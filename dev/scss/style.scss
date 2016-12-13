@@ -1,8 +1,30 @@
 @import 'mixins';
 @import 'variables';
 
+* {
+	margin: 0;
+}
+
+* + * {
+	margin-top: $baseline;
+}
+
+dt,
+dd,
+h3,
+label,
+li,
+progress,
+meter {
+	margin-top: 0;
+}
+
+h1, h2, h3, h4 {
+	margin-bottom: -$baseline;
+}
+
 html {
-	font-family: 'PT Serif', Georgia, sans-serif;
+	font-family: $serif-font;
 	font-size: $scale-small-font; // fallback
 	line-height: 1.4;
 	color: color('text');
@@ -21,44 +43,31 @@ html {
 body {
 	margin: $baseline;
 
-	> header,
-	> main,
-	> footer,
-	> article {
-		display: block;
+	header,
+	main,
+	footer,
+	article {
 		position: relative;
 		max-width: $content-size;
-		margin: 0 auto;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
-	> header {
-		margin-bottom: $baseline*2;
+	header {
 		text-align: center;
 	}
 
 	> footer {
-		margin-top: $baseline*2;
 		text-align: center;
 		font-size: .8rem;
 		color: color('invisible');
 	}
 }
 
-section, article {
-	margin: $baseline 0 $baseline*2;
-}
-
-address {
-	@include lift(.62rem);
-}
-
 aside {
 	position: absolute;
 	right: -$side;
 	max-width: $side*.75;
-
-	@include lift(.6rem);
-	font-weight: 400;
 	font-style: italic;
 	color: color('disabled');
 
@@ -68,7 +77,7 @@ aside {
 		position: relative;
 		right: auto;
 		max-width: none;
-		@include lift(.6rem);
+		margin-bottom: $baseline;
 	}
 	/* stylelint-enable */
 }
@@ -90,11 +99,8 @@ a {
 }
 
 nav {
-	padding: $baseline*.5 0;
-
 	ul {
 		list-style: none;
-		margin: 0;
 		padding: 0;
 
 		li {
@@ -103,55 +109,44 @@ nav {
 			color: color('disabled');
 		}
 	}
-
-	a {
-		&:visited {
-			color: color('link');
-		}
-
-		&:hover,
-		&:focus {
-			color: color('link-hover');
-		}
-	}
 }
 
 h1 {
-	@include lift(.36rem);
+	@include lift($baseline*.82);
 	font-size: 4em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: $baseline*3;
-	color: color('accent');
+	color: color('headers');
 }
 
 h2 {
-	@include lift(.47rem);
+	@include lift($baseline*.86);
 	font-size: 2.5em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: $baseline*2;
 	color: color('headers');
 }
 
 h3 {
-	@include lift(.46rem);
-	margin-top: $baseline*.5;
+	@include lift($baseline*.9, $baseline*.5);
 	font-size: 1.5em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: $baseline*1.5;
 	color: color('headers');
 }
 
 h4 {
-	@include lift(.62rem);
+	@include lift($baseline);
 	font-size: 1em;
 	font-weight: bold;
 	line-height: $baseline;
-	color: darken(color('disabled'), 10);
+	color: lighten(color('headers'), 10);
 }
 
 form {
-	max-width: 25em;
-	margin: 0 auto;
+	max-width: $content-size*.8;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 fieldset {
@@ -210,7 +205,6 @@ input {
 
 	&[type=color] {
 		width: 4em;
-		height: $baseline*1.5;
 	}
 
 	&[type=file] {
@@ -224,7 +218,6 @@ textarea {
 	/* stylelint-disable no-unsupported-browser-features */
 	resize: vertical;
 	/* stylelint-enable */
-	margin-bottom: $baseline*.5;
 }
 
 pre {
@@ -242,7 +235,7 @@ pre {
 	}
 }
 
-code {
+code, samp {
 	@include code;
 	padding: .0625em .3125em;
 }
@@ -250,12 +243,11 @@ code {
 img {
 	display: block;
 	max-width: 100%;
-	margin: 0 auto;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 p {
-	@include lift(.62rem);
-
 	img {
 		float: right;
 		margin: .25em 0 .25em .5em;
@@ -266,7 +258,6 @@ p {
 figure {
 	display: inline-block;
 	box-sizing: border-box;
-	margin: .5em 0;
 	/* stylelint-disable no-unsupported-browser-features */
 	padding: calc(.25em - 1px) 1em;
 	/* stylelint-enable */
@@ -294,28 +285,34 @@ figure {
 	}
 }
 
-blockquote {
-	margin: 0 2em;
-	padding-top: -.1em;
+address, blockquote {
+	margin-bottom: $baseline;
+	padding: 0 2em;
 }
 
 ul, ol {
-	@include lift(.58rem);
-	margin-left: 1em;
+	padding-left: 2em;
+
+	li:last-child {
+		margin-bottom: $baseline;
+	}
 }
 
 dl {
-	@include lift(.58rem);
-	margin-left: 0em;
+	padding-left: 2em;
 
 	dt {
-		font-weight: 700;
+		margin-left: -2em;
+		font-weight: bold;
+	}
+
+	dd:last-child {
+		margin-bottom: $baseline;
 	}
 }
 
 details {
 	display: block;
-	margin: 0;
 	padding: 0;
 
 	summary {
@@ -323,7 +320,7 @@ details {
 		outline: none;
 		margin: 0;
 		padding: 0 .5em;
-		font-weight: 700;
+		font-weight: bold;
 		cursor: pointer;
 	}
 }
@@ -351,7 +348,6 @@ table {
 	-webkit-overflow-scrolling: touch;
 
 	caption {
-		@include lift(.6rem);
 		font-style: italic;
 		background: #fff;
 	}
@@ -362,7 +358,7 @@ table {
 
 	td, th {
 		/* stylelint-disable no-unsupported-browser-features */
-		padding: calc(#{$baseline} - .6rem - 1px) .7em .6rem;
+		padding: calc(#{$baseline*.5} - 1px) .7em $baseline*.5;
 		/* stylelint-enable */
 		vertical-align: top;
 		border: 1px solid color('border');
@@ -391,14 +387,14 @@ table {
 	}
 
 	th {
-		border: .0625em solid darken(color('border'), 10);
+		border: 1px solid darken(color('border'), 10);
 	}
 }
 
 abbr {
 	margin-right: -.15em;
 	letter-spacing: .15em;
-	font-size: .875rem;
+	font-size: .875em;
 }
 
 dfn {
@@ -429,19 +425,17 @@ hr {
 }
 
 var {
-	font-family: monospace;
+	font-family: $mono-font;
 	font-style: normal;
 }
 
 audio {
 	width: 100%;
-	margin: .5em 0;
 }
 
 video {
 	width: 100%;
 	max-width: 100%;
-	margin: .5em 0;
 }
 
 noscript {
@@ -452,6 +446,7 @@ kbd {
 	display: inline-block;
 	margin: 0;
 	padding: 0 .6ex;
+	font-family: $mono-font;
 	font-size: .9em;
 	border-radius: 5px;
 	box-shadow: 0 1px color('border');

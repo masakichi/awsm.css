@@ -15,6 +15,9 @@ $colors: (
 	@return map-get($colors, $key);
 }
 
+$serif-font: 'PT Serif', Georgia, serif;
+$mono-font: Consolas, Courier, monospace;
+
 /* sizes */
 $content-size: 32rem;
 $side: 200px;
