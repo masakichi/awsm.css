@@ -1,18 +1,18 @@
 /* colors */
 $colors: (
-	'headers': #25291c,
-	'accent': #070600,
-	'text': #111,
-	'disabled': #7d7d77,
-	'invisible': #a3a39b,
-	'border': #e8e8e8,
-	'link': #0064c1,
-	'link-hover': #3000c1,
-	'link-visited': #6d00c1,
+  'headers': #25291c,
+  'accent': #070600,
+  'text': #111,
+  'disabled': #7d7d77,
+  'invisible': #a3a39b,
+  'border': #e8e8e8,
+  'link': #0064c1,
+  'link-hover': #3000c1,
+  'link-visited': #6d00c1,
 );
 
 @function color($key: 'primary') {
-	@return map-get($colors, $key);
+  @return map-get($colors, $key);
 }
 
 $serif-font: 'PT Serif', Georgia, serif;
