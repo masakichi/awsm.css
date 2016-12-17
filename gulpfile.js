@@ -32,10 +32,10 @@ var errorHandler = function(title) {
 			};
 		})
 	});
-}; 
+};
 
 gulp.task('markup', function() {
-	
+
   return gulp.src(input.pug)
     .pipe(errorHandler('Markup'))
 
@@ -50,7 +50,7 @@ gulp.task('markup', function() {
 gulp.task('styles', function() {
 	return gulp.src(input.scss)
 		.pipe(errorHandler('Styles'))
-		
+
 		.pipe($.stylelint({
 	      reporters: [
 	        { formatter: 'string', console: true }
@@ -66,7 +66,7 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest(output.css))
 		.pipe(gulp.dest(output.dist))
 
-		.pipe($.minifyCss())
+		.pipe($.csso())
 		.pipe($.rename('awsm.min.css'))
 		.pipe(gulp.dest(output.css))
 		.pipe(gulp.dest(output.dist))
@@ -75,7 +75,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('images', function() {
-	return gulp.src(input.images) 
+	return gulp.src(input.images)
 		.pipe(errorHandler('Images'))
 
 		.pipe(gulp.dest(output.images))
