@@ -1,0 +1,29 @@
+include _mixins.pug
+
++page("overview")
+  section
+    h2 Usage
+
+    +code-block &lt;link rel="stylesheet" href="awsm.min.css"&gt;
+
+    p 
+      | Also don't forget to add viewport info to
+      = ' ' 
+      code &lt;head&gt;
+      = ' '
+      | section for adaptation to mobile. Like this:
+
+    +code-block &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+    p 
+      | And if you want to get beautiful fonts, add “PT Serif” from
+      = ' '
+      a(href="https://www.google.com/fonts/specimen/PT+Serif", title="PT Serif in Google Fonts") Google Fonts
+      | .
+
+  section
+    h2 Why?
+    
+    p
+      | I have to create simple pages in my daily work. Sometimes it's compiled Markdown and sometimes it's pure HTML. 
+      | I'd like to make them more beautiful without additional classes, ids, etc. So I did it.

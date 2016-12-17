@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugins</title>
+    <link rel="stylesheet" href="css/awsm.min.css">
+  </head>
+  <body>
+    <header>
+      <h1>awsm.css</h1>
+      <p>It makes your HTML beautiful</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="elements.html">Elements</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li>Plugins</li>
+          <li><a href="https://github.com/igoradamenko/awsm.css" target="_blank">GitHub</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>There are some plugins that I advice you to use with awsm.css.</p>
+      <section id="fotorama">
+        <h2>Fotorama</h2>
+        <p>It's simple and powerful jQuery gallery by Artem Polikarpov. Homepage of the plugin — <a href="http://fotorama.io/" title="Fotorama">fotorama.io</a>
+          .
+          Demo:
+        </p>
+        <div class="fotorama" data-width="700" data-ratio="700/467" data-max-width="100%"><img src="http://s.fotorama.io/okonechnikov/1-lo.jpg"><img src="http://s.fotorama.io/okonechnikov/2-lo.jpg"><img src="http://s.fotorama.io/okonechnikov/9-lo.jpg"><img src="http://s.fotorama.io/okonechnikov/6-lo.jpg"><img src="http://s.fotorama.io/okonechnikov/5-lo.jpg">
+        </div>
+        <p>Photos <a href="http://okonet.ru/">by Andrey Okonetchnikov</a>
+        </p>
+      </section>
+      <section id="highlightjs-prismjs">
+        <h2>highlight.js & prism.js</h2>
+        <p>
+          The best syntax highlight libraries. First of them has more themes, but sometimes second works better.
+          Which one to use? Up to you.
+        </p>
+        <p>Homepages: <a href="https://highlightjs.org/" title="highlight.js">highlightjs.org</a> & <a href="http://prismjs.com/" title="http://prism.js">prismjs.com</a>
+          .
+          Demo of prism.js you can see below.
+        </p>
+        <pre style="padding: 0"><code class="language-scss">/* Create a border-triangle
+ * params:
+ *    $direction: [top, right, bottom, left]
+ *    $size
+ *    $color
+ *    $type: `display` value
+ */
+@mixin triangle($direction, $size, $color, $mode: 'normal', $type: inline-block) {
+  display: $type;
+  $direction-map: (
+    'top': 'bottom',
+    'right': 'left',
+    'bottom': 'top',
+    'left': 'right'
+  );
+  $opposite-direction: map-get($direction-map, $direction);
+
+  @each $d in top right bottom left {
+    @if $d == $opposite-direction {
+      border-#{$d}: $size solid $color;
+    }
+    @else {
+      @if $d != $direction {
+        @if $mode == 'normal' {
+          border-#{$d}: $size solid transparent;
+        }
+
+        @if $mode == 'wide' {
+          border-#{$d}: $size * 1.5 solid transparent;
+        }
+      }
+    }
+  }
+}</code></pre>
+      </section>
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-solarizedlight.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js"></script>
+      <style>
+        /* remove prism.js paddings */
+        pre[class*=language-] {
+          padding: 0;
+        }
+      </style>
+    </main>
+    <footer>
+      <address>Igor Adamenko</address>
+    </footer>
+  </body>
+</html>

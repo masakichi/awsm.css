@@ -1,0 +1,35 @@
+include _docmap.pug
+
+mixin page(name)
+  doctype html
+  html(lang="en")
+    head
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title= docmap[name].pageTitle ? docmap[name].pageTitle : docmap[name].title
+      link(rel="stylesheet", href="css/awsm.min.css")
+    
+    body
+      header
+        h1 awsm.css
+        p It makes your HTML beautiful
+
+        nav
+          ul
+            - for (var item in docmap)            
+              - if (item != name)
+                li
+                  a(href= docmap[item].url, target= docmap[item].blank ? '_blank' : false)= docmap[item].title
+              - else
+                li= docmap[item].title
+
+      main
+        block
+
+      footer
+        address Igor Adamenko
+
+mixin code-block
+  pre
+    code
+      block

@@ -1,0 +1,551 @@
+include _mixins.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Beautiful Typography
+    link(rel="stylesheet", href="css/awsm.min.css")
+    link(href="https://fonts.googleapis.com/css?family=PT+Serif", rel="stylesheet")
+
+  body
+    header
+      h1 Beautiful typography
+
+      p Using just CSS
+
+      nav
+        ul
+          li
+            a(href="#rhythm") Rhythm
+
+          li
+            a(href="#scales") Scales
+
+          li
+            a(href="#syncopations") Syncopations
+
+          li
+            a(href="#responsive") Responsive
+
+          li
+            a(href="#caveats") Caveats
+
+          li
+            a(href="#conclusion") Conclusion
+
+    main
+      section#rhythm
+        h2 Introduction
+
+        p
+          | Typographic design is a delicate balance between bringing enough attention to a piece of text,
+          | such that it will be read.
+          | Yet, once the attention is drawn, relinguishes it such that the reader focusses on the content itself.
+
+      section#rhythm
+        h2 Rhythm
+
+        p
+          | At the core of beautiful typography is
+          = ' '
+          em rhythm
+          | . Vertical rhythm is achieved with consistent spacing of one
+          = ' '
+          em baseline
+          = ' '
+          | to another, regardless of font size and any other spacer elements.
+
+        p
+          | Rhythm is not a prescription for dry monotonic lines;
+          | it allows splashes of syncopations of font size changes, and interjections of non-text elements.
+          | Provided the consistency is resumed, rhythm is maintained.
+
+        p Let's start with headers.
+
+        h1 A simple h1
+
+        p
+          | Despite being significantly larger,
+          = ' '
+          code h1
+          = ' '
+          | headers do not break rhythm.
+          | It sits on a baseline, the same as the text around it, even if it itself occupies multiple baselines.
+
+        h1 Just h1 over multiple lines
+
+        p
+          | A short burst of large text in headers tolerate smaller
+          = ' '
+          em leading
+          = ' '
+          | than the main text.
+          | Descenders in one line can come close to ascenders on the next without discomfort.
+          | In most cases, and in large enough viewports,
+          = ' '
+          code h1
+          = ' '
+          | headers are single lined anyway.
+
+        h2 What about h2?
+
+        p Same thing.
+
+        h2 And h2 over multiple lines?  How does it look?
+
+        p No loss of vertical rhythm.
+
+        h3 This is an h3
+
+        p Still going...
+
+        h3 This is an h3 over multiple lines; I struggle to find fluff words to pad it out
+
+        p
+          | It's time for a compromise. For the
+          = ' '
+          a(href="#scales") scale
+          = ' '
+          | chosen, it is difficult to find a
+          = ' '
+          em leading
+          = ' '
+          | that simultaneously sits every line on the baseline (to maintain overall rhythm),
+          | and that is not too large or too small.
+          | So, a half-baseline offset is introduced whenever we have an even number of
+          = ' '
+          code h3
+          = ' '
+          | lines. As with the other headers, in most cases,
+          = ' '
+          code h3
+          = ' '
+          | headers are single lined anyway.
+
+        h3 For this demo, here's another multi-line h3 to introduce another half-baseline
+
+        p And we're back to the same rhythm
+
+        h4 This is an h4
+
+        p No problem, since it is the same size as the main text.
+
+        h4 This is an h4 header over multiple lines; and here's some meaningless words just to get to the next line
+        p
+          | For most use cases, four headers is probably enough.
+          | Often, if there is a perceived need for more header levels,
+          | it is likely that the content is in need of some restructuring.
+
+      section#scales
+        h2 Scales
+
+        p
+          | Related to rhythm is judicious selection of scales: in font sizes.
+          | A music composer never composes without a scale, and neither should a web designer.
+
+        aside
+          | Technically it is 1, 1.5, 2.5, 4 relative to the main font, respectively for
+          = ' '
+          code h4
+          | ,
+          = ' '
+          code h3
+          | ,
+          = ' '
+          code h2
+          | , and
+          = ' '
+          code h1
+          | .
+
+        p
+          | Here, the Fibonacci sequence 2, 3, 5, 8, which approximate the
+          = ' '
+          a(href="https://en.wikipedia.org/wiki/Golden_ratio") Golden ratio
+          | , is used for the heading sizes.
+          | Other ratios can be considered, but the Golden ratio is widely considered pleasing,
+          | likely due to its wide occurance in nature. It is also often mimicked in architecture.
+
+      section#syncopations
+        h2 Syncopations
+
+        p
+          | A continuous text stream is often punctuated with non-paragraphed text.
+          | As with music, syncopations add flavour and variety.
+          | It is most important to end the syncopations by returning to the base rhythm.
+
+        p
+          img(src="images/surprised-cat.jpg", alt="Surprised cat")
+          | Images inlined in
+          = ' '
+          code p
+          = ' '
+          | are right-aligned, with text flowing on the left without breaking rhythm. Images outside of
+          = ' '
+          code p
+          = ' '
+          | are center aligned, but we'll come back to that when we talk about
+          = ' '
+          a(href="#caveats") caveats
+          | .
+
+        p
+          | Inline styles with the same scale as the main text shouldn"t break rhythm. We have many:
+          = ' '
+          abbr(title="Abbreviation") abbr
+          | ,
+          = ' '
+          code code
+          | ,
+          = ' '
+          dfn definition
+          | ,
+          = ' '
+          del deleted
+          | ,
+          = ' '
+          em emphasized
+          | ,
+          = ' '
+          ins inserted
+          | ,
+          = ' '
+          kbd keyboard
+          | ,
+          = ' '
+          mark marked
+          | ,
+          = ' '
+          samp sample
+          | ,
+          = ' '
+          small small
+          | ,
+          = ' '
+          strong strong
+          | ,
+          = ' '
+          q quotes
+          | ,
+          = ' '
+          q(lang="ru") quotes in another language
+          | , or
+          = ' '
+          var variables
+          | .
+          | As long as the height of the inlined element is not greater than the line-height, overall rhythm is not disrupted.
+
+        p Lists should not break rhythm:
+
+        ul
+          li No matter what happens
+
+          li Lists don't break vertical rhythm
+
+          li Even when a list item is very long that it spans multiple lines; spacing must be consistent.
+
+        p Unordered or ordered:
+
+        ol
+          li
+            | Stay
+            = ' '
+            em in-phrase
+
+          li As musicians and dancers say
+
+        p The same goes with description lists:
+
+        dl
+          dt Vertical rhythm
+          dd Baselines follow a consistent vertical rhythm, regardless of font
+
+          dt Measure
+          dd
+            | Our eyes comfortably track lines of a certain horizontal width;
+            | too narrow or too wide increases reading difficulty
+        p
+          | Likewise with
+          = ' '
+          code blockquote
+          | :
+
+        blockquote
+          p Art is to space, what music is to time.
+
+          footer
+            | — 
+            = ' '
+            cite Unknown
+
+        p Or an address
+
+        address 123, Street name, Suburb, Country
+
+        p Or even the humble horizontal rule.
+
+        hr
+
+        p Some exotic HTML5 elements:
+
+        details
+          summary
+            | Click on
+            = ' '
+            code details
+            = ' '
+            | to see it expand
+
+          p It only works with very recent browsers.
+
+        p
+          code progress
+          = ' '
+          progress(value="22", max="100")
+          | , or
+          = ' '
+          code meter
+          = ' '
+          meter(value="0.6")
+            = ' '
+          | are also new to HTML5. They inline well.
+
+        p
+          | There are other text-based syncopations in HTML, but they came with some
+          = ' '
+          a(href="#caveats") caveats
+          | . We"ll revisit them shortly.
+
+      section#responsive
+        h2 Responsiveness & fluidity
+
+        aside
+          code aside
+          = ' '
+          | appear on the margin, or inline, depending on screen width. But always obeying vertical rhythm.
+
+        p
+          em Responsive
+          = ' '
+          | web design shows, hides, or otherwise reshuffles content according to screen size.
+          | Notice the responsive behaviour of the
+          = ' '
+          code aside
+          = ' '
+          | tag as you resize your browser width.
+
+        p
+          em Fluidity
+          = ' '
+          | is a lesser used technique that additionally changes element sizes based on screen size.
+          | It exploits the fact that users generally hold smaller screens closer, and don't need as large elements.
+          = ' '
+          em Fluidity
+          = ' '
+          | smooths out the differences between similar screen sizes, ensuring more consistent
+          = ' '
+          em measure
+          = ' '
+          | and thus design.
+
+        p
+          | A
+          = ' '
+          em measure
+          = ' '
+          | of 49 to 75 characters per line is generally desirable, with 66 characters per line ideal.
+          = ' '
+          em Fluidity
+          = ' '
+          | ensures that on large screens, text width is capped to ensure a good maximum
+          = ' '
+          em measure
+          | ; and on small screens, the reduced root font size ensures that the minimum
+          = ' '
+          em measure
+          = ' '
+          | is kept for as long as possible. Ultimately on very small screens, the desired minimum
+          = ' '
+          em measure
+          = ' '
+          | is unattainable, and we resort to just keeping a decent font size.
+
+      section#caveats
+        h2 Caveats
+
+        p
+          | Ultimately HTML and CSS, is not InDesign or QuarkXPress. We lack the fine control that those programs offer.
+          | With a few hacks with baselines and padding, we've already achieved a fair amount.
+          | But there are some more elements that don't quite work.
+
+        h3 Images & other media
+
+        aside
+          | Use
+          = ' '
+          em art direction
+          = ' '
+          | to scale images according to screen size, but that's a different topic.
+
+        p
+          | This one is particularly obvious. Anything non-text plays by its own rules,
+          | and without complicated Javascript or other CSS trickery to add the necessary screen size dependent padding,
+          | we're not likely able to bring the subsequent text back inline.
+
+        h3 Tables
+
+        p
+          | Any widget that can potentially add browser-native elements, such as scrollbars,
+          | are impossible to control with CSS.
+          | Nevertheless, we can still attempt to maintain rhythm when the scrollbars are
+          = ' '
+          em absent
+          | . Here's the
+          = ' '
+          code table
+          = ' '
+          | element.
+
+        table
+          caption Table caption
+
+          thead
+            tr
+              th Column 1
+              th Column 2
+              th Column 3
+
+          tbody
+            tr
+              td HTML Tables can be useful
+              td
+              td
+
+            tr
+              td
+              td Just don't use them for layout purposes
+              td
+
+            tr
+              td
+              td
+              td Use them only when data is truly tabular
+
+          tfoot
+            tr
+              td(colspan="3") Here's a footer spanning multiple columns
+
+        p
+          | Depending on
+          = ' '
+          a(href="http://www.w3.org/TR/CSS21/tables.html#separated-borders") your browser's implementation
+          | , you may or may not still be maintaining rhythm by this point.
+
+        h3 Forms
+
+        p
+          | Form elements also tend to use browser native widgets to provide the native look and feel.
+          | As such, they are likely to disrupt  rhythm. Worst is the
+          = ' '
+          code textarea
+          | , which users can resize on-demand. What follows may or may not line up, depending on your browser.
+
+        form(onsubmit="accept(); return false;")
+          fieldset
+            legend Legendary form
+
+            label(for="text-field") Text field
+            input#text-field(type="text")
+
+            label(for="date-field") Date field
+            input#date-field(type="date")
+
+            label(for="select-field") Select field
+            select#select-field
+              option(value="option-1") option 1
+              option(value="option-2") option 2
+              option(value="option-3") option 3
+
+            label(for="tetxarea-field") Text area
+            textarea#text-area Users can resize this!  The design horror!
+
+            label(for="color-field") Color field
+            input#color-field(type="color", value="#d01d1d")
+
+            label(for="file-field") File field
+            input#file-field(type="file")
+
+            input(type="submit", value="Submit Input")
+            button(type="reset") Button
+
+            output#output(style="display: none")
+              p You clicked the submit input!
+
+        p
+          | Notice that not all form elements line up with the baseline.
+          | That's ok, as long as they line up among themselves, and return to rhythm after.
+
+        h3 Font changes
+
+        p
+          | Since CSS doesn't follow the more conventional notion of a baseline,
+          | which is fixed regardless of font, changing fonts is problematic and causes loss of vertical rhythm.
+
+        p
+          | Any inline elements that enlarge height is particularly disruptive,
+          | as it alters the effective line-height just for the line it is occupying. And there is no way to control it.
+          | Use things like
+          var
+            | x
+            sub sub
+            | = y
+            sup sup
+          | with caution. Preferably, don't inline them,
+          | as the lines before and after them look strange with inconsistent spacing -
+          | you get one tall line surrounded by normal ones.
+
+        p We've lost rhythm now...
+
+        +code-block &lt;code&gt;&lt;pre&gt makes things worse
+
+        p We might as well get used to the new rhythm after these elements.
+
+      section#conclusion
+        h2 Conclusion
+
+        p
+          | Maintaining perfect vertical rhythm throughout the entire page may not be that important considering
+          | the vertical scrolling nature of HTML. At any one scroll position, the visible page can still
+          = ' '
+          em mostly
+          = ' '
+          | be in rhythm. Nonetheless, the other topics presented here can lead to beautiful typography using just CSS.
+
+        figure
+          img(src="images/cat.jpg", alt="Kitty")
+
+          figcaption
+            | Here's a kitty to offset the pain, and showcase
+            = ' '
+            code figure
+
+    footer
+      p
+        | Text on a footer is usually brief and smaller than the main font.
+        | Just like music, consistent rhythm fades away at the end, bringing the piece to an end.
+
+    script.
+      function accept() {
+        document.getElementById("output").style.display = 'block';
+        return false;
+      }
+
+    script(src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js")
+
+    script.
+      window.onload = function() {
+        baseliner = new Baseliner({ gridColor: 'red', gridHeight: 28, gridOffset: 22 });
+        baseliner.toggle();
+      }

@@ -1,25 +1,27 @@
 /* requires */
 
-var gulp	= require('gulp'),
-	bs		= require('browser-sync'),
-	$		= require('gulp-load-plugins')({
-		replaceString: /^gulp(-|\.)|postcss-/,
-		pattern: ['*']
-	});
+var gulp = require('gulp');
+var bs = require('browser-sync');
+var $ = require('gulp-load-plugins')({
+  replaceString: /^gulp(-|\.)|postcss-/,
+  pattern: ['*']
+});
 
 /* paths */
 
 var input = {
-		html: ['dev/example/**/*.html', '!dev/example/includes/*.html'] ,
-		scss: 'dev/scss/**/*.scss',
-		images: 'dev/example/images/*'
-	},
-	output = {
-		dist: 'dist',
-		main: 'example',
-		css: 'example/css',
-		images: 'example/images'
-	};
+  pug: ['dev/docs/**/*.pug'],
+  html: ['dev/docs/**/*.html', '!dev/docs/includes/*.html'] ,
+  scss: 'dev/scss/**/*.scss',
+  images: 'dev/docs/images/*'
+};
+
+var output = {
+  dist: 'dist',
+  main: 'docs',
+  css: 'docs/css',
+  images: 'docs/images'
+};
 
 var errorHandler = function(title) {
 	return $.plumber({
@@ -30,16 +32,19 @@ var errorHandler = function(title) {
 			};
 		})
 	});
-} 
+}; 
 
 gulp.task('markup', function() {
-	return gulp.src(input.html)
-		.pipe(errorHandler('Markup'))
-		
-		.pipe($.fileInclude())
-		.pipe($.cached('markup'))
-		.pipe(gulp.dest(output.main))
-		.pipe(bs.stream());
+	
+  return gulp.src(input.pug)
+    .pipe(errorHandler('Markup'))
+
+    .pipe($.filter(['**/!(_)*.pug']))
+    .pipe($.pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest(output.main))
+    .pipe(bs.stream());
 });
 
 gulp.task('styles', function() {
@@ -87,7 +92,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(input.html, gulp.series('markup'));
+	gulp.watch(input.pug, gulp.series('markup'));
 	gulp.watch(input.scss, gulp.series('styles'));
 	gulp.watch(input.images, gulp.series('images'));
 });
