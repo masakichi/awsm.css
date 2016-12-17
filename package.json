@@ -25,9 +25,10 @@
     "stylelint-selector-no-utility": "^1.5.0"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/gulp",
     "build": "./node_modules/.bin/gulp build",
-    "clean": "./node_modules/.bin/gulp clean"
+    "clean": "./node_modules/.bin/gulp clean",
+    "dev": "./node_modules/.bin/gulp",
+    "lint": "./node_modules/.bin/gulp lint"
   },
   "license": "MIT",
   "repository": {

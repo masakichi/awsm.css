@@ -47,15 +47,21 @@ gulp.task('markup', function() {
     .pipe(bs.stream());
 });
 
+gulp.task('lint', function() {
+  return gulp.src(input.scss)
+    .pipe(errorHandler('Linter'))
+
+    .pipe($.stylelint({
+        reporters: [
+          { formatter: 'string', console: true }
+        ]
+      }));
+});
+
 gulp.task('styles', function() {
 	return gulp.src(input.scss)
 		.pipe(errorHandler('Styles'))
 
-		.pipe($.stylelint({
-	      reporters: [
-	        { formatter: 'string', console: true }
-	      ]
-	    }))
 		.pipe($.concat('awsm.scss'))
 		.pipe($.sass())
 
@@ -93,7 +99,7 @@ gulp.task('server', function() {
 
 gulp.task('watch', function() {
 	gulp.watch(input.pug, gulp.series('markup'));
-	gulp.watch(input.scss, gulp.series('styles'));
+	gulp.watch(input.scss, gulp.series('lint', 'styles'));
 	gulp.watch(input.images, gulp.series('images'));
 });
 
@@ -101,6 +107,6 @@ gulp.task('clean', function(cb) {
 	return $.del(output.main);
 });
 
-gulp.task('build', gulp.series('markup', 'styles', 'images'));
+gulp.task('build', gulp.series('markup', 'lint', 'styles', 'images'));
 
 gulp.task('default', gulp.series('build', gulp.parallel('watch', 'server')));
