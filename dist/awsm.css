@@ -16,7 +16,8 @@ body{
   body > header{
     margin-bottom:3.5em; }
     body > header h1{
-      margin:0; }
+      margin:0;
+      font-size:1.5em; }
     body > header p{
       margin:0;
       font-size:.85em; }
@@ -35,11 +36,25 @@ nav{
     padding:0; }
     nav ul li{
       display:inline-block;
-      margin-right:1em; }
+      margin-right:1em;
+      margin-bottom:.25em; }
   nav a:visited{
     color:#0064c1; }
   nav a:hover, nav a:focus{
     color:#3000c1; }
+
+ul, ol{
+  margin-top:0;
+  padding-top:0; }
+
+p + ul, p + ol{
+  margin-top:-.75em; }
+
+dd{
+  margin-bottom:1em; }
+
+dt{
+  font-weight:700; }
 
 h1, h2, h3, h4, h5, h6{
   margin:1.25em 0 0;
@@ -81,6 +96,18 @@ img{
 audio, video{
   width:100%;
   max-width:100%; }
+
+figure{
+  margin:1em 0 .5em;
+  padding:0; }
+  figure + p{
+    margin-top:.5em; }
+  figure figcaption{
+    opacity:.65;
+    font-size:.85em; }
+
+code{
+  font-family:Consolas, monospace; }
 
 pre > code{
   display:-webkit-box;
