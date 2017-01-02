@@ -93,7 +93,8 @@ gulp.task('server', function() {
 		server: output.main,
 		open: false,
 		browser: "browser",
-		reloadOnRestart: true
+		reloadOnRestart: true,
+    notify: false
 	});
 });
 
