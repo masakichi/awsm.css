@@ -93,3 +93,41 @@ audio, video {
   width: 100%;
   max-width: 100%;
 }
+
+//- Code
+pre {
+  > code {
+    $scrollBorderColor: rgba(color('primary'), .15);
+
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+    padding: 0 1px;
+    background:
+      linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
+      linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
+    background-attachment: scroll, scroll;
+    background-size: 1px 100%, 1px 100%;
+    background-repeat: no-repeat;
+
+    &::before,
+    &::after {
+      content: '';
+      display: flex;
+      flex-shrink: 0;
+      position: relative;
+      width: 1px;
+      background: color('secondary');
+    }
+
+    &::before {
+      left: -1px;
+    }
+
+    &::after {
+      right: -1px;
+      width: 2px; // fix render in chrome on android
+      margin-left: auto;
+    }
+  }
+}
