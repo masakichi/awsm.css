@@ -1,20 +1,18 @@
 include _mixins.pug
 
 +page("elements")
+  h1 There are demos of library capabilities
+
+  p There are demos of library capabilities. From skeleton to media.
+
   section#main
-    h2 Main blocks
+    h2 Main
 
     p
       | awsm.css contains styles for all really useful HTML5 skeleton tags.
-      | If you open the source code of this page you'll see all of them (except
-      = ''
-      code article
-      = ' '
-      | but there are styles for it too).
+      | If you open the source code of this page you'll see all of them.
 
     h3 What about others?
-
-    aside One should note here that you can write on the margin.
 
     figure
       img(src="images/cat.jpg", alt="Kitty")
@@ -27,21 +25,23 @@ include _mixins.pug
     p
       code div
       = ' '
-      | blocks are not styled because they don't have semantic value (as well as
+      | isn't styled because it doesn't have semantic value (as well as
       = ' '
       code span
       = ' '
       | elements which aren't styled either)
 
-    p But quotes are really nice:
-
     aside
-      strong N.B.!
-      = ' '
-      a(
-        href="http://html5doctor.com/cite-and-blockquote-reloaded/",
-        title="An article on html5doctor.com explains the right way of using quotes in HTML5"
-      ) cite and blockquote – reloaded
+      p
+        strong N.B.!
+        = ' '
+        a(
+          href="http://html5doctor.com/cite-and-blockquote-reloaded/",
+          title="An article on html5doctor.com explains the right way of using quotes in HTML5",
+          target="_blank"
+        ) cite and blockquote – reloaded
+
+    p But for example quotes are really nice:
 
     blockquote
       p See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.
@@ -59,37 +59,18 @@ include _mixins.pug
     p There's boring unordered list of jedi masters:
 
     ul
-      li Plo Koon
-      li Qui-Gon Jinn
       li Obi-Wan Kenobi
       li Luke Skywalker
-      li Aalya Secura
-      li Kit Fisto
-      li Ahsoka Tano
-      li Anakin Skywalker
-      li Mace Windu
       li Yoda
 
-    p Let's rank them on impact on the saga and personal accomplishments!
+    p Let's rank them!
 
     ol
       li Luke Skywalker
       li Yoda
       li Obi-Wan Kenobi
-      li Anakin Skywalker
-      li Qui-Gon Jinn
-      li Mace Windu
-      li Ahsoka Tano
-      li Plo Koon
-      li Kit Fisto
-      li Aalya Secura
 
-    p
-      | You may see list wrapped by
-      = ' '
-      code nav
-      = ' '
-      | in the header of this page. And we also have description lists:
+    p And we also have description lists:
 
     dl
       dt Blizzard
@@ -104,11 +85,9 @@ include _mixins.pug
   section#tables
     h2 Tables
 
-    p For instance let's look at Apple, Microsoft & Google:
+    p Let's look at Apple, Microsoft & Google:
 
     table
-      caption Comparison of IT giants
-
       thead
         tr
           th Title
@@ -139,19 +118,10 @@ include _mixins.pug
         tr
           td(colspan="4") Total revenue: US$ 342.376 billion
 
+    p This table looks fine on mobile. Resize browser window and check this out!
+
   section#inlines
     h2 Inlines
-
-    p
-      | awsm.css contains many styles for inline elements. For example
-      = ' '
-      dfn omfg
-      = ' '
-      | is abbreviation which means “Oh my fucking God!”. It's one of the most popular
-      = ' '
-      abbr(title='World Wide Web') WWW
-      = ' '
-      | abbreviation.
 
     p
       | Of course the library has styles for
@@ -162,35 +132,7 @@ include _mixins.pug
       = ' '
       em emphasized
       = ' '
-      | text. It doesn't have something special for
-      = ' '
-      code b
-      = ' '
-      | and
-      = ' '
-      code i
-      = ' '
-      | because in HTML5 they are only semantical elements. So they are same as
-      = ' '
-      code strong
-      = ' '
-      | and
-      = ' '
-      code em
-      | .
-
-    p
-      | If some part of the text is outdated you can
-      = ' '
-      del delete this
-      = ' '
-      | and
-      = ' '
-      ins insert actual version
-      | . You also can mark
-      = ' '
-      mark important thought
-      | .
+      | text.
 
     p
       img(src="images/surprised-cat.jpg", alt="Surprised cat")
@@ -198,7 +140,10 @@ include _mixins.pug
       = ' '
       code p
       = ' '
-      | it'll be aligned to the right. And all paragraphs after it will flow around the picture on the left.
+      | it'll be aligned to the left or right side.
+      | If it's in the start, then it's aligned to the left, else—to the start.
+
+    p
       | But if you insert image outside
       = ' '
       code p
@@ -207,61 +152,31 @@ include _mixins.pug
 
     hr
 
-    p
-      | Above you've seen examples of using tags for quoting (
-      code blockquote
-      = ' '
-      | &
-      = ' '
-      code cite
-      | ). There is another one tag. It's
-      = ' '
-      code q
-      | . Imagine that we hear the song:
-      = ' '
-      q Soft Kitty, Warm Kitty, little ball of fur.. Happy Kitty, Sleepy Kitty, purr, purr, purr
-      | .
-
-    p
-      | And don't forget about attribute
-      = ' '
-      code lang
-      = ' '
-      | of this tag. Quotes depend on it. For instance in Russian quotes are different:
-      = ' '
-      q(lang="ru") Теплый пушистый котенок спит, свернулся в клубочек и мурчит
-      | .
+    p There are many others stylized inline tags in lib, but it would be boring to list them all.
 
     img(src="images/sleepy-cat.jpg", alt="Sleepy cat")
 
   section#media
     h2 Media
 
-    p View of audio and video depends on your browser. You can see examples below.
+    p View of audio and video depends on your browser.
 
     aside
-      | This is a background theme of
-      = ' '
-      a(
-        href="https://radio-t.com",
-        title="The famous Russian IT-podcast",
-        target="_blank"
-      ) Radio-T
-      | .
+      p
+        | This is a background theme of
+        = ' '
+        a(
+          href="https://radio-t.com",
+          title="The famous Russian IT-podcast",
+          target="_blank"
+        ) Radio-T
+        | .
 
     audio(src="http://igoradamenko.com/github/awsm.css/radio-t.mp3", controls, loop)
-      | Your browser does not support
-      = ' '
-      code audio
-      = ' '
-      | or MP3.
+      | It seems like your browser can't play this audio.
 
     video(src="http://igoradamenko.com/github/awsm.css/cats.mp4", controls)
-      | Your browser does not support
-      = ' '
-      code video
-      = ' '
-      | or MP4.
+      | It seems like your browser can't play this video.
 
   section#forms
     h2 Forms
@@ -280,27 +195,34 @@ include _mixins.pug
 
         label(for="first-name") First Name
         input#first-name(type="text")
+        br
 
         label(for="last-name") Last Name
         input#last-name(type="text")
+        br
 
         label(for="date") Date of birth
         input#date(type="date")
+        br
 
         label(for="country") Country
         select#country
           option(value="china") China
           option(value="russia") Russia
           option(value="usa") USA
+        br
 
         label(for="about") Tell us about yourself
         textarea#about
+        br
 
         label(for="photo") Photo
         input#photo(type="file")
+        br
 
         label(for="password") Password
         input#password(type="password")
+        br
 
         input(type="submit", value="Submit")
         button(type="reset") Reset
@@ -311,55 +233,10 @@ include _mixins.pug
   section#code
     h2 Code formatting
 
-    p
-      code sub
-      = ' '
-      | and
-      = ' '
-      code sup
-      = ' '
-      | are supported too:
-
-      var
-        | t
-        sub n
-        = ' '
-        | = n
-        sup 3
-      | .
-
-    p
-      | Also it has support of
-      = ' '
-      code kbd
-      | :
-      kbd Ctrl
-      = ' '
-      | +
-      = ' '
-      kbd F
-      | ;
-      = ' '
-      code samp
-      | :
-
-    samp
-      | [22:13:57] Starting 'scss'...
-      br
-      | [22:13:57] Finished 'scss' after 2.16 ms
-      br
-      | [22:13:57] Starting 'css'...
-      br
-      | [22:13:57] Finished 'css' after 1.99 ms
-      br
-      | [BS] 1 file changed (awsm.min.css)
-
-    p ..and the block of code:
-
     +code-block
       -
         var code = '<h2>Code formatting</h2>\n' +
-        '<p><code>sub</code> and <code>sup</code> are supported too: <var>t<sub>n</sub> = n<sup>3</sup></var>.</p>'
+        '<p>If you need a good syntax highlight for your code, check the <a title="Good plugins" href="plugins.html#highlightjs-prismjs">Plugins</a> section.</p>'
 
       = code
 
