@@ -73,19 +73,19 @@
 	        "transform",
 	        "transform-origin",
 	        "transform-style",
-	                    
+
 	        "outline",
 	        "outline-width",
 	        "outline-style",
 	        "outline-color",
 	        "outline-offset",
-	        
+
 	        "table-layout",
 	        "caption-side",
 	        "empty-cells",
 	        "border-spacing",
 	        "border-collapse",
-	        
+
 	        "list-style",
 	        "list-style-position",
 	        "list-style-type",
@@ -96,24 +96,24 @@
 
 	        "float",
 	        "clear",
-	        
+
 	        "overflow",
 	        "overflow-x",
 	        "overflow-y",
-	        
+
 	        "clip",
-	        
+
 	        "box-sizing",
-	        
+
 	        "width",
 	        "min-width",
 	        "max-width",
 	        "height",
 	        "min-height",
 	        "max-height",
-	        
+
 	        "resize",
-	        
+
 	        "margin",
 	        "margin-top",
 	        "margin-right",
@@ -124,7 +124,7 @@
 	        "padding-right",
 	        "padding-bottom",
 	        "padding-left",
-	                   
+
 	        "text-align",
 	        "text-align-last",
 	        "text-decoration",
@@ -141,11 +141,11 @@
 	        "text-overflow-ellipsis",
 	        "text-overflow-mode",
 	        "text-shadow",
-	        
+
 	        "vertical-align",
 
 	        "-webkit-text-size-adjust",
-	        
+
 	        "white-space",
 	        "word-spacing",
 	        "word-wrap",
@@ -153,7 +153,7 @@
 	        "tab-size",
 	        "hyphens",
 	        "letter-spacing",
-	        
+
 	        "font",
 	        "src",
 	        "font-family",
@@ -166,7 +166,7 @@
 	        "line-height",
 
 	        "-webkit-font-smoothing",
-	                    
+
 	        "border",
 	        "border-width",
 	        "border-style",
@@ -207,9 +207,9 @@
 	        "border-top-right-image",
 	        "border-bottom-right-image",
 	        "border-bottom-left-image",
-	        
+
 	        "box-shadow",
-	        
+
 	        "background",
 	        "background-color",
 	        "background-image",
@@ -222,15 +222,15 @@
 	        "background-size",
 	        "-webkit-background-size",
 	        "background-repeat",
-	        
+
 	        "-ms-interpolation-mode",
 	        "filter",
-	        
+
 	        "color",
 
 	        "pointer-events",
 	        "cursor",
-	        
+
 	        "nav-index",
 	        "nav-up",
 	        "nav-right",
@@ -334,7 +334,7 @@
 		"no-unsupported-browser-features": [true, {
 		  "browsers": "> 1%, not OperaMini all",
 		  "severity": "warning",
-		  "ignore": ["css-appearance"]
+		  "ignore": ["css-appearance", "flexbox"]
 		}],
 		"number-leading-zero": "never",
 		"number-no-trailing-zeros": true,

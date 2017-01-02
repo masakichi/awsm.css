@@ -1,0 +1,95 @@
+@import 'variables';
+
+//- Basic
+
+html {
+  font-family: font('serif');
+  font-size: size('font-min');
+  line-height: size('line-height-max');
+  background: color('secondary');
+  color: color('primary');
+}
+
+//- Layout & fonts
+
+body {
+  margin: 1em;
+
+  header,
+  main,
+  footer,
+  article {
+    max-width: size('width-max');
+    margin: 0 auto;
+  }
+
+  > header {
+    margin-bottom: 3.5em;
+
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+      font-size: .85em;
+    }
+  }
+
+  > footer {
+    margin-top: 4.5em;
+    padding-bottom: 1.5em;
+    text-align: center;
+    font-size: .8rem;
+    color: color('stealthy');
+  }
+}
+
+nav {
+  margin: 1em 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.25em 0 0;
+  line-height: size('line-height-min');
+
+  + p {
+    margin-top: .5em;
+  }
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+//- Media
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+audio, video {
+  width: 100%;
+  max-width: 100%;
+}
