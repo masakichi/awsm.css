@@ -36,6 +36,10 @@ nav{
     nav ul li{
       display:inline-block;
       margin-right:1em; }
+  nav a:visited{
+    color:#0064c1; }
+  nav a:hover, nav a:focus{
+    color:#3000c1; }
 
 h1, h2, h3, h4, h5, h6{
   margin:1.25em 0 0;
@@ -51,6 +55,23 @@ h2{
 
 h3{
   font-size:1.25em; }
+
+a{
+  text-decoration:none;
+  color:#0064c1;
+  -webkit-transition:color 300ms ease-out, box-shadow 300ms ease-out;
+  transition:color 300ms ease-out, box-shadow 300ms ease-out;
+  background:url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3Crect x="0" y="0.5" width="1" height="0.5" fill="rgba(0, 100, 193, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x; }
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+    a{
+      background:url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="2"%3E%3Crect x="0" y="1" width="1" height="1" fill="rgba(0, 100, 193, 0.35)"/%3E%3C/svg%3E') left bottom repeat-x; } }
+  a:visited{
+    color:#80b2e0; }
+  a:hover, a:focus{
+    box-shadow:inset 0px -1px #3000c1;
+    color:#3000c1;
+    -webkit-transition:color 0s, box-shadow 0s;
+    transition:color 0s, box-shadow 0s; }
 
 img{
   display:block;

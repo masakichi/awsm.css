@@ -1,3 +1,4 @@
+@import 'mixins';
 @import 'variables';
 
 //- Basic
@@ -58,6 +59,17 @@ nav {
       margin-right: 1em;
     }
   }
+
+  a {
+    &:visited {
+      color: color('link');
+    }
+
+    &:hover,
+    &:focus {
+      color: color('link-hover');
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,6 +91,27 @@ h2 {
 
 h3 {
   font-size: 1.25em;
+}
+
+//- Typography
+
+a {
+  text-decoration: none;
+  color: color('link');
+  transition: color 300ms ease-out, box-shadow 300ms ease-out;
+
+  @include retina-border(color('link'));
+
+  &:visited {
+    color: mix(color('link'), color('secondary')); //- we can't use rgba or change background-image in :visited 'cause of security
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0px -1px color('link-hover');
+    color: color('link-hover');
+    transition: color 0s, box-shadow 0s;
+  }
 }
 
 //- Media
