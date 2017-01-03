@@ -185,58 +185,6 @@ include _mixins.pug
     video(src="http://igoradamenko.com/github/awsm.css/cats.mp4", controls)
       | It seems like your browser can't play this video.
 
-  section#forms
-    h2 Forms
-
-    script.
-      function accept() {
-        document.getElementById('output').style.display = 'block';
-        return false;
-      }
-
-    form(onsubmit="accept(); return false;")
-      h4 Mars vacation program
-
-      fieldset
-        legend Be first
-
-        label(for="first-name") First Name
-        input#first-name(type="text")
-        br
-
-        label(for="last-name") Last Name
-        input#last-name(type="text")
-        br
-
-        label(for="date") Date of birth
-        input#date(type="date")
-        br
-
-        label(for="country") Country
-        select#country
-          option(value="china") China
-          option(value="russia") Russia
-          option(value="usa") USA
-        br
-
-        label(for="about") Tell us about yourself
-        textarea#about
-        br
-
-        label(for="photo") Photo
-        input#photo(type="file")
-        br
-
-        label(for="password") Password
-        input#password(type="password")
-        br
-
-        input(type="submit", value="Submit")
-        button(type="reset") Reset
-
-        output#output(style="display: none")
-          p Welcome on board!
-
   section#code
     h2 Code formatting
 
