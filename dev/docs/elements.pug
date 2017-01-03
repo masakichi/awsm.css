@@ -1,7 +1,7 @@
 include _mixins.pug
 
 +page("elements")
-  h1 There are demos of library capabilities
+  h1 Elements
 
   p There are demos of library capabilities. From skeleton to media.
 
@@ -132,30 +132,27 @@ include _mixins.pug
     h2 Inlines
 
     p
-      | Of course the library has styles for
+      img(src="images/surprised-cat.jpg", alt="Surprised cat")
+      | The library has styles for
       = ' '
       strong strong
-      = ' '
-      | and
+      | ,
       = ' '
       em emphasized
       = ' '
-      | text.
+      | text and so on.
 
     p
-      img(src="images/surprised-cat.jpg", alt="Surprised cat")
       | Please note if you insert image inside
       = ' '
       code p
       = ' '
       | it'll be aligned to the right side.
-
-    p
       | But if you insert image outside
       = ' '
       code p
       = ' '
-      | it'll be aligned to the center. You may see example below.
+      | it'll be aligned to the center. See example below.
 
     hr
 
