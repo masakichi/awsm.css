@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elements</title>
     <link rel="stylesheet" href="css/awsm.min.css">
-    <!--link(href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&amp;subset=cyrillic", rel="stylesheet")-->
-    <!--link(href="https://fonts.googleapis.com/css?family=PT+Sans:700&amp;subset=cyrillic", rel="stylesheet")-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&amp;amp;subset=cyrillic" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -29,8 +28,8 @@
         <p>There are demos of library capabilities. From skeleton to media.</p>
         <section id="main">
           <h2>Main</h2>
-          <p>
-            awsm.css contains styles for all really useful HTML5 skeleton tags.
+          <p>awsm.css contains styles for all really useful <abbr title="HyperText Markup Language is the standard markup language for creating web pages and web applications.">HTML5</abbr> 
+            skeleton tags.
             If you open the source code of this page you'll see all of them.
           </p>
           <h3>What about others?</h3>
@@ -41,7 +40,7 @@
           <p><code>div</code> isn't styled because it doesn't have semantic value (as well as <code>span</code> elements which aren't styled either)
           </p>
           <aside>
-            <p><strong>N.B.!</strong> <a href="http://html5doctor.com/cite-and-blockquote-reloaded/" title="An article on html5doctor.com explains the right way of using quotes in HTML5" target="_blank">cite and blockquote – reloaded</a>
+            <p><strong>N.B.</strong> <a href="http://html5doctor.com/cite-and-blockquote-reloaded/" title="An article on html5doctor.com explains the right way of using quotes in HTML5" target="_blank">cite and blockquote – reloaded</a>
             </p>
           </aside>
           <p>But for example quotes are really nice:</p>
@@ -51,7 +50,7 @@
               <cite>Linus Torvalds</cite>
             </footer>
           </blockquote>
-          <p>Yeah! They have absolutely no custom styles :)</p>
+          <p>Yeah! They almost have no custom styles :)</p>
         </section>
         <section id="lists">
           <h2>Lists</h2>
@@ -85,6 +84,7 @@
               <tr>
                 <th>Title</th>
                 <th>Revenue</th>
+                <th>Number of employees</th>
                 <th>CEO</th>
                 <th>Founders</th>
               </tr>
@@ -92,26 +92,29 @@
             <tbody>
               <tr>
                 <td>Apple</td>
-                <td>US$ 182.795 billion</td>
+                <td>US$ 215.639 billion</td>
+                <td>115,000</td>
                 <td>Tim Cook</td>
                 <td>Steve Jobs, Steve Wozniak, Ronald Wayne</td>
               </tr>
               <tr>
                 <td>Microsoft</td>
-                <td>US$ 93.58 billion</td>
+                <td>US$ 85.32 billion</td>
+                <td>114,000</td>
                 <td>Satya Nadella</td>
                 <td>Bill Gates, Paul Allen</td>
               </tr>
               <tr>
                 <td>Google</td>
-                <td>US$ 66.001 billion</td>
+                <td>US$ 74.54 billion</td>
+                <td>57,100</td>
                 <td>Larry Page</td>
                 <td>Larry Page, Sergey Brin</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="4">Total revenue: US$ 342.376 billion</td>
+                <td colspan="5">Total revenue: US$ 375.499 billion</td>
               </tr>
             </tfoot>
           </table>
@@ -121,9 +124,7 @@
           <h2>Inlines</h2>
           <p>Of course the library has styles for <strong>strong</strong> and <em>emphasized</em> text.
           </p>
-          <p><img src="images/surprised-cat.jpg" alt="Surprised cat">Please note if you insert image inside <code>p</code> 
-            it'll be aligned to the left or right side.
-            If it's in the start, then it's aligned to the left, else—to the start.
+          <p><img src="images/surprised-cat.jpg" alt="Surprised cat">Please note if you insert image inside <code>p</code> it'll be aligned to the right side.
           </p>
           <p>But if you insert image outside <code>p</code> it'll be aligned to the center. You may see example below.
           </p>

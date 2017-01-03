@@ -9,6 +9,7 @@ html {
   line-height: size('line-height-max');
   background: color('secondary');
   color: color('primary');
+  -webkit-overflow-scrolling: touch;
 }
 
 //- Layout & fonts
@@ -77,20 +78,41 @@ nav {
 ul, ol {
   margin-top: 0;
   padding-top: 0;
+  padding-left: 2.5em;
 }
 
 p {
+  hyphens: auto;
+
   + ul, + ol {
     margin-top: -.75em;
+  }
+
+  img {
+    float: right;
+    margin-bottom: .5em;
+    margin-left: .5em;
   }
 }
 
 dd {
   margin-bottom: 1em;
+  margin-left: 0;
+  padding-left: 2.5em;
 }
 
 dt {
   font-weight: 700;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: 2.5em;
+}
+
+aside {
+  font-style: italic;
+  color: color('stealthy');
 }
 
 //- Typography
@@ -135,6 +157,13 @@ a {
   }
 }
 
+abbr {
+  margin-right: -.075em;
+  hyphens: none;
+  letter-spacing: .075em;
+  font-size: .9em;
+}
+
 //- Media
 
 img {
@@ -148,6 +177,10 @@ audio, video {
   max-width: 100%;
 }
 
+video {
+  object-position: 0 -1px; // fix strange chrome video controls rendering
+}
+
 figure {
   margin: 1em 0 .5em;
   padding: 0;
@@ -159,6 +192,63 @@ figure {
   figcaption {
     opacity: .65;
     font-size: .85em;
+  }
+}
+
+//- Tables
+
+table {
+  $scrollBorderColor: rgba(color('primary'), .15);
+
+  display: inline-block;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+  max-width: 100%;
+  text-align: left;
+  vertical-align: top;
+  background:
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
+  background-attachment: scroll, scroll;
+  background-size: 1px 100%, 1px 100%;
+  background-repeat: no-repeat, no-repeat;
+
+  caption {
+    font-size: .9em;
+    background: color('secondary');
+  }
+
+  td, th {
+    padding: .35em .75em;
+    vertical-align: top;
+    font-size: .9em;
+    border: 1px solid color('invisible');
+    border-top: 0;
+    border-left: 0;
+
+    &:first-child {
+      padding-left: 0;
+      background-image: linear-gradient(to right, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-size: 2px 100%;
+      background-repeat: no-repeat;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      border-right: 0;
+      background-image: linear-gradient(to left, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-position: 100% 0;
+      background-size: 2px 100%;
+      background-repeat: no-repeat;
+    }
+
+    &:only-child {
+      background-image: linear-gradient(to right, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%), linear-gradient(to left, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-position: 0 0, 100% 0;
+      background-size: 2px 100%, 2px 100%;
+      background-repeat: no-repeat, no-repeat;
+    }
   }
 }
 
@@ -181,7 +271,7 @@ pre {
       linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
     background-attachment: scroll, scroll;
     background-size: 1px 100%, 1px 100%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat, no-repeat;
 
     &::before,
     &::after {
@@ -203,4 +293,13 @@ pre {
       margin-left: auto;
     }
   }
+}
+
+//- Misc.
+
+hr {
+  height: 1px;
+  margin: 2em 0;
+  border: 0;
+  background: color('invisible');
 }

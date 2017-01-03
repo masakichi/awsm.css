@@ -1,7 +1,6 @@
 //- Maps
 $font-map: (
   'mono': (Consolas, monospace),
-  'sans': ('PT Sans', Helvetica, Arial, sans-serif),
   'serif': ('PT Serif', Georgia, serif),
 );
 
@@ -18,6 +17,7 @@ $color-map: (
   'primary': #000,
   'secondary': #fff,
   'stealthy': #aaa,
+  'invisible': #f2f2f2,
   'link': #0064c1,
   'link-hover': #3000c1,
   'link-visited': #6d00c1,

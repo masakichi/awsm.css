@@ -3,7 +3,8 @@ html{
   font-size:16px;
   line-height:1.6;
   background:#fff;
-  color:#000; }
+  color:#000;
+  -webkit-overflow-scrolling:touch; }
 
 body{
   margin:1em; }
@@ -45,16 +46,35 @@ nav{
 
 ul, ol{
   margin-top:0;
-  padding-top:0; }
+  padding-top:0;
+  padding-left:2.5em; }
 
-p + ul, p + ol{
-  margin-top:-.75em; }
+p{
+  -webkit-hyphens:auto;
+      -ms-hyphens:auto;
+          hyphens:auto; }
+  p + ul, p + ol{
+    margin-top:-.75em; }
+  p img{
+    float:right;
+    margin-bottom:.5em;
+    margin-left:.5em; }
 
 dd{
-  margin-bottom:1em; }
+  margin-bottom:1em;
+  margin-left:0;
+  padding-left:2.5em; }
 
 dt{
   font-weight:700; }
+
+blockquote{
+  margin:0;
+  padding-left:2.5em; }
+
+aside{
+  font-style:italic;
+  color:#aaa; }
 
 h1, h2, h3, h4, h5, h6{
   margin:1.25em 0 0;
@@ -88,6 +108,14 @@ a{
     -webkit-transition:color 0s, box-shadow 0s;
     transition:color 0s, box-shadow 0s; }
 
+abbr{
+  margin-right:-.075em;
+  -webkit-hyphens:none;
+      -ms-hyphens:none;
+          hyphens:none;
+  letter-spacing:.075em;
+  font-size:.9em; }
+
 img{
   display:block;
   max-width:100%;
@@ -97,6 +125,10 @@ audio, video{
   width:100%;
   max-width:100%; }
 
+video{
+  -o-object-position:0 -1px;
+     object-position:0 -1px; }
+
 figure{
   margin:1em 0 .5em;
   padding:0; }
@@ -105,6 +137,50 @@ figure{
   figure figcaption{
     opacity:.65;
     font-size:.85em; }
+
+table{
+  display:inline-block;
+  border-spacing:0;
+  border-collapse:collapse;
+  overflow-x:auto;
+  max-width:100%;
+  text-align:left;
+  vertical-align:top;
+  background:-webkit-linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 0 0, -webkit-linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 100% 0;
+  background:linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 0 0, linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 100% 0;
+  background-attachment:scroll, scroll;
+  background-size:1px 100%, 1px 100%;
+  background-repeat:no-repeat, no-repeat; }
+  table caption{
+    font-size:.9em;
+    background:#fff; }
+  table td, table th{
+    padding:.35em .75em;
+    vertical-align:top;
+    font-size:.9em;
+    border:1px solid #f2f2f2;
+    border-top:0;
+    border-left:0; }
+    table td:first-child, table th:first-child{
+      padding-left:0;
+      background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%);
+      background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%);
+      background-size:2px 100%;
+      background-repeat:no-repeat; }
+    table td:last-child, table th:last-child{
+      padding-right:0;
+      border-right:0;
+      background-image:-webkit-linear-gradient(right, white 50%, rgba(255, 255, 255, 0) 100%);
+      background-image:linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+      background-position:100% 0;
+      background-size:2px 100%;
+      background-repeat:no-repeat; }
+    table td:only-child, table th:only-child{
+      background-image:-webkit-linear-gradient(left, white 50%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(right, white 50%, rgba(255, 255, 255, 0) 100%);
+      background-image:linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(to left, white 50%, rgba(255, 255, 255, 0) 100%);
+      background-position:0 0, 100% 0;
+      background-size:2px 100%, 2px 100%;
+      background-repeat:no-repeat, no-repeat; }
 
 code{
   font-family:Consolas, monospace; }
@@ -119,7 +195,7 @@ pre > code{
   background:linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 0 0, linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 100% 0;
   background-attachment:scroll, scroll;
   background-size:1px 100%, 1px 100%;
-  background-repeat:no-repeat; }
+  background-repeat:no-repeat, no-repeat; }
   pre > code::before, pre > code::after{
     content:'';
     display:-webkit-box;
@@ -134,3 +210,9 @@ pre > code{
     right:-1px;
     width:2px;
     margin-left:auto; }
+
+hr{
+  height:1px;
+  margin:2em 0;
+  border:0;
+  background:#f2f2f2; }
