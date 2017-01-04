@@ -68,8 +68,7 @@ nav {
       color: color('link');
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: color('link-hover');
     }
   }
@@ -82,6 +81,7 @@ ul, ol {
 }
 
 p {
+  margin: 1em 0;
   hyphens: auto;
 
   + ul, + ol {
@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1.25em 0 0;
   line-height: size('line-height-min');
 
-  + p {
+  + p, + details {
     margin-top: .5em;
   }
 }
@@ -150,7 +150,11 @@ a {
   }
 
   &:hover,
-  &:focus {
+  &:active {
+    outline-width: 0;
+  }
+
+  &:hover {
     box-shadow: inset 0px -1px color('link-hover');
     color: color('link-hover');
     transition: color 0s, box-shadow 0s;
@@ -254,44 +258,28 @@ table {
 
 //- Code
 
-code {
+code, kbd, var, samp {
   font-family: font('mono');
 }
 
 pre {
+  $scrollBorderColor: rgba(color('primary'), .15);
+
+  overflow-x: auto;
+  background:
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
+  background-attachment: scroll, scroll;
+  background-size: 1px 100%, 1px 100%;
+  background-repeat: no-repeat, no-repeat;
+
   > code {
-    $scrollBorderColor: rgba(color('primary'), .15);
-
-    display: flex;
-    position: relative;
-    overflow-x: auto;
-    padding: 0 1px;
-    background:
-      linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
-      linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
-    background-attachment: scroll, scroll;
-    background-size: 1px 100%, 1px 100%;
-    background-repeat: no-repeat, no-repeat;
-
-    &::before,
-    &::after {
-      content: '';
-      display: flex;
-      flex-shrink: 0;
-      position: relative;
-      width: 1px;
-      background: color('secondary');
-    }
-
-    &::before {
-      left: -1px;
-    }
-
-    &::after {
-      right: -1px;
-      width: 2px; // fix render in chrome on android
-      margin-left: auto;
-    }
+    display: inline-block;
+    overflow-x: visible;
+    box-sizing: border-box;
+    min-width: 100%;
+    border-right: 1px solid color('secondary');
+    border-left: 1px solid color('secondary');
   }
 }
 
@@ -302,4 +290,23 @@ hr {
   margin: 2em 0;
   border: 0;
   background: color('invisible');
+}
+
+details {
+  margin: 1em 0;
+
+  &[open] {
+    border-bottom: 1px solid color('invisible');
+  }
+}
+
+summary {
+  display: inline-block;
+  font-weight: 700;
+  border-bottom: 1px dashed;
+  cursor: pointer;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
 }

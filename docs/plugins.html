@@ -47,7 +47,7 @@
             .
             Demo of prism.js you can see below.
           </p>
-          <pre style="padding: 0"><code class="language-scss">/* Create a border-triangle
+          <pre><code class="language-scss">/* Create a border-triangle
  * params:
  *    $direction: [top, right, bottom, left]
  *    $size
@@ -89,9 +89,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js"></script>
         <style>
-          /* remove prism.js paddings */
+          /* move prism.js paddings from pre to code */
           pre[class*=language-] {
             padding: 0;
+          }
+          
+          pre[class*=language-] code {
+            padding: 1em;
           }
         </style>
       </article>
