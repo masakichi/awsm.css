@@ -5,6 +5,12 @@ html{
   background:#fff;
   color:#000;
   -webkit-overflow-scrolling:touch; }
+  @media (min-width: 320px){
+    html{
+      font-size:calc(16px + 0.0125 * (100vw - 320px)); } }
+  @media (min-width: 640px){
+    html{
+      font-size:20px; } }
 
 body{
   margin:1em; }
@@ -189,7 +195,8 @@ table{
       background-repeat:no-repeat, no-repeat; }
 
 code, kbd, var, samp{
-  font-family:Consolas, monospace; }
+  font-family:Consolas, monospace;
+  font-style:normal; }
 
 pre{
   overflow-x:auto;
@@ -224,6 +231,9 @@ summary{
   cursor:pointer; }
   summary::-webkit-details-marker{
     display:none; }
+
+noscript{
+  color:#d00000; }
 
 ::-moz-selection{
   background:rgba(0, 100, 193, 0.15); }

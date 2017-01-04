@@ -10,6 +10,19 @@ html {
   background: color('secondary');
   color: color('primary');
   -webkit-overflow-scrolling: touch;
+
+  @media (min-width: size('width-min')) {
+    // source: https://www.smashingmagazine.com/2016/05/fluid-typography/
+    $font-size-diff: size('font-max') - size('font-min');
+    $width-diff: size('width-max') - size('width-min');
+    $ratio: $font-size-diff / $width-diff;
+
+    font-size: calc(#{size('font-min')} + #{$ratio} * (100vw - #{size('width-min')}));
+  }
+
+  @media (min-width: size('width-max')) {
+    font-size: size('font-max');
+  }
 }
 
 //- Layout & fonts
@@ -265,6 +278,7 @@ table {
 
 code, kbd, var, samp {
   font-family: font('mono');
+  font-style: normal;
 }
 
 pre {
@@ -314,6 +328,10 @@ summary {
   &::-webkit-details-marker {
     display: none;
   }
+}
+
+noscript {
+  color: color('alarm');
 }
 
 ::selection {

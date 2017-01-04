@@ -334,7 +334,7 @@
 		"no-unsupported-browser-features": [true, {
 		  "browsers": "> 1%, not OperaMini all",
 		  "severity": "warning",
-		  "ignore": ["css-appearance", "flexbox", "css-hyphens"]
+		  "ignore": ["css-appearance", "flexbox", "css-hyphens", "calc", "viewport-units"]
 		}],
 		"number-leading-zero": "never",
 		"number-no-trailing-zeros": true,
