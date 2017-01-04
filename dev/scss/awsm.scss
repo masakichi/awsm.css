@@ -310,3 +310,7 @@ summary {
     display: none;
   }
 }
+
+::selection {
+  background: rgba(color('accent'), .15);
+}

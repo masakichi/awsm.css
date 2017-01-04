@@ -221,3 +221,9 @@ summary{
   cursor:pointer; }
   summary::-webkit-details-marker{
     display:none; }
+
+::-moz-selection{
+  background:rgba(0, 100, 193, 0.15); }
+
+::selection{
+  background:rgba(0, 100, 193, 0.15); }
