@@ -56,10 +56,13 @@ p{
           hyphens:auto; }
   p + ul, p + ol{
     margin-top:-.75em; }
-  p img{
+  p img, p picture{
     float:right;
     margin-bottom:.5em;
     margin-left:.5em; }
+    p img img, p picture img{
+      float:none;
+      margin:0; }
 
 dd{
   margin-bottom:1em;
@@ -119,7 +122,7 @@ abbr{
   letter-spacing:.075em;
   font-size:.9em; }
 
-img{
+img, picture{
   display:block;
   max-width:100%;
   margin:0 auto; }
