@@ -34,6 +34,7 @@ body {
   main,
   footer,
   article {
+    position: relative;
     max-width: size('width-max');
     margin: 0 auto;
   }
@@ -97,6 +98,14 @@ p {
   margin: 1em 0;
   hyphens: auto;
 
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   + ul, + ol {
     margin-top: -.75em;
   }
@@ -131,6 +140,17 @@ blockquote {
 aside {
   font-style: italic;
   color: color('stealthy');
+
+  $shift: 200px;
+  @media (min-width: size('width-max') + $shift * 2) {
+    position: absolute;
+    right: -$shift;
+    width: $shift * .75;
+    max-width: $shift * .75;
+    padding-left: .5em;
+    font-size: .8em;
+    border-left: 1px solid color('invisible');
+  }
 }
 
 //- Typography
@@ -271,6 +291,10 @@ table {
       background-size: 2px 100%, 2px 100%;
       background-repeat: no-repeat, no-repeat;
     }
+  }
+
+  th {
+    line-height: size('line-height-min');
   }
 }
 
