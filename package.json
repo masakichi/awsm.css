@@ -28,7 +28,8 @@
     "build": "./node_modules/.bin/gulp build",
     "clean": "./node_modules/.bin/gulp clean",
     "dev": "./node_modules/.bin/gulp",
-    "lint": "./node_modules/.bin/gulp lint"
+    "lint": "./node_modules/.bin/gulp lint",
+    "test": "npm run build"
   },
   "license": "MIT",
   "repository": {
