@@ -1,0 +1,105 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Igor Adamenko
+    link(rel="stylesheet", href="../../css/awsm.min.css")
+    link(href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic", rel="stylesheet")
+
+  body
+    header
+      h1 Igor Adamenko
+      nav
+        ul
+          li
+            a(href="../../", title="Back to the awsm.css site") Back
+
+          li
+            a(href="popular.html", title="Popular articles") Popular
+
+          li
+            a(href="tags.html", title="Page with list of tags") Tags
+
+    main
+      article
+        header
+          p 30 September 2016, 20:40
+          h1
+            a(href="chrome-main-setting.html", title="Main setting in Chrome") Main setting in Chrome
+
+        p
+          | Chromium-based browsers on Mac have one important feature that I don't remember on Window—setting “Warn Before Quitting (⌘Q)”.
+          | If you check it, then
+          = ' '
+          kbd Cmd
+          = ' + '
+          kbd Q
+          = ' '
+          | won't close browser immediately.
+          | It shows warning:
+
+        img(src="../../images/chrome.png", alt="Warning: Hold ⌘Q to Quit.")
+
+      article
+        header
+          p 16 August 2016, 2:49
+          h1
+            a(href="uptime.html", title="Uptime") Uptime
+
+        p I've notice that if I use Windows calmly and carefully, it can work for a month without reboot and any freezes.
+
+        figure
+          img(src="../../images/windows.png", alt="Screenshot of Windows task manager with 30 days uptime.")
+
+          figcaption
+            | Yep, this is Russian version of Windows. Look at
+            = ' '
+            em 30:00:03:33
+            | . This is uptime.
+
+      article
+        header
+          p 15 June 2016, 22:29
+          h1
+            a(href="dont-use-flexbox-for-page-layout.html", title="Don't use flexbox for page layout") Don't use flexbox for page layout
+
+        p Seriously. Do not use.
+
+        p
+          | If you start to use flexbox, then you won't be able to get rid of flexbox model.
+          | And your content will rule of your layout.
+          | You will get strange bugs with overflow, growing, shrinking, etc.
+          = ' '
+          var flex-grow
+          = ' and '
+          var flex-shring
+          | will be your friends forever.
+          | And each of your component will affect on his children without your participation.
+
+        p
+          | So, don't do that.
+          = ' '
+          a(
+            href="https://jakearchibald.com/2014/dont-use-flexbox-for-page-layout/",
+            title="Article in a blog of Jake Archibald.",
+            target="_blank"
+          ) Listen Jake
+          = ' '
+          | if you don't believe me.
+
+    footer
+      p Igor Adamenko
+
+    style.
+      /* for beautiful back link */
+      nav li:first-child a::before {
+        content: '←\a0';
+        left: -1.2em;
+      }
+
+      @media (min-width: 700px) {
+        nav li:first-child a::before {
+          position: absolute;
+        }
+      }

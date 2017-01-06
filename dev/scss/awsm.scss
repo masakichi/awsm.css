@@ -153,6 +153,12 @@ aside {
   }
 }
 
+section {
+  + section {
+    margin-top: 2em;
+  }
+}
+
 //- Typography
 
 h1, h2, h3, h4, h5, h6 {
@@ -174,6 +180,51 @@ h2 {
 
 h3 {
   font-size: 1.25em;
+}
+
+article {
+  + article {
+    margin-top: 5em;
+  }
+
+  header {
+    p {
+      font-family: font('sans');
+      font-size: .7em;
+      color: color('stealthy');
+
+      + h1, + h2 {
+        margin-top: -.25em;
+      }
+    }
+
+    h1, h2 {
+      + p {
+        margin-top: .25em;
+      }
+
+      a {
+        color: color('primary');
+
+        @include retina-border(color('primary'));
+
+        &:visited {
+          color: color('stealthy');
+
+          @include retina-border(color('stealthy'));
+
+          &:hover {
+            color: color('link-hover');
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: 1.5em;
+    font-size: .85em;
+  }
 }
 
 a {
@@ -339,6 +390,7 @@ details {
   margin: 1em 0;
 
   &[open] {
+    padding-bottom: .5em;
     border-bottom: 1px solid color('invisible');
   }
 }
