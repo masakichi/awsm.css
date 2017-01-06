@@ -4,7 +4,10 @@ var gulp = require('gulp');
 var bs = require('browser-sync');
 var $ = require('gulp-load-plugins')({
   replaceString: /^gulp(-|\.)|postcss-/,
-  pattern: ['*']
+  pattern: ['*'],
+  rename: {
+    postcss: "postcss-base" // for difference between gulp-postcss & postcss
+  }
 });
 
 /* paths */
