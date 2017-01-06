@@ -146,7 +146,7 @@ article header h1 a, article header h2 a{
     article header h1 a:visited:hover, article header h2 a:visited:hover{
       color:#3000c1; }
 
-article footer{
+article > footer{
   margin-top:1.5em;
   font-size:.85em; }
 
