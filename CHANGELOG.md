@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Added
+- Rems for font size & page width.
+
 ## [2.0.0 “Charmander”] - 2017-01-07
 ### Added
 - Fluid typography.
@@ -55,6 +59,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 “Bulbasaur” - 2016-03-20
 
 
+[Unreleased]: https://github.com/igoradamenko/awsm.css/compare/v2.0.0...HEAD
 [2.0.0 “Charmander”]: https://github.com/igoradamenko/awsm.css/compare/v1.2.1...v2.0.0
 [1.2.1]: https://github.com/igoradamenko/awsm.css/compare/v1.2.0...v1.2.1
 [1.2.0 “Venusaur”]: https://github.com/igoradamenko/awsm.css/compare/v1.1.0...v1.2.0
