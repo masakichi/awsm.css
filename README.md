@@ -30,7 +30,7 @@ Also don't forget to add viewport info to the `<head>` for adaptation to mobile.
 And if you want to get beautiful fonts, add “[PT Serif](https://www.google.com/fonts/specimen/PT+Serif)” and “[PT Sans](https://www.google.com/fonts/specimen/PT+Sans)” from Google Fonts:
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
 ```
 
 It also available as the [npm package](https://www.npmjs.com/package/awsm.css), which supports [PostCSS API](#postcss-api).
