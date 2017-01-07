@@ -205,6 +205,20 @@ include _mixins.pug
     details
       summary Show me the magic
       p This simple spoiler does not work in Internet Explorer / Edge yet. Coming soon :)
+      p But now you can star the repo, why not? ^_^
+      p
+        a(
+          class="github-button",
+          href="https://github.com/igoradamenko/awsm.css",
+          data-icon="octicon-star",
+          data-style="mega",
+          data-count-href="/igoradamenko/awsm.css/stargazers",
+          data-count-api="/repos/igoradamenko/awsm.css#stargazers_count",
+          data-count-aria-label="# stargazers on GitHub",
+          aria-label="Star igoradamenko/awsm.css on GitHub"
+        ) Star
+
+      script(src="https://buttons.github.io/buttons.js", async, defer)
 
     noscript
       | This is an example of noscript but it seems like you'll never see that :)
