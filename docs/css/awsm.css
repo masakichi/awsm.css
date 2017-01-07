@@ -251,6 +251,7 @@ code, kbd, var, samp{
 
 pre{
   overflow-x:auto;
+  font-size:.8em;
   background:-webkit-linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 0 0, -webkit-linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 100% 0;
   background:linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 0 0, linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 100% 0;
   background-attachment:scroll, scroll;
@@ -261,8 +262,7 @@ pre{
     overflow-x:visible;
     box-sizing:border-box;
     min-width:100%;
-    font-size:.8em;
-    border-right:1px solid #fff;
+    border-right:2px solid #fff;
     border-left:1px solid #fff; }
 
 hr{
