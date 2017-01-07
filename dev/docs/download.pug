@@ -22,7 +22,30 @@ include _mixins.pug
     a(href="https://github.com/igoradamenko/awsm.css/archive/master.zip") download tarball of the project
     | .
 
-  section
+  section#postcss
+    h2 PostCSS API
+
+    p
+      | If you install
+      = ' '
+      a(
+        href="https://www.npmjs.com/package/awsm.css",
+        title="awsm.css in npm registry",
+        target="_blank"
+      ) npm package
+      | , you can use library as PostCSS plugin:
+
+    -
+      var code = 'const postcss = require(\'postcss\');\n' +
+      'const awsm = require(\'awsm.css\');\n' +
+      '\n' +
+      'postcss([awsm()]).process(\'a {color: red}\').then(result => {\n' +
+      '  console.log(result.css); // awsm.css prepends your CSS \n' +
+      '});'
+
+    +code-block= code
+
+  section#license
     h2 License
 
     p
@@ -35,7 +58,7 @@ include _mixins.pug
       | The MIT License places almost no restrictions on what you can do with this lib.
       | You are free to use it in commercial projects as long as the copyright is left intact.
 
-  section
+  section#credits
     h2 Credits
 
     p

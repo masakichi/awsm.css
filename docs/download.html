@@ -31,7 +31,18 @@
         </p>
         <p>You also can <a href="https://github.com/igoradamenko/awsm.css/archive/master.zip">download tarball of the project</a>.
         </p>
-        <section>
+        <section id="postcss">
+          <h2>PostCSS API</h2>
+          <p>If you install <a href="https://www.npmjs.com/package/awsm.css" title="awsm.css in npm registry" target="_blank">npm package</a>, you can use library as PostCSS plugin:
+          </p>
+          <pre><code>const postcss = require('postcss');
+const awsm = require('awsm.css');
+
+postcss([awsm()]).process('a {color: red}').then(result =&gt; {
+  console.log(result.css); // awsm.css prepends your CSS 
+});</code></pre>
+        </section>
+        <section id="license">
           <h2>License</h2>
           <p>aswm.css licensed under <a href="http://en.wikipedia.org/wiki/MIT_License">the MIT</a>.
           </p>
@@ -40,7 +51,7 @@
             You are free to use it in commercial projects as long as the copyright is left intact.
           </p>
         </section>
-        <section>
+        <section id="credits">
           <h2>Credits</h2>
           <p>Thanks to <a href="https://www.instagram.com/xnmlsx/" title="@xnmlsx in Instagram" target="_blank">Anastasia Medvedeva</a> for photo & video used in examples.
           </p>
