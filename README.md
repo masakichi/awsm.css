@@ -1,4 +1,4 @@
-# awms.css
+# awsm.css
 
 [![Build Status](https://travis-ci.org/igoradamenko/awsm.css.svg)](https://travis-ci.org/igoradamenko/awsm.css)
 [![GitHub release](https://img.shields.io/github/release/igoradamenko/awsm.css.svg)](https://github.com/igoradamenko/awsm.css/releases)
@@ -70,7 +70,7 @@ I have to create simple pages in my daily work. Sometimes it's compiled Markdown
 
 ## License
 
-aswm.css licensed under [the MIT](http://en.wikipedia.org/wiki/MIT_License).
+awsm.css licensed under [the MIT](http://en.wikipedia.org/wiki/MIT_License).
 
 The MIT License places almost no restrictions on what you can do with this lib. You are free to use it in commercial projects as long as the copyright is left intact.
 
