@@ -1,0 +1,416 @@
+@import 'mixins';
+@import 'variables';
+
+//- Basic
+
+html {
+  font-family: font('serif');
+  font-size: size('font-min');
+  line-height: size('line-height-max');
+  background: color('secondary');
+  color: color('primary');
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: size('width-min')) {
+    // source: https://www.smashingmagazine.com/2016/05/fluid-typography/
+    $font-size-diff: size('font-max') - size('font-min');
+    $width-diff: size('width-max') - size('width-min');
+    $ratio: $font-size-diff / $width-diff;
+
+    font-size: calc(#{size('font-min')} + #{$ratio} * (100vw - #{size('width-min')}));
+  }
+
+  @media (min-width: size('width-max')) {
+    font-size: size('font-max');
+  }
+}
+
+//- Layout & fonts
+
+body {
+  margin: 1em;
+
+  header,
+  main,
+  footer,
+  article {
+    position: relative;
+    max-width: size('width-max');
+    margin: 0 auto;
+  }
+
+  > header {
+    margin-bottom: 3.5em;
+
+    h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    p {
+      margin: 0;
+      font-size: .85em;
+    }
+  }
+
+  > footer {
+    margin-top: 4.5em;
+    padding-bottom: 1.5em;
+    text-align: center;
+    font-size: .8rem;
+    color: color('stealthy');
+  }
+}
+
+nav {
+  margin: 1em 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 1em;
+      margin-bottom: .25em;
+    }
+  }
+
+  a {
+    &:visited {
+      color: color('link');
+    }
+
+    &:hover {
+      color: color('link-hover');
+    }
+  }
+}
+
+ul, ol {
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 2.5em;
+}
+
+p {
+  margin: 1em 0;
+  hyphens: auto;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  + ul, + ol {
+    margin-top: -.75em;
+  }
+
+  img, picture {
+    float: right;
+    margin-bottom: .5em;
+    margin-left: .5em;
+
+    img {
+      float: none;
+      margin: 0;
+    }
+  }
+}
+
+dd {
+  margin-bottom: 1em;
+  margin-left: 0;
+  padding-left: 2.5em;
+}
+
+dt {
+  font-weight: 700;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: 2.5em;
+}
+
+aside {
+  font-style: italic;
+  color: color('stealthy');
+
+  $shift: 200px;
+  @media (min-width: size('width-max') + $shift * 2) {
+    position: absolute;
+    right: -$shift;
+    width: $shift * .75;
+    max-width: $shift * .75;
+    padding-left: .5em;
+    font-size: .8em;
+    border-left: 1px solid color('invisible');
+  }
+}
+
+section {
+  + section {
+    margin-top: 2em;
+  }
+}
+
+//- Typography
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.25em 0 0;
+  line-height: size('line-height-min');
+
+  + p, + details {
+    margin-top: .5em;
+  }
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+article {
+  + article {
+    margin-top: 5em;
+  }
+
+  header {
+    p {
+      font-family: font('sans');
+      font-size: .7em;
+      color: color('stealthy');
+
+      + h1, + h2 {
+        margin-top: -.25em;
+      }
+    }
+
+    h1, h2 {
+      + p {
+        margin-top: .25em;
+      }
+
+      a {
+        color: color('primary');
+
+        @include retina-border(color('primary'));
+
+        &:visited {
+          color: color('stealthy');
+
+          @include retina-border(color('stealthy'));
+
+          &:hover {
+            color: color('link-hover');
+          }
+        }
+      }
+    }
+  }
+
+  > footer {
+    margin-top: 1.5em;
+    font-size: .85em;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: color('link');
+  transition: color 300ms ease-out, box-shadow 300ms ease-out;
+
+  @include retina-border(color('link'));
+
+  &:visited {
+    color: mix(color('link'), color('secondary')); //- we can't use rgba or change background-image in :visited 'cause of security
+  }
+
+  &:hover,
+  &:active {
+    outline-width: 0;
+  }
+
+  &:hover {
+    box-shadow: inset 0px -1px color('link-hover');
+    color: color('link-hover');
+    transition: color 0s, box-shadow 0s;
+  }
+}
+
+abbr {
+  margin-right: -.075em;
+  hyphens: none;
+  letter-spacing: .075em;
+  font-size: .9em;
+}
+
+//- Media
+
+img, picture {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+audio, video {
+  width: 100%;
+  max-width: 100%;
+}
+
+video {
+  object-position: 0 -1px; // fix strange chrome video controls rendering
+}
+
+figure {
+  margin: 1em 0 .5em;
+  padding: 0;
+
+  + p {
+    margin-top: .5em;
+  }
+
+  figcaption {
+    opacity: .65;
+    font-size: .85em;
+  }
+}
+
+//- Tables
+
+table {
+  $scrollBorderColor: rgba(color('primary'), .15);
+
+  display: inline-block;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+  max-width: 100%;
+  text-align: left;
+  vertical-align: top;
+  background:
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
+  background-attachment: scroll, scroll;
+  background-size: 1px 100%, 1px 100%;
+  background-repeat: no-repeat, no-repeat;
+
+  caption {
+    font-size: .9em;
+    background: color('secondary');
+  }
+
+  td, th {
+    padding: .35em .75em;
+    vertical-align: top;
+    font-size: .9em;
+    border: 1px solid color('invisible');
+    border-top: 0;
+    border-left: 0;
+
+    &:first-child {
+      padding-left: 0;
+      background-image: linear-gradient(to right, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-size: 2px 100%;
+      background-repeat: no-repeat;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      border-right: 0;
+      background-image: linear-gradient(to left, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-position: 100% 0;
+      background-size: 2px 100%;
+      background-repeat: no-repeat;
+    }
+
+    &:only-child {
+      background-image: linear-gradient(to right, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%), linear-gradient(to left, rgba(color('secondary'), 1) 50%, rgba(color('secondary'), 0) 100%);
+      background-position: 0 0, 100% 0;
+      background-size: 2px 100%, 2px 100%;
+      background-repeat: no-repeat, no-repeat;
+    }
+  }
+
+  th {
+    line-height: size('line-height-min');
+  }
+}
+
+//- Code
+
+code, kbd, var, samp {
+  font-family: font('mono');
+  font-style: normal;
+}
+
+pre {
+  $scrollBorderColor: rgba(color('primary'), .15);
+
+  overflow-x: auto;
+  font-size: .8em;
+  background:
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
+    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
+  background-attachment: scroll, scroll;
+  background-size: 1px 100%, 1px 100%;
+  background-repeat: no-repeat, no-repeat;
+
+  > code {
+    display: inline-block;
+    overflow-x: visible;
+    box-sizing: border-box;
+    min-width: 100%;
+    border-right: 2px solid color('secondary');
+    border-left: 1px solid color('secondary');
+  }
+}
+
+//- Misc.
+
+hr {
+  height: 1px;
+  margin: 2em 0;
+  border: 0;
+  background: color('invisible');
+}
+
+details {
+  margin: 1em 0;
+
+  &[open] {
+    padding-bottom: .5em;
+    border-bottom: 1px solid color('invisible');
+  }
+}
+
+summary {
+  display: inline-block;
+  font-weight: 700;
+  border-bottom: 1px dashed;
+  cursor: pointer;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+noscript {
+  color: color('alarm');
+}
+
+::selection {
+  background: rgba(color('accent'), .15);
+}

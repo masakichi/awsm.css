@@ -44,5 +44,8 @@ Temporary Items
 node_modules
 .sass-cache
 
+# IDEs & editors
+
 *.sublime-project
 *.sublime-workspace
+.idea/

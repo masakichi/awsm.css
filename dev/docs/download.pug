@@ -1,7 +1,9 @@
 include _mixins.pug
 
 +page("download")
-  p 
+  h1 Download
+
+  p
     | Download the latest version here —
     =' '
     a(href="css/awsm.css") awsm.css
@@ -12,20 +14,77 @@ include _mixins.pug
     = ' '
     a(href="css/awsm.min.css") awsm.min.css
     = ' '
-    | (2.5 Kb after gzip).
+    | (2.1 Kb after gzip).
 
-  p 
+  p
     | You also can
     = ' '
     a(href="https://github.com/igoradamenko/awsm.css/archive/master.zip") download tarball of the project
     | .
 
-  section
+  section#unpkg
+    h2 unpkg
+
+    p Also you can use unpkg for link latest or exact version of library:
+
+    +code-block &lt;link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css"&gt;
+
+    p
+      | Get more information about the unpkg CDN on
+      = ' '
+      a(
+        href="https://unpkg.com/",
+        title="unpkg is a fast, global content delivery network for stuff that is published to npm",
+        target="_blank"
+      ) unpkg.com
+      | .
+
+  section#postcss
+    h2 PostCSS API
+
+    p
+      | If you install
+      = ' '
+      a(
+        href="https://www.npmjs.com/package/awsm.css",
+        title="awsm.css in npm registry",
+        target="_blank"
+      ) npm package
+      | , you can use library as PostCSS plugin:
+
+    -
+      var code = 'const postcss = require(\'postcss\');\n' +
+      'const awsm = require(\'awsm.css\');\n' +
+      '\n' +
+      'postcss([awsm()]).process(\'a {color: red}\').then(result => {\n' +
+      '  console.log(result.css); // awsm.css prepends your CSS \n' +
+      '});'
+
+    +code-block= code
+
+  section#license
     h2 License
-    
+
     p
       | aswm.css licensed under
       = ' '
       a(href="http://en.wikipedia.org/wiki/MIT_License") the MIT
-      | . 
-      | The MIT License places almost no restrictions on what you can do with this lib. You are free to use it in commercial projects as long as the copyright is left intact.
+      | .
+
+    p
+      | The MIT License places almost no restrictions on what you can do with this lib.
+      | You are free to use it in commercial projects as long as the copyright is left intact.
+
+  section#credits
+    h2 Credits
+
+    p
+      | Thanks to
+      = ' '
+      a(
+        href="https://www.instagram.com/xnmlsx/",
+        title="@xnmlsx in Instagram",
+        target="_blank"
+      ) Anastasia Medvedeva
+      = ' '
+      | for photo & video used in examples.

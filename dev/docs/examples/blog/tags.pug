@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Tags — Igor Adamenko
+    link(rel="stylesheet", href="../../css/awsm.min.css")
+    link(href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic", rel="stylesheet")
+
+  body
+    header
+      h1 Igor Adamenko
+      nav
+        ul
+          li
+            a(href="../../", title="Back to the awsm.css site") Back
+
+          li
+            a(href="index.html", title="Main page of blog example") Main page
+
+          li
+            a(href="popular.html", title="Popular articles") Popular
+
+          li Tags
+
+    main
+      article
+        p List of all tags of the blog:
+
+        ul
+          li
+            a(href="#tag-browsers", title="There is a fake link, just for demo") browsers
+
+          li
+            a(href="#tag-css", title="There is a fake link, just for demo") css
+
+          li
+            a(href="#tag-flexbox", title="There is a fake link, just for demo") flexbox
+
+          li
+            a(href="#tag-interfaces", title="There is a fake link, just for demo") interfaces
+
+          li
+            a(href="#tag-windows", title="There is a fake link, just for demo") windows
+
+    footer
+      p Igor Adamenko
+
+    style.
+      /* for beautiful back link */
+      nav li:first-child a::before {
+        content: '←\a0';
+        left: -1.2em;
+      }
+
+      @media (min-width: 700px) {
+        nav li:first-child a::before {
+          position: absolute;
+        }
+      }

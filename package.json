@@ -20,6 +20,7 @@
     "gulp-sass": "^3.0.0",
     "gulp-stylelint": "^3.6.0",
     "gulp-util": "^3.0.8",
+    "postcss": "^5.2.8",
     "postcss-discard-comments": "^2.0.4",
     "stylelint-scss": "^1.4.1",
     "stylelint-selector-no-utility": "^1.5.0"
@@ -28,7 +29,8 @@
     "build": "./node_modules/.bin/gulp build",
     "clean": "./node_modules/.bin/gulp clean",
     "dev": "./node_modules/.bin/gulp",
-    "lint": "./node_modules/.bin/gulp lint"
+    "lint": "./node_modules/.bin/gulp lint",
+    "test": "npm run build"
   },
   "license": "MIT",
   "repository": {
@@ -36,6 +38,15 @@
     "url": "https://github.com/igoradamenko/awsm.css.git"
   },
   "bugs": {
-    "url": "https://github.com/igoradamenko/awsm.css/issues"
-  }
+    "url": "https://github.com/igoradamenko/awsm.css/issues",
+    "email": "mail@igoradamenko.com"
+  },
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ]
 }

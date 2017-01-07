@@ -2,28 +2,76 @@ include _mixins.pug
 
 +page("overview")
   section
+    h2 What is it?
+
+    p
+      | awsm.css is a
+      = ' '
+      abbr(title="Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.") CSS
+      = ' '
+      | library for beautify semantic
+      = ' '
+      abbr(title="HyperText Markup Language is the standard markup language for creating web pages and web applications.") HTML
+      = ' '
+      | markup without classes, attributes, etc. Use tags only.
+
+    p The library is the best choice for blog, your homepage or site about project.
+
+  section
     h2 Usage
 
     +code-block &lt;link rel="stylesheet" href="awsm.min.css"&gt;
 
-    p 
+    p
       | Also don't forget to add viewport info to
-      = ' ' 
+      = ' '
       code &lt;head&gt;
       = ' '
       | section for adaptation to mobile. Like this:
 
     +code-block &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 
-    p 
-      | And if you want to get beautiful fonts, add “PT Serif” from
+    p
+      | And if you want to get beautiful fonts, add
       = ' '
-      a(href="https://www.google.com/fonts/specimen/PT+Serif", title="PT Serif in Google Fonts") Google Fonts
+      | “
+      a(
+        href="https://www.google.com/fonts/specimen/PT+Serif",
+        title="PT Serif in Google Fonts",
+        target="_blank"
+      ) PT Serif
+      | ” and “
+      a(
+        href="https://www.google.com/fonts/specimen/PT+Sans",
+        title="PT Sans in Google Fonts",
+        target="_blank"
+      ) PT Sans
+      | ” from Google Fonts:
+
+    +code-block &lt;link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet"&gt;
+
+    p
+      | It also available as the
+      = ' '
+      a(
+        href="https://www.npmjs.com/package/awsm.css",
+        title="awsm.css in npm registry",
+        target="_blank"
+      ) npm package
+      | , which supports
+      = ' '
+      a(
+        href="download.html#postcss",
+        title="Example of usage as PostCSS plugin"
+      ) PostCSS API
       | .
 
   section
     h2 Why?
-    
+
     p
-      | I have to create simple pages in my daily work. Sometimes it's compiled Markdown and sometimes it's pure HTML. 
+      | I have to create simple pages in my daily work. Sometimes it's compiled Markdown and sometimes it's pure
+      = ' '
+      abbr(title="HyperText Markup Language is the standard markup language for creating web pages and web applications.") HTML
+      | .
       | I'd like to make them more beautiful without additional classes, ids, etc. So I did it.

@@ -1,34 +1,40 @@
-/* colors */
-$colors: (
-  'headers': #25291c,
-  'accent': #070600,
-  'text': #111,
-  'disabled': #7d7d77,
-  'invisible': #a3a39b,
-  'border': #e8e8e8,
+//- Maps
+$font-map: (
+  'mono': (Consolas, monospace),
+  'serif': ('PT Serif', Georgia, serif),
+  'sans': ('PT Sans', Helvetica, Arial, sans),
+);
+
+$size-map: (
+  'font-min': 16px,
+  'font-max': 20px,
+  'line-height-min': 1.2,
+  'line-height-max': 1.6,
+  'width-min': 320px,
+  'width-max': 640px,
+);
+
+$color-map: (
+  'primary': #000,
+  'secondary': #fff,
+  'stealthy': #aaa,
+  'invisible': #f2f2f2,
+  'accent': #0064c1,
   'link': #0064c1,
   'link-hover': #3000c1,
   'link-visited': #6d00c1,
+  'alarm': #d00000,
 );
 
-@function color($key: 'primary') {
-  @return map-get($colors, $key);
+//- Functions
+@function font($key) {
+  @return map-get($font-map, $key);
 }
 
-/* fonts */
+@function size($key) {
+  @return map-get($size-map, $key);
+}
 
-$serif-font: 'PT Serif', Georgia, serif;
-$mono-font: Consolas, Courier, monospace;
-
-/* sizes */
-$content-size: 32rem;
-$side: 200px;
-$browser-scroll-bar: 40px;
-
-$scale-small-font: 16px;
-$scale-small-width: 336px; // 16px * 21rem, approx 49 characters
-
-$scale-large-font: 20px;
-$scale-large-width: 640px; // 20px * 32rem, approx 75 characters
-
-$baseline: 1.4rem;
+@function color($key) {
+  @return map-get($color-map, $key);
+}

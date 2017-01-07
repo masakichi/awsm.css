@@ -1,6 +1,8 @@
 include _mixins.pug
 
 +page("plugins")
+  h1 Plugins
+
   p There are some plugins that I advice you to use with awsm.css.
 
   section#fotorama
@@ -42,7 +44,7 @@ include _mixins.pug
       | .
       | Demo of prism.js you can see below.
 
-    pre(style="padding: 0")
+    pre
       code.language-scss
         -
           var code = '/* Create a border-triangle\n' +
@@ -92,7 +94,11 @@ include _mixins.pug
   script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js")
 
   style.
-    /* remove prism.js paddings */
+    /* move prism.js paddings from pre to code */
     pre[class*=language-] {
       padding: 0;
+    }
+
+    pre[class*=language-] code {
+      padding: 1em;
     }
