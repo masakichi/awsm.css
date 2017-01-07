@@ -38,10 +38,15 @@
     "url": "https://github.com/igoradamenko/awsm.css.git"
   },
   "bugs": {
-    "url": "https://github.com/igoradamenko/awsm.css/issues"
+    "url": "https://github.com/igoradamenko/awsm.css/issues",
+    "email": "mail@igoradamenko.com"
   },
   "main": "index.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ]
 }
