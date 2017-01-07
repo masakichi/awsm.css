@@ -22,6 +22,23 @@ include _mixins.pug
     a(href="https://github.com/igoradamenko/awsm.css/archive/master.zip") download tarball of the project
     | .
 
+  section#unpkg
+    h2 unpkg
+
+    p Also you can use unpkg for link latest or exact version of library:
+
+    +code-block &lt;link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css"&gt;
+
+    p
+      | Get more information about the unpkg CDN on
+      = ' '
+      a(
+        href="https://unpkg.com/",
+        title="unpkg is a fast, global content delivery network for stuff that is published to npm",
+        target="_blank"
+      ) unpkg.com
+      | .
+
   section#postcss
     h2 PostCSS API
 
