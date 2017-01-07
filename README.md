@@ -9,7 +9,11 @@
 
 Just start to create page with HTML5 tags, link awsm.css and get simple, clean and beautiful markup.
   
-Check out examples here: [igoradamenko.github.io/awsm.css](https://igoradamenko.github.io/awsm.css/).
+Check out [examples](#examples) or sample markup [here](https://github.com/igoradamenko/awsm.css/tree/master/docs)..
+
+..or watch demo video:
+
+[![Demo video](http://igoradamenko.com/github/awsm.css/repo-video.png)](https://www.youtube.com/watch?v=OWhDTiXcWvU)
 
 ## Usage
 
@@ -23,13 +27,13 @@ Also don't forget to add viewport info to the `<head>` for adaptation to mobile.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-And if you want to get beautiful fonts, add “[PT Serif(https://www.google.com/fonts/specimen/PT+Serif)” and “[PT Sans](https://www.google.com/fonts/specimen/PT+Sans)” from Google Fonts:
+And if you want to get beautiful fonts, add “[PT Serif](https://www.google.com/fonts/specimen/PT+Serif)” and “[PT Sans](https://www.google.com/fonts/specimen/PT+Sans)” from Google Fonts:
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400i,700,700i&subset=cyrillic" rel="stylesheet">
 ```
 
-It also available as the [npm package](https://www.npmjs.com/package/awsm.css), which supports [PostCSS API](#PostCSS-API).
+It also available as the [npm package](https://www.npmjs.com/package/awsm.css), which supports [PostCSS API](#postcss-api).
 
 ## Download
 
@@ -72,10 +76,10 @@ The MIT License places almost no restrictions on what you can do with this lib. 
 
 ## Examples
 
-[Website for this repo](https://igoradamenko.github.io/awsm.css/) uses awsm.css. Check this out.
+[Website for this repo](https://igoradamenko.github.io/awsm.css/) uses awsm.css. Check this out. Also there are examples of [blog](https://igoradamenko.github.io/awsm.css/examples/blog/) and [homepage](https://igoradamenko.github.io/awsm.css/examples/homepage/) built with awsm.css.
 
-If you use awsm.css in your project, feel free to [open issue](https://github.com/igoradamenko/awsm.css/issues/new) and we will add your url in this list :)
+If you use the library in your project, feel free to [open issue](https://github.com/igoradamenko/awsm.css/issues/new) and we will add your url in this list :)
 
-## Got questions?
+## Got questions? Any troubles?
 
-If you have questions or general suggestions, don't hesitate to submit a new [Github issue](https://github.com/igoradamenko/awsm.css/issues/new).
+If you have questions or general suggestions, don't hesitate to submit a new [GitHub issue](https://github.com/igoradamenko/awsm.css/issues/new).
