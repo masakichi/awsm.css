@@ -40,6 +40,7 @@
   "bugs": {
     "url": "https://github.com/igoradamenko/awsm.css/issues"
   },
+  "main": "index.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   }
