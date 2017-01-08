@@ -5,11 +5,18 @@
 
 html {
   font-family: font('serif');
-  font-size: size('font-min');
+  font-size: 100%;
   line-height: size('line-height-max');
   background: color('secondary');
   color: color('primary');
   -webkit-overflow-scrolling: touch;
+}
+
+//- Layout & fonts
+
+body {
+  margin: 1em;
+  font-size: size('font-min');
 
   @media (min-width: size('width-min')) {
     // source: https://www.smashingmagazine.com/2016/05/fluid-typography/
@@ -23,12 +30,6 @@ html {
   @media (min-width: size('width-max')) {
     font-size: size('font-max');
   }
-}
-
-//- Layout & fonts
-
-body {
-  margin: 1em;
 
   header,
   main,
@@ -141,7 +142,7 @@ aside {
   font-style: italic;
   color: color('stealthy');
 
-  $shift: 200px;
+  $shift: 12.5rem; // 200px / 16px
   @media (min-width: size('width-max') + $shift * 2) {
     position: absolute;
     right: -$shift;

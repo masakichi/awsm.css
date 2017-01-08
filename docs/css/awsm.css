@@ -1,25 +1,26 @@
 html{
   font-family:"PT Serif", Georgia, serif;
-  font-size:16px;
+  font-size:100%;
   line-height:1.6;
   background:#fff;
   color:#000;
   -webkit-overflow-scrolling:touch; }
-  @media (min-width: 320px){
-    html{
-      font-size:calc(16px + 0.0125 * (100vw - 320px)); } }
-  @media (min-width: 640px){
-    html{
-      font-size:20px; } }
 
 body{
-  margin:1em; }
+  margin:1em;
+  font-size:1rem; }
+  @media (min-width: 20rem){
+    body{
+      font-size:calc(1rem + 0.0125 * (100vw - 20rem)); } }
+  @media (min-width: 40rem){
+    body{
+      font-size:1.25rem; } }
   body header,
   body main,
   body footer,
   body article{
     position:relative;
-    max-width:640px;
+    max-width:40rem;
     margin:0 auto; }
   body > header{
     margin-bottom:3.5em; }
@@ -90,12 +91,12 @@ blockquote{
 aside{
   font-style:italic;
   color:#aaa; }
-  @media (min-width: 1040px){
+  @media (min-width: 65rem){
     aside{
       position:absolute;
-      right:-200px;
-      width:150px;
-      max-width:150px;
+      right:-12.5rem;
+      width:9.375rem;
+      max-width:9.375rem;
       padding-left:.5em;
       font-size:.8em;
       border-left:1px solid #f2f2f2; } }
