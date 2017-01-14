@@ -134,6 +134,8 @@ h1, h2, h3, h4, h5, h6{
       color:#000;
       -webkit-transition:opacity 0s, color 0s;
       transition:opacity 0s, color 0s; }
+    h1 > a[href^='#'][id]:target:focus, h2 > a[href^='#'][id]:target:focus, h3 > a[href^='#'][id]:target:focus, h4 > a[href^='#'][id]:target:focus, h5 > a[href^='#'][id]:target:focus, h6 > a[href^='#'][id]:target:focus{
+      outline:none; }
     h1 > a[href^='#'][id]::before, h2 > a[href^='#'][id]::before, h3 > a[href^='#'][id]::before, h4 > a[href^='#'][id]::before, h5 > a[href^='#'][id]::before, h6 > a[href^='#'][id]::before{
       content:'•'; }
 

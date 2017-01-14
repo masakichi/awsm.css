@@ -202,6 +202,10 @@ h1, h2, h3, h4, h5, h6 {
       transition: opacity 0s, color 0s;
     }
 
+    &:target:focus {
+      outline: none;
+    }
+
     &::before {
       content: '•';
     }
