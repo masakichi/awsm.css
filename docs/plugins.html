@@ -49,39 +49,18 @@
             .
             Demo of prism.js you can see below.
           </p>
-          <pre><code class="language-scss">/* Create a border-triangle
- * params:
- *    $direction: [top, right, bottom, left]
- *    $size
- *    $color
- *    $type: `display` value
- */
-@mixin triangle($direction, $size, $color, $mode: 'normal', $type: inline-block) {
-  display: $type;
-  $direction-map: (
-    'top': 'bottom',
-    'right': 'left',
-    'bottom': 'top',
-    'left': 'right'
-  );
-  $opposite-direction: map-get($direction-map, $direction);
+          <pre><code class="language-scss">@import 'mixins';
+@import 'variables';
 
-  @each $d in top right bottom left {
-    @if $d == $opposite-direction {
-      border-#{$d}: $size solid $color;
-    }
-    @else {
-      @if $d != $direction {
-        @if $mode == 'normal' {
-          border-#{$d}: $size solid transparent;
-        }
+//- Basic
 
-        @if $mode == 'wide' {
-          border-#{$d}: $size * 1.5 solid transparent;
-        }
-      }
-    }
-  }
+html {
+  font-family: font('serif');
+  font-size: 100%;
+  line-height: size('line-height-max');
+  background: color('secondary');
+  color: color('primary');
+  -webkit-overflow-scrolling: touch;
 }</code></pre>
         </section>
         <section>
