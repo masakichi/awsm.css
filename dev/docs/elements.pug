@@ -245,3 +245,60 @@ include _mixins.pug
         strong Project's page
         = ' '
         | — just look at this site :)
+
+      li
+        | How page looks without awsm.css?
+        = ' '
+        a(href="javascript:toggleToggler()") Check this out!
+        span(id="togglerNotice")
+          = ' '
+          | For removing floating button just click on the link once again.
+
+  #toggler Disable CSS
+
+  script.
+    var stylesheetNode = document.querySelector('link[rel="stylesheet"]');
+    var awsmPath = stylesheetNode.href;
+    var toggler = document.getElementById('toggler');
+    var togglerNotice = document.getElementById('togglerNotice');
+
+    function toggle() {
+      stylesheetNode.href = stylesheetNode.href === awsmPath ? '' : awsmPath;
+      toggler.textContent = toggler.textContent === 'Disable CSS' ? 'Enable CSS' : 'Disable CSS';
+    };
+
+    function toggleToggler() {
+      if (toggler.style.display !== 'block') {
+        toggler.addEventListener('click', toggle);
+
+        toggler.style.display = 'block';
+        togglerNotice.style.display = 'inline';
+        toggle();
+      } else {
+        toggler.style.display = 'none';
+        togglerNotice.style.display = 'none';
+      }
+    }
+
+  style.
+    #togglerNotice {
+      display: none;
+      color: #b00000;
+    }
+
+    #toggler {
+      display: none;
+      position: fixed;
+      top: 50%;
+      right: 1em;
+      transform: translateY(-50%);
+      padding: .25em .5em;
+      border: 1px solid #afafaf;
+      border-radius: 3px;
+      background: #fafafa;
+      cursor: pointer;
+    }
+
+    #toggler:hover {
+      background: #bebebe;
+    }
