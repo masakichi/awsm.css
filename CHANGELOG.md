@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Rems for font size & page width.
+- Margins for `aside`.
+- Styles for `h4`, `h5`, `h6`.
+- Support for header anchor links.
+
+### Fixed
+- Code block right border size.
 
 ## [2.0.0 “Charmander”] - 2017-01-07
 ### Added
