@@ -1,12 +1,10 @@
 include _mixins.pug
 
 +page("elements")
-  h1 Elements
-
   p There are demos of library capabilities. From skeleton to media.
 
-  section#main
-    h2 Main
+  section
+    +h("main") Main
 
     p
       | awsm.css contains styles for all really useful
@@ -17,7 +15,7 @@ include _mixins.pug
       | If you open the source code of this page you'll see all of them.
 
     section
-      h3 What about others?
+      +h("others", 3) What about others?
 
       figure
         img(src="images/cat.jpg", alt="Kitty")
@@ -58,8 +56,8 @@ include _mixins.pug
 
       p Yeah! They almost have no custom styles :)
 
-  section#lists
-    h2 Lists
+  section
+    +h("lists") Lists
 
     p There's boring unordered list of jedi masters:
 
@@ -87,8 +85,8 @@ include _mixins.pug
       dt Waterfall
       dd The user charges at the target and may make it flinch. It can also be used to climb a waterfall.
 
-  section#tables
-    h2 Tables
+  section
+    +h("tables") Tables
 
     p Let's look at Apple, Microsoft & Google:
 
@@ -129,8 +127,8 @@ include _mixins.pug
 
     p This table looks fine on mobile. Resize browser window and check this out!
 
-  section#inlines
-    h2 Inlines
+  section
+    +h("inlines") Inlines
 
     p
       img(src="images/surprised-cat.jpg", alt="Surprised cat")
@@ -161,8 +159,8 @@ include _mixins.pug
 
     img(src="images/sleepy-cat.jpg", alt="Sleepy cat")
 
-  section#media
-    h2 Media
+  section
+    +h("media") Media
 
     p View of audio and video depends on your browser.
 
@@ -183,8 +181,8 @@ include _mixins.pug
     video(src="http://igoradamenko.com/github/awsm.css/cats.mp4", controls)
       | It seems like your browser can't play this video.
 
-  section#code
-    h2 Code formatting
+  section
+    +h("code") Code
 
     +code-block
       -
@@ -200,8 +198,8 @@ include _mixins.pug
       = ' '
       | section.
 
-  section#misc
-    h2 Misc.
+  section
+    +h("misc") Misc.
 
     details
       summary Show me the magic
@@ -224,8 +222,8 @@ include _mixins.pug
     noscript
       | This is an example of noscript but it seems like you'll never see that :)
 
-  section#moar
-    h2 MOAR!
+  section
+    +h("moar") MOAR!
 
     p Do you need more examples? Here they are:
 

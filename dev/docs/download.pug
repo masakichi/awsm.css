@@ -1,8 +1,6 @@
 include _mixins.pug
 
 +page("download")
-  h1 Download
-
   p
     | Download the latest version here —
     =' '
@@ -22,8 +20,8 @@ include _mixins.pug
     a(href="https://github.com/igoradamenko/awsm.css/archive/master.zip") download tarball of the project
     | .
 
-  section#unpkg
-    h2 unpkg
+  section
+    +h("unpkg")
 
     p Also you can use unpkg for link latest or exact version of library:
 
@@ -41,8 +39,8 @@ include _mixins.pug
       ) unpkg.com
       | .
 
-  section#postcss
-    h2 PostCSS API
+  section
+    +h("postcss") PostCSS API
 
     p
       | If you install
@@ -64,8 +62,8 @@ include _mixins.pug
 
     +code-block= code
 
-  section#license
-    h2 License
+  section
+    +h("license") License
 
     p
       | awsm.css licensed under
@@ -77,8 +75,8 @@ include _mixins.pug
       | The MIT License places almost no restrictions on what you can do with this lib.
       | You are free to use it in commercial projects as long as the copyright is left intact.
 
-  section#credits
-    h2 Credits
+  section
+    +h("credits") Credits
 
     p
       | Thanks to

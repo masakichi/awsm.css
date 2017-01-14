@@ -1,12 +1,10 @@
 include _mixins.pug
 
 +page("plugins")
-  h1 Plugins
-
   p There are some plugins that I advice you to use with awsm.css.
 
-  section#fotorama
-    h2 Fotorama
+  section
+    +h("fotorama") Fotorama
 
     p
       | It's simple and powerful jQuery gallery by Artem Polikarpov. Homepage of the plugin —
@@ -26,8 +24,8 @@ include _mixins.pug
       = ' '
       a(href="http://okonet.ru/") by Andrey Okonetchnikov
 
-  section#highlightjs-prismjs
-    h2 highlight.js & prism.js
+  section
+    +h("highlightjs-prismjs") highlight.js & prism.js
 
     p
       | The best syntax highlight libraries. First of them has more themes, but sometimes second works better.
