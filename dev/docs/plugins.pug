@@ -82,6 +82,29 @@ include _mixins.pug
 
         = code
 
+  section
+    +h("zoomjs") ZOOM.JS
+
+    p
+      | It's a pure JavaScript image zooming plugin; as seen on
+      = ' '
+      a(
+        href="https://medium.design/image-zoom-on-medium-24d146fc0c20",
+        title="Article “Image zoom – Designing Medium”",
+        target="_blank"
+      ) Medium.com
+      = '. '
+      | Check the demo below (click to the image).
+      = ' '
+      a(
+        href="https://github.com/nishanths/zoom.js",
+        title="Project on the GitHub",
+        target="_blank"
+      ) Homepage
+      | .
+
+    img(src="images/zoom.js.jpeg", alt="Beautiful photo of buildings in a city", data-action="zoom")
+
   script(src="https://code.jquery.com/jquery-1.10.2.min.js")
 
   script(src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.js")
@@ -90,6 +113,9 @@ include _mixins.pug
   link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-solarizedlight.min.css")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js")
+
+  script(src="https://unpkg.com/@nishanths/zoom.js@2.0.1/dist/zoom.min.js")
+  link(rel="stylesheet", href="https://unpkg.com/@nishanths/zoom.js@2.0.1/css/zoom.css")
 
   style.
     /* move prism.js paddings from pre to code */
