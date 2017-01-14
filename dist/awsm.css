@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html{
   font-family:"PT Serif", Georgia, serif;
   font-size:100%;
@@ -113,8 +114,28 @@ section + section{
 h1, h2, h3, h4, h5, h6{
   margin:1.25em 0 0;
   line-height:1.2; }
+  h1:hover > a[href^='#'][id], h1:focus > a[href^='#'][id], h2:hover > a[href^='#'][id], h2:focus > a[href^='#'][id], h3:hover > a[href^='#'][id], h3:focus > a[href^='#'][id], h4:hover > a[href^='#'][id], h4:focus > a[href^='#'][id], h5:hover > a[href^='#'][id], h5:focus > a[href^='#'][id], h6:hover > a[href^='#'][id], h6:focus > a[href^='#'][id]{
+    opacity:1;
+    -webkit-transition:opacity 0s, color 300ms ease-out;
+    transition:opacity 0s, color 300ms ease-out; }
   h1 + p, h1 + details, h2 + p, h2 + details, h3 + p, h3 + details, h4 + p, h4 + details, h5 + p, h5 + details, h6 + p, h6 + details{
     margin-top:.5em; }
+  h1 > a[href^='#'][id], h2 > a[href^='#'][id], h3 > a[href^='#'][id], h4 > a[href^='#'][id], h5 > a[href^='#'][id], h6 > a[href^='#'][id]{
+    position:absolute;
+    left:-.5em;
+    opacity:0;
+    background:none;
+    color:rgba(0, 0, 0, 0.5);
+    -webkit-transition:opacity 300ms ease-out;
+    transition:opacity 300ms ease-out; }
+    h1 > a[href^='#'][id]:target, h1 > a[href^='#'][id]:hover, h1 > a[href^='#'][id]:focus, h2 > a[href^='#'][id]:target, h2 > a[href^='#'][id]:hover, h2 > a[href^='#'][id]:focus, h3 > a[href^='#'][id]:target, h3 > a[href^='#'][id]:hover, h3 > a[href^='#'][id]:focus, h4 > a[href^='#'][id]:target, h4 > a[href^='#'][id]:hover, h4 > a[href^='#'][id]:focus, h5 > a[href^='#'][id]:target, h5 > a[href^='#'][id]:hover, h5 > a[href^='#'][id]:focus, h6 > a[href^='#'][id]:target, h6 > a[href^='#'][id]:hover, h6 > a[href^='#'][id]:focus{
+      opacity:1;
+      box-shadow:none;
+      color:#000;
+      -webkit-transition:opacity 0s, color 0s;
+      transition:opacity 0s, color 0s; }
+    h1 > a[href^='#'][id]::before, h2 > a[href^='#'][id]::before, h3 > a[href^='#'][id]::before, h4 > a[href^='#'][id]::before, h5 > a[href^='#'][id]::before, h6 > a[href^='#'][id]::before{
+      content:'•'; }
 
 h1{
   font-size:2em; }
