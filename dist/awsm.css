@@ -89,6 +89,7 @@ blockquote{
   padding-left:2.5em; }
 
 aside{
+  margin:.5em 0;
   font-style:italic;
   color:#aaa; }
   @media (min-width: 65rem){
@@ -97,9 +98,14 @@ aside{
       right:-12.5rem;
       width:9.375rem;
       max-width:9.375rem;
+      margin:0;
       padding-left:.5em;
       font-size:.8em;
       border-left:1px solid #f2f2f2; } }
+  aside:first-child{
+    margin-top:0; }
+  aside:last-child{
+    margin-bottom:0; }
 
 section + section{
   margin-top:2em; }
