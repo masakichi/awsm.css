@@ -5,7 +5,19 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Uptime — Igor Adamenko
     link(rel="stylesheet", href="../../css/awsm.min.css")
-    link(href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=PT+Sans%7CPT+Serif:400,400i,700,700i&subset=cyrillic", rel="stylesheet")
+    style.
+      /* for beautiful back link */
+      nav li:first-child a::before {
+        content: '←\a0';
+        left: -1.2em;
+      }
+
+      @media (min-width: 700px) {
+        nav li:first-child a::before {
+          position: absolute;
+        }
+      }
 
   body
     header
@@ -47,16 +59,3 @@ html(lang="en")
 
     footer
       p Igor Adamenko
-
-    style.
-      /* for beautiful back link */
-      nav li:first-child a::before {
-        content: '←\a0';
-        left: -1.2em;
-      }
-
-      @media (min-width: 700px) {
-        nav li:first-child a::before {
-          position: absolute;
-        }
-      }
