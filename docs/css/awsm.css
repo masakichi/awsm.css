@@ -287,7 +287,7 @@ table{
     line-height:1.2; }
 
 code, kbd, var, samp{
-  font-family:Consolas, monospace;
+  font-family:Consolas, "Lucida Console", Monaco, monospace;
   font-style:normal; }
 
 pre{
