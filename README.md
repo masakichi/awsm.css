@@ -25,10 +25,10 @@ Also don't forget to add viewport info to the `<head>` for adaptation to mobile.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-And if you want to get beautiful font, add “[PT Serif](https://www.google.com/fonts/specimen/PT+Serif)” from Google Fonts:
+And if you want to get beautiful font, add “[PT Serif](https://www.google.com/fonts/specimen/PT+Serif)” from Google Fonts ([specify subset](https://developers.google.com/fonts/docs/getting_started#specifying_script_subsets) if you need cyrillic or something else):
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
 ```
 
 It also available as the [npm package](https://www.npmjs.com/package/awsm.css), which supports [PostCSS API](#postcss-api).
