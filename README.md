@@ -80,7 +80,8 @@ If you use the library in your project, feel free to [open issue](https://github
 
 Another examples:
 
-- [Alexander's Ulizko blog](http://ulizko.com).
+- [A.Ulizko](http://ulizko.com). Blog.
+- [exploit.tokyo](http://me.exploit.tokyo). Homepage.
 - [PokemonGO](https://igoradamenko.github.io/pokemon-go/). Simple page with a map. It uses v1.2 of the lib. 
 
 ## Got questions? Any troubles?
