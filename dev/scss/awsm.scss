@@ -70,12 +70,12 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
 
-    li {
-      display: inline-block;
-      margin-right: 1em;
-      margin-bottom: .25em;
-    }
+  li {
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: .25em;
   }
 
   a {
@@ -115,7 +115,9 @@ p {
     float: right;
     margin-bottom: .5em;
     margin-left: .5em;
+  }
 
+  picture {
     img {
       float: none;
       margin: 0;
