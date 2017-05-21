@@ -37,7 +37,7 @@ It also available as the [npm package](https://www.npmjs.com/package/awsm.css), 
 
 Download the latest version here — [awsm.css](https://raw.githubusercontent.com/igoradamenko/awsm.css/master/dist/awsm.css).
 
-Minified — [awsm.min.css](https://raw.githubusercontent.com/igoradamenko/awsm.css/master/dist/awsm.min.css) (≈2 Kb after gzip).
+Minified — [awsm.min.css](https://raw.githubusercontent.com/igoradamenko/awsm.css/master/dist/awsm.min.css) (≈3 Kb after gzip).
 
 ### unpkg
 
