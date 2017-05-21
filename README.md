@@ -78,8 +78,9 @@ The MIT License places almost no restrictions on what you can do with this lib. 
 
 If you use the library in your project, feel free to [open issue](https://github.com/igoradamenko/awsm.css/issues/new) and we will add your url in this list :)
 
-Another example:
+Another examples:
 
+- [Alexander's Ulizko blog](http://ulizko.com).
 - [PokemonGO](https://igoradamenko.github.io/pokemon-go/). Simple page with a map. It uses v1.2 of the lib. 
 
 ## Got questions? Any troubles?
