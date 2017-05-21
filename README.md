@@ -80,9 +80,20 @@ If you use the library in your project, feel free to [open issue](https://github
 
 Another examples:
 
+- [React Coroutine](https://react-coroutine.js.org). Documentation.
+- [botan](https://botan.glitch.me). Documentation.
 - [A.Ulizko](http://ulizko.com). Blog.
-- [exploit.tokyo](http://me.exploit.tokyo). Homepage.
 - [PokemonGO](https://igoradamenko.github.io/pokemon-go/). Simple page with a map. It uses v1.2 of the lib. 
+- [Alexander Pushkov](https://notpushk.in). CV.
+- [exploit.tokyo](http://me.exploit.tokyo). Homepage.
+- [kazehara.com](http://kazehara.com). Homepage.
+- [upamune.com](https://www.upamune.com). Homepage.
+- [MONETOCHKA SIGNS](https://hgenru.github.io/monetochka-signs/). Fun.
+- [illustrarium.github.io](https://illustrarium.github.io). Vacancy.
+- [Laravel news](http://laravel-news-demo.lith.pw). Demo.
+- [Isomorpic Rendering](https://codient.herokuapp.com/). Demo.
+- [Pusher Learning](https://pusher-learning.herokuapp.com). Demo.
+- [and so on..](https://github.com/search?p=1&q="awsm.css"&type=Code&utf8=✓)
 
 ## Got questions? Any troubles?
 
