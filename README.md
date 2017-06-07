@@ -78,7 +78,7 @@ The MIT License places almost no restrictions on what you can do with this lib. 
 
 If you use the library in your project, feel free to [open issue](https://github.com/igoradamenko/awsm.css/issues/new) and we will add your url in this list :)
 
-Another examples:
+Other examples:
 
 - [React Coroutine](https://react-coroutine.js.org). Documentation.
 - [botan](https://botan.glitch.me). Documentation.
