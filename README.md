@@ -85,14 +85,19 @@ Other examples:
 - [A.Ulizko](http://ulizko.com). Blog.
 - [PokemonGO](https://igoradamenko.github.io/pokemon-go/). Simple page with a map. It uses v1.2 of the lib. 
 - [Alexander Pushkov](https://notpushk.in). CV.
+- [Masashi Yoshikawa](https://masashi-y.github.io/). CV.
 - [exploit.tokyo](http://me.exploit.tokyo). Homepage.
 - [kazehara.com](http://kazehara.com). Homepage.
 - [upamune.com](https://www.upamune.com). Homepage.
+- [tlaziuk.com](http://tlaziuk.com/). Homepage.
 - [MONETOCHKA SIGNS](https://hgenru.github.io/monetochka-signs/). Fun.
 - [illustrarium.github.io](https://illustrarium.github.io). Vacancy.
 - [Laravel news](http://laravel-news-demo.lith.pw). Demo.
 - [Isomorpic Rendering](https://codient.herokuapp.com/). Demo.
 - [Pusher Learning](https://pusher-learning.herokuapp.com). Demo.
+- [Image Search Abstraction Layer](https://img-search-ms-343dev.herokuapp.com/). Demo.
+- [File Metadata Microservice](https://file-metadata-ms-343dev.herokuapp.com/). Demo.
+- [Timestamp Microservice](https://timestamp-ms-343dev.herokuapp.com/). Demo.
 - [and so on..](https://github.com/search?p=1&q="awsm.css"&type=Code&utf8=✓)
 
 ## Got questions? Any troubles?
