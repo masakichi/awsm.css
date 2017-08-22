@@ -83,6 +83,7 @@ Other examples:
 - [React Coroutine](https://react-coroutine.js.org). Documentation.
 - [botan](https://botan.glitch.me). Documentation.
 - [A.Ulizko](http://ulizko.com). Blog.
+- [anatta](https://github.com/Rahmon/anatta). WordPress theme.
 - [PokemonGO](https://igoradamenko.github.io/pokemon-go/). Simple page with a map. It uses v1.2 of the lib. 
 - [Alexander Pushkov](https://notpushk.in). CV.
 - [Masashi Yoshikawa](https://masashi-y.github.io/). CV.
