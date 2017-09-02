@@ -84,6 +84,7 @@ Other examples:
 - [addmeto](http://addmeto.cc/). Telegram feed.
 - [Yandex](http://tele.ga/yandex/). Telegram feed.
 - [toberta](http://tobetra.com/). Telegram feed.
+- [tele.ga](http://tele.ga/). Service for export Telegram feed to blog.
 - [botan](https://botan.glitch.me). Documentation.
 - [A.Ulizko](http://ulizko.com). Blog.
 - [anatta](https://github.com/Rahmon/anatta). WordPress theme.
