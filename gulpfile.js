@@ -6,9 +6,13 @@ var $ = require('gulp-load-plugins')({
   replaceString: /^gulp(-|\.)|postcss-/,
   pattern: ['*'],
   rename: {
-    postcss: "postcss-base" // for difference between gulp-postcss & postcss
+    postcss: "postcss-base", // for difference between gulp-postcss & postcss
+    sass: "dart-sass",
   }
 });
+var Fiber = require("fibers");
+var sass = require("gulp-sass");
+sass.compiler = require("sass");
 
 /* paths */
 
@@ -66,7 +70,7 @@ gulp.task('styles', function() {
 		.pipe(errorHandler('Styles'))
 
 		.pipe($.concat('awsm.scss'))
-		.pipe($.sass())
+		.pipe(sass({fiber: Fiber}))
 
 		.pipe($.postcss([
 			$.autoprefixer({ browsers: [ "> 1%" ] }),
