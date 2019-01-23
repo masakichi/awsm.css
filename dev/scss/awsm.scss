@@ -92,6 +92,12 @@ ul, ol {
   margin-top: 0;
   padding-top: 0;
   padding-left: 2.5em;
+
+  li {
+    + li {
+      margin-top: .25em;
+    }
+  }
 }
 
 p {

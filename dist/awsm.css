@@ -74,6 +74,9 @@ ul, ol{
   padding-top:0;
   padding-left:2.5em;
 }
+ul li + li, ol li + li{
+  margin-top:0.25em;
+}
 
 p{
   margin:1em 0;
