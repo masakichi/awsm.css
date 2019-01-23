@@ -4,6 +4,13 @@
   "description": "Simple CSS lib for semantic HTML markup",
   "author": "Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)",
   "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/gulp build",
+    "clean": "./node_modules/.bin/gulp clean",
+    "dev": "./node_modules/.bin/gulp",
+    "lint": "./node_modules/.bin/gulp lint",
+    "test": "npm run build"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "browser-sync": "^2.18.5",
@@ -29,13 +36,6 @@
     "stylelint-order": "^0.4.4",
     "stylelint-scss": "^1.4.1",
     "stylelint-selector-no-utility": "^1.5.0"
-  },
-  "scripts": {
-    "build": "./node_modules/.bin/gulp build",
-    "clean": "./node_modules/.bin/gulp clean",
-    "dev": "./node_modules/.bin/gulp",
-    "lint": "./node_modules/.bin/gulp lint",
-    "test": "npm run build"
   },
   "license": "MIT",
   "repository": {
