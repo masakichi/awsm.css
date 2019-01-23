@@ -1,4 +1,3 @@
-@import 'mixins';
 @import 'variables';
 
 //- Basic
@@ -264,12 +263,8 @@ article {
       a {
         color: color('primary');
 
-        @include retina-border(color('primary'));
-
         &:visited {
           color: color('stealthy');
-
-          @include retina-border(color('stealthy'));
 
           &:hover {
             color: color('link-hover');
@@ -286,11 +281,8 @@ article {
 }
 
 a {
-  text-decoration: none;
   color: color('link');
   transition: color 300ms ease-out, box-shadow 300ms ease-out;
-
-  @include retina-border(color('link'));
 
   &:visited {
     color: mix(color('link'), color('secondary')); //- we can't use rgba or change background-image in :visited 'cause of security
@@ -302,9 +294,8 @@ a {
   }
 
   &:hover {
-    box-shadow: inset 0px -1px color('link-hover');
     color: color('link-hover');
-    transition: color 0s, box-shadow 0s;
+    transition: color 0s;
   }
 }
 
