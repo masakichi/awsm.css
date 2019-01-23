@@ -5,6 +5,7 @@
   "author": "Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)",
   "main": "index.js",
   "scripts": {
+    "start": "npm run dev",
     "build": "./node_modules/.bin/gulp build",
     "clean": "./node_modules/.bin/gulp clean",
     "dev": "./node_modules/.bin/gulp",
