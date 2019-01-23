@@ -243,6 +243,9 @@ a:hover{
   color:#3000c1;
   transition:color 0s;
 }
+a abbr{
+  font-size:1em;
+}
 
 abbr{
   margin-right:-0.075em;
@@ -252,7 +255,6 @@ abbr{
           hyphens:none;
   letter-spacing:0.075em;
   font-size:0.9em;
-  border-bottom:1px dotted;
 }
 
 img, picture{

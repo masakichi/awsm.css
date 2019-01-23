@@ -297,6 +297,10 @@ a {
     color: color('link-hover');
     transition: color 0s;
   }
+
+  abbr {
+    font-size: 1em; // because when it set to .9em inside link in chrome it makes underlining thinner
+  }
 }
 
 abbr {
@@ -305,7 +309,6 @@ abbr {
   hyphens: none;
   letter-spacing: .075em;
   font-size: .9em;
-  border-bottom: 1px dotted;
 }
 
 //- Media
