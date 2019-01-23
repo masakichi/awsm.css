@@ -282,7 +282,6 @@ article {
 
 a {
   color: color('link');
-  transition: color 300ms ease-out, box-shadow 300ms ease-out;
 
   &:visited {
     color: mix(color('link'), color('secondary')); //- we can't use rgba or change background-image in :visited 'cause of security
@@ -295,7 +294,6 @@ a {
 
   &:hover {
     color: color('link-hover');
-    transition: color 0s;
   }
 
   abbr {
