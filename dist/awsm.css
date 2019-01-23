@@ -2,7 +2,7 @@
 html{
   font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "PT Sans", "Open Sans", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:100%;
-  line-height:1.6;
+  line-height:1.4;
   background:#fff;
   color:#000;
   -webkit-overflow-scrolling:touch;
@@ -14,12 +14,12 @@ body{
 }
 @media (min-width: 20rem){
   body{
-    font-size:calc(1rem + 0.0125 * (100vw - 20rem));
+    font-size:calc(1rem + 0.00625 * (100vw - 20rem));
   }
 }
 @media (min-width: 40rem){
   body{
-    font-size:1.25rem;
+    font-size:1.125rem;
   }
 }
 body header,
