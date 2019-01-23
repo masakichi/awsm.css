@@ -289,7 +289,7 @@ a {
   color: color('link');
 
   &:visited {
-    color: mix(color('link'), color('secondary')); //- we can't use rgba or change background-image in :visited 'cause of security
+    color: color('link-visited');
   }
 
   &:hover,
