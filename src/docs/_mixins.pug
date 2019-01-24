@@ -81,7 +81,6 @@ mixin page(name)
                 li= docmap[item].title
 
             li
-              | Theme:
               select(id="theme-changer", onchange="updateTheme(this.value)")
                 each option, index in locals.themes
                   option(value= option.title, selected= !index) #{option.title}

@@ -409,6 +409,167 @@ table {
   }
 }
 
+//- Forms
+// stylelint-disable
+@mixin placeholder {
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin inputs-buttons {
+  outline: none;
+  box-sizing: border-box;
+  height: 2em;
+  margin: 0;
+  padding: calc(.25em - 1px) .5em;
+  font-family: inherit;
+  font-size: 1em;
+  background: color('secondary');
+  border: 1px solid color('stealthy');
+  border-radius: 2px;
+  color: color('primary');
+
+  &:focus {
+    border: 1px solid color('primary');
+  }
+}
+
+@mixin inputs {
+  @include inputs-buttons;
+  display: block;
+  width: 100%;
+
+  @include placeholder {
+    color: color('stealthy');
+  }
+}
+
+@mixin buttons {
+  @include inputs-buttons;
+  display: inline-block;
+  width: auto;
+  background: color('secondary');
+  color: color('primary');
+  cursor: pointer;
+
+  &:focus, &:hover {
+    border: 1px solid color('primary');
+  }
+}
+
+form {
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: size('width-max')) {
+    max-width: 80%;
+  }
+
+  select, label {
+    display: block;
+  }
+
+  select, input[type], textarea {
+    margin-bottom: 1em;
+  }
+}
+
+fieldset {
+  margin: 0;
+  padding: .5em 1em;
+  border: 1px solid color('stealthy');
+}
+
+legend {
+  color: color('stealthy');
+}
+
+button {
+  @include buttons;
+}
+
+select {
+  @include buttons;
+
+  @mixin select-background-image($color) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(#{red($color)}, #{green($color)}, #{blue($color)})' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
+  }
+
+  appearance: button;
+  padding-right: 1.2em;
+  background-position: top 55% right .35em;
+  background-repeat: no-repeat;
+  background-size: .5em;
+
+  @include select-background-image(color('stealthy'));
+
+  &:focus, &:hover {
+    @include select-background-image(color('primary'));
+  }
+}
+
+input {
+  &[type=text],
+  &[type=password],
+  &[type^=date],
+  &[type=email],
+  &[type=number],
+  &[type=search],
+  &[type=tel],
+  &[type=time],
+  &[type=month],
+  &[type=week],
+  &[type=url] {
+    @include inputs;
+  }
+
+  &[type=submit],
+  &[type=button],
+  &[type=reset] {
+    @include buttons;
+    appearance: none;
+  }
+
+  &[type=color],
+  &[type=file] {
+    @include buttons;
+    display: block;
+  }
+
+  &[type=color] {
+    width: 4em;
+  }
+
+  &[type=file] {
+    font-size: 12px; // otherwise browsers change only text size but not button size
+    height: auto;
+    width: 100%;
+    padding: .75em .5em;
+    line-height: 1;
+  }
+}
+
+textarea {
+  @include inputs;
+  height: 4.5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  resize: vertical;
+}
+
+output {
+  display: block;
+}
+
 //- Code
 
 code, kbd, var, samp {

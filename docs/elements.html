@@ -66,7 +66,7 @@
           <li><a href="download.html">Download</a></li>
           <li><a href="plugins.html">Plugins</a></li>
           <li><a href="https://github.com/igoradamenko/awsm.css" target="_blank">GitHub</a></li>
-          <li>Theme:
+          <li>
             <select id="theme-changer" onchange="updateTheme(this.value)">
               <option value="white" selected>white</option>
               <option value="gondola">gondola</option>
@@ -97,6 +97,7 @@
               <li><a href="#tables">Tables</a></li>
               <li><a href="#inlines">Inlines</a></li>
               <li><a href="#media">Media</a></li>
+              <li><a href="#forms">Forms</a></li>
               <li><a href="#code">Code</a></li>
               <li><a href="#misc">Misc.</a></li>
               <li><a href="#moar">MOAR!</a></li>
@@ -224,57 +225,55 @@
           <audio src="http://igoradamenko.com/github/awsm.css/radio-t.mp3" controls loop>It seems like your browser can't play this audio.</audio>
           <video src="http://igoradamenko.com/github/awsm.css/cats.mp4" controls>It seems like your browser can't play this video.</video>
         </section>
-        <!--section-->
-        <!--  +h("forms") Forms-->
-        <!---->
-        <!--  script.-->
-        <!--    function accept() {-->
-        <!--      document.getElementById('output').style.display = 'block';-->
-        <!--      return false;-->
-        <!--    }-->
-        <!---->
-        <!--  form(onsubmit="accept(); return false;")-->
-        <!--    h4 Mars vacation program-->
-        <!---->
-        <!--    fieldset-->
-        <!--      legend Be first-->
-        <!---->
-        <!--      label(for="first-name") First Name-->
-        <!--      input#first-name(type="text")-->
-        <!--      br-->
-        <!---->
-        <!--      label(for="last-name") Last Name-->
-        <!--      input#last-name(type="text")-->
-        <!--      br-->
-        <!---->
-        <!--      label(for="date") Date of birth-->
-        <!--      input#date(type="date")-->
-        <!--      br-->
-        <!---->
-        <!--      label(for="country") Country-->
-        <!--      select#country-->
-        <!--        option(value="china") China-->
-        <!--        option(value="russia") Russia-->
-        <!--        option(value="usa") USA-->
-        <!--      br-->
-        <!---->
-        <!--      label(for="about") Tell us about yourself-->
-        <!--      textarea#about-->
-        <!--      br-->
-        <!---->
-        <!--      label(for="photo") Photo-->
-        <!--      input#photo(type="file")-->
-        <!--      br-->
-        <!---->
-        <!--      label(for="password") Password-->
-        <!--      input#password(type="password")-->
-        <!--      br-->
-        <!---->
-        <!--      input(type="submit", value="Submit")-->
-        <!--      button(type="reset") Reset-->
-        <!---->
-        <!--      output#output(style="display: none")-->
-        <!--        p Welcome on board!-->
+        <section>
+          <h2><a id="forms" href="#forms" aria-hidden="true"></a>Forms
+          </h2>
+          <script>
+            function accept() {
+              document.getElementById('output').style.display = 'block';
+              return false;
+            }
+            
+            function onreset() {
+              document.getElementById('output').style.display = 'none';
+            }
+            
+          </script>
+          <form onsubmit="accept(); return false;">
+            <h4>Mars vacation program</h4>
+            <fieldset>
+              <legend>Be first</legend>
+              <label for="full-name">Full Name</label>
+              <input id="full-name" type="text" value="Elon Reeve Musk">
+              <label for="date">Date of birth</label>
+              <input id="date" type="date" value="1971-06-28">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" value="elon.musk@spacex.com">
+              <label for="phone">Phone number</label>
+              <input id="phone" type="tel" placeholder="Numbers only, please">
+              <label for="country">Country</label>
+              <select id="country">
+                <option value="china">China</option>
+                <option value="russia">Russia</option>
+                <option value="usa" selected>USA</option>
+              </select>
+              <label for="about">Tell us about yourself</label>
+              <textarea id="about"></textarea>
+              <label for="photo">Photo</label>
+              <input id="photo" type="file">
+              <label for="eyes-color">Eyes color <small>(just kidding)</small>
+              </label>
+              <input id="eyes-color" type="color">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Use strong password!">
+              <input type="submit" value="Submit">
+              <button type="reset" onclick="onreset()">Reset</button>
+              <output id="output" style="display: none">
+                <p>Welcome on board!</p>
+              </output>
+            </fieldset>
+          </form>
+        </section>
         <section>
           <h2><a id="code" href="#code" aria-hidden="true"></a>Code
           </h2>

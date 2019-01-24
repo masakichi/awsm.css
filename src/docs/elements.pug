@@ -26,6 +26,8 @@ include _mixins.pug
         li
           a(href="#media") Media
         li
+          a(href="#forms") Forms
+        li
           a(href="#code") Code
         li
           a(href="#misc") Misc.
@@ -209,6 +211,64 @@ include _mixins.pug
 
     video(src="http://igoradamenko.com/github/awsm.css/cats.mp4", controls)
       | It seems like your browser can't play this video.
+
+  section
+    +h("forms") Forms
+
+    script.
+      function accept() {
+        document.getElementById('output').style.display = 'block';
+        return false;
+      }
+
+      function onreset() {
+        document.getElementById('output').style.display = 'none';
+      }
+
+    form(onsubmit="accept(); return false;")
+      h4 Mars vacation program
+
+      fieldset
+        legend Be first
+
+        label(for="full-name") Full Name
+        input#full-name(type="text", value="Elon Reeve Musk")
+
+        label(for="date") Date of birth
+        input#date(type="date", value="1971-06-28")
+
+        label(for="email") E-mail
+        input#email(type="email", value="elon.musk@spacex.com")
+
+        label(for="phone") Phone number
+        input#phone(type="tel", placeholder="Numbers only, please")
+
+        label(for="country") Country
+        select#country
+          option(value="china") China
+          option(value="russia") Russia
+          option(value="usa", selected) USA
+
+        label(for="about") Tell us about yourself
+        textarea#about
+
+        label(for="photo") Photo
+        input#photo(type="file")
+
+        label(for="eyes-color")
+          | Eyes color
+          = ' '
+          small (just kidding)
+        input#eyes-color(type="color")
+
+        label(for="password") Password
+        input#password(type="password", placeholder="Use strong password!")
+
+        input(type="submit", value="Submit")
+        button(type="reset", onclick="onreset()") Reset
+
+        output#output(style="display: none")
+          p Welcome on board!
 
   section
     +h("code") Code

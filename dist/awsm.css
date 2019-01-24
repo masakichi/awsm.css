@@ -338,6 +338,219 @@ table th{
   line-height:1.2;
 }
 
+form{
+  margin-right:auto;
+  margin-left:auto;
+}
+@media (min-width: 40rem){
+  form{
+    max-width:80%;
+  }
+}
+form select, form label{
+  display:block;
+}
+form select, form input[type], form textarea{
+  margin-bottom:1em;
+}
+
+fieldset{
+  margin:0;
+  padding:0.5em 1em;
+  border:1px solid #aaaaaa;
+}
+
+legend{
+  color:#aaaaaa;
+}
+
+button{
+  outline:none;
+  box-sizing:border-box;
+  height:2em;
+  margin:0;
+  padding:calc(.25em - 1px) 0.5em;
+  font-family:inherit;
+  font-size:1em;
+  background:white;
+  border:1px solid #aaaaaa;
+  border-radius:2px;
+  color:black;
+  display:inline-block;
+  width:auto;
+  background:white;
+  color:black;
+  cursor:pointer;
+}
+button:focus{
+  border:1px solid black;
+}
+button:focus, button:hover{
+  border:1px solid black;
+}
+
+select{
+  outline:none;
+  box-sizing:border-box;
+  height:2em;
+  margin:0;
+  padding:calc(.25em - 1px) 0.5em;
+  font-family:inherit;
+  font-size:1em;
+  background:white;
+  border:1px solid #aaaaaa;
+  border-radius:2px;
+  color:black;
+  display:inline-block;
+  width:auto;
+  background:white;
+  color:black;
+  cursor:pointer;
+  -webkit-appearance:button;
+     -moz-appearance:button;
+          appearance:button;
+  padding-right:1.2em;
+  background-position:top 55% right 0.35em;
+  background-repeat:no-repeat;
+  background-size:0.5em;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(170, 170, 170)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
+}
+select:focus{
+  border:1px solid black;
+}
+select:focus, select:hover{
+  border:1px solid black;
+}
+select:focus, select:hover{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(0, 0, 0)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
+}
+
+input[type=text], input[type=password], input[type^=date], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=month], input[type=week], input[type=url]{
+  outline:none;
+  box-sizing:border-box;
+  height:2em;
+  margin:0;
+  padding:calc(.25em - 1px) 0.5em;
+  font-family:inherit;
+  font-size:1em;
+  background:white;
+  border:1px solid #aaaaaa;
+  border-radius:2px;
+  color:black;
+  display:block;
+  width:100%;
+}
+input[type=text]:focus, input[type=password]:focus, input[type^=date]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=month]:focus, input[type=week]:focus, input[type=url]:focus{
+  border:1px solid black;
+}
+input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type^=date]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=search]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=time]::-moz-placeholder, input[type=month]::-moz-placeholder, input[type=week]::-moz-placeholder, input[type=url]::-moz-placeholder{
+  color:#aaaaaa;
+}
+input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type^=date]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=number]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, input[type=time]::-webkit-input-placeholder, input[type=month]::-webkit-input-placeholder, input[type=week]::-webkit-input-placeholder, input[type=url]::-webkit-input-placeholder{
+  color:#aaaaaa;
+}
+input[type=text]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type^=date]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=number]:-ms-input-placeholder, input[type=search]:-ms-input-placeholder, input[type=tel]:-ms-input-placeholder, input[type=time]:-ms-input-placeholder, input[type=month]:-ms-input-placeholder, input[type=week]:-ms-input-placeholder, input[type=url]:-ms-input-placeholder{
+  color:#aaaaaa;
+}
+input[type=submit], input[type=button], input[type=reset]{
+  outline:none;
+  box-sizing:border-box;
+  height:2em;
+  margin:0;
+  padding:calc(.25em - 1px) 0.5em;
+  font-family:inherit;
+  font-size:1em;
+  background:white;
+  border:1px solid #aaaaaa;
+  border-radius:2px;
+  color:black;
+  display:inline-block;
+  width:auto;
+  background:white;
+  color:black;
+  cursor:pointer;
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
+}
+input[type=submit]:focus, input[type=button]:focus, input[type=reset]:focus{
+  border:1px solid black;
+}
+input[type=submit]:focus, input[type=submit]:hover, input[type=button]:focus, input[type=button]:hover, input[type=reset]:focus, input[type=reset]:hover{
+  border:1px solid black;
+}
+input[type=color], input[type=file]{
+  outline:none;
+  box-sizing:border-box;
+  height:2em;
+  margin:0;
+  padding:calc(.25em - 1px) 0.5em;
+  font-family:inherit;
+  font-size:1em;
+  background:white;
+  border:1px solid #aaaaaa;
+  border-radius:2px;
+  color:black;
+  display:inline-block;
+  width:auto;
+  background:white;
+  color:black;
+  cursor:pointer;
+  display:block;
+}
+input[type=color]:focus, input[type=file]:focus{
+  border:1px solid black;
+}
+input[type=color]:focus, input[type=color]:hover, input[type=file]:focus, input[type=file]:hover{
+  border:1px solid black;
+}
+input[type=color]{
+  width:4em;
+}
+input[type=file]{
+  font-size:12px;
+  height:auto;
+  width:100%;
+  padding:0.75em 0.5em;
+  line-height:1;
+}
+
+textarea{
+  outline:none;
+  box-sizing:border-box;
+  height:2em;
+  margin:0;
+  padding:calc(.25em - 1px) 0.5em;
+  font-family:inherit;
+  font-size:1em;
+  background:white;
+  border:1px solid #aaaaaa;
+  border-radius:2px;
+  color:black;
+  display:block;
+  width:100%;
+  height:4.5em;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  resize:vertical;
+}
+textarea:focus{
+  border:1px solid black;
+}
+textarea::-moz-placeholder{
+  color:#aaaaaa;
+}
+textarea::-webkit-input-placeholder{
+  color:#aaaaaa;
+}
+textarea:-ms-input-placeholder{
+  color:#aaaaaa;
+}
+
+output{
+  display:block;
+}
+
 code, kbd, var, samp{
   font-family:Consolas, "Lucida Console", Monaco, monospace;
   font-style:normal;
