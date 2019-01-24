@@ -182,12 +182,27 @@
           <pre><code>const postcss = require('postcss');
 const awsm = require('awsm.css');
 
-postcss([awsm({ theme: 'tasman' })]).process('a {color: red}').then(result =&gt; {
-  console.log(result.css); // awsm.css prepends your CSS 
-});</code></pre>
+postcss([awsm({ theme: 'tasman', sealed: true })])
+  .process('a {color: red}')
+  .then(result =&gt; {
+    console.log(result.css); // awsm.css prepends your CSS 
+  });</code></pre>
+          <section>
+            <h3><a id="postcss" href="#postcss" aria-hidden="true"></a>Options
+            </h3>
+            <dl>
+              <dt>
+                <var>theme</var>
+              </dt>
+              <dd>Defines theme to inject.<br><em>Default: <code>white</code>.</em></dd>
+              <dt>
+                <var>sealed</var>
+              </dt>
+              <dd>When set to <code>true</code>, styles are wrapped by <code>.awsm</code> selector. Useful when you don't want awsm.css to change global namespace.<br><em>Default: <code>false</code>.</em>
+              </dd>
+            </dl>
+          </section>
         </section>
-        <p>You can omit <code>theme</code> key in options argument. In this case default (white) theme will be loaded.
-        </p>
         <section>
           <h2><a id="license" href="#license" aria-hidden="true"></a>License
           </h2>

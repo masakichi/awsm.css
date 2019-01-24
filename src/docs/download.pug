@@ -103,19 +103,47 @@ include _mixins.pug
       var code = 'const postcss = require(\'postcss\');\n' +
       'const awsm = require(\'awsm.css\');\n' +
       '\n' +
-      'postcss([awsm({ theme: \'tasman\' })]).process(\'a {color: red}\').then(result => {\n' +
-      '  console.log(result.css); // awsm.css prepends your CSS \n' +
-      '});'
+      'postcss([awsm({ theme: \'tasman\', sealed: true })])\n' +
+      '  .process(\'a {color: red}\')\n' +
+      '  .then(result => {\n' +
+      '    console.log(result.css); // awsm.css prepends your CSS \n' +
+      '  });'
 
     +code-block= code
 
-  p
-    | You can omit
-    = ' '
-    code theme
-    = ' '
-    | key in options argument. In this case default (white) theme will be loaded.
+    section
+      +h("postcss", 3) Options
 
+      dl
+        dt
+          var theme
+        dd
+          | Defines theme to inject.
+          br
+          em
+            | Default:
+            = ' '
+            code white
+            | .
+
+        dt
+          var sealed
+        dd
+          | When set to
+          = ' '
+          code true
+          = ', '
+          | styles are wrapped by
+          = ' '
+          code .awsm
+          = ' '
+          | selector. Useful when you don't want awsm.css to change global namespace.
+          br
+          em
+            | Default:
+            = ' '
+            code false
+            | .
 
   section
     +h("license") License
