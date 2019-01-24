@@ -9,6 +9,8 @@ Just start to create page with HTML5 tags, link awsm.css and get simple, clean a
   
 Check out [examples](#examples) or sample markup [here](https://github.com/igoradamenko/awsm.css/tree/master/docs).
 
+[**Demo**](https://igoradamenko.github.io/awsm.css/)
+
 ## Previous versions
 
 Current `master` points to v3 of the library. 
