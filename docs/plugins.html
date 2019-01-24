@@ -11,6 +11,37 @@
     <meta property="og:url" content="https://igoradamenko.github.io/awsm.css/plugins.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@igoradamenko">
+    <script>var themes = JSON.parse('[{"title":"default","prismTheme":""}]');
+      
+      function getCSSFileName(theme) {
+        return 'css/awsm_theme_' + theme + '.min.css';
+      }
+      
+      function appendStyles(str) {
+        var style = document.createElement('style');
+        style.innerHTML = str;
+        document.querySelector('head').appendChild(style);
+      }
+      
+      function loadTheme() {
+        var theme = localStorage.getItem('awsm-current-theme');
+      
+        if (!theme || theme === 'default') return;
+      
+        reloadTheme(theme);
+      }
+      
+      function reloadTheme(theme) {
+        var stylesText = localStorage.getItem('awsm-' + theme + '-theme');
+      
+        if (!stylesText) return;
+      
+        appendStyles(stylesText);
+      }
+      
+      loadTheme();
+      
+    </script>
   </head>
   <body>
     <header>
@@ -24,6 +55,11 @@
           <li><a href="download.html">Download</a></li>
           <li>Plugins</li>
           <li><a href="https://github.com/igoradamenko/awsm.css" target="_blank">GitHub</a></li>
+          <li>Theme:
+            <select id="theme-changer" onchange="updateTheme(this.value)">
+              <option value="default" selected>default</option>
+            </select>
+          </li>
         </ul>
       </nav>
     </header>
@@ -75,9 +111,25 @@ html {
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js"></script>
+        <script>
+          function appendPrismCSS(theme) {
+            var url = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism' + (theme ? ('-' + theme) : '') + '.min.css';
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = url;
+            document.querySelector('body').appendChild(link);
+          }
+          
+          var theme = localStorage.getItem('awsm-current-theme');
+          
+          if (theme) {
+            var prismTheme = themes.find(x => x.title === theme).prismTheme;
+            appendPrismCSS(prismTheme);
+          }
+          
+        </script>
         <script src="https://unpkg.com/@nishanths/zoom.js@2.0.1/dist/zoom.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/@nishanths/zoom.js@2.0.1/css/zoom.css">
         <style>
@@ -95,5 +147,32 @@ html {
     <footer>
       <p>Igor Adamenko</p>
     </footer>
+    <script>
+      var theme = localStorage.getItem('awsm-current-theme');
+      
+      if (theme && theme !== 'default') {
+        document.getElementById('theme-changer').value = theme;
+      }
+      
+      function loadCSS(path, cb) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path);
+        xhr.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            cb(this.responseText);
+          }
+        };
+        xhr.send();
+      }
+      
+      function updateTheme(theme) {
+        localStorage.setItem('awsm-current-theme', theme);
+        loadCSS(getCSSFileName(theme), function(text) {
+          localStorage.setItem('awsm-' + theme + '-theme', text);
+          reloadTheme(theme);
+        });
+      }
+      
+    </script>
   </body>
 </html>

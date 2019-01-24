@@ -19,6 +19,37 @@ mixin page(name)
       meta(name="twitter:card", content="summary_large_image")
       meta(name="twitter:creator", content="@igoradamenko")
 
+      script.
+        var themes = JSON.parse('!{JSON.stringify(locals.themes)}');
+
+        function getCSSFileName(theme) {
+          return 'css/awsm_theme_' + theme + '.min.css';
+        }
+
+        function appendStyles(str) {
+          var style = document.createElement('style');
+          style.innerHTML = str;
+          document.querySelector('head').appendChild(style);
+        }
+
+        function loadTheme() {
+          var theme = localStorage.getItem('awsm-current-theme');
+
+          if (!theme || theme === 'default') return;
+
+          reloadTheme(theme);
+        }
+
+        function reloadTheme(theme) {
+          var stylesText = localStorage.getItem('awsm-' + theme + '-theme');
+
+          if (!stylesText) return;
+
+          appendStyles(stylesText);
+        }
+
+        loadTheme();
+
     body
       header
         h1 awsm.css
@@ -38,6 +69,12 @@ mixin page(name)
               - else
                 li= docmap[item].title
 
+            li
+              | Theme:
+              select(id="theme-changer", onchange="updateTheme(this.value)")
+                each option, index in locals.themes
+                  option(value= option.title, selected= !index) #{option.title}
+
       main
         article
           if docmap[name].header
@@ -47,6 +84,32 @@ mixin page(name)
 
       footer
         p Igor Adamenko
+
+      script.
+        var theme = localStorage.getItem('awsm-current-theme');
+
+        if (theme && theme !== 'default') {
+          document.getElementById('theme-changer').value = theme;
+        }
+
+        function loadCSS(path, cb) {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', path);
+          xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+              cb(this.responseText);
+            }
+          };
+          xhr.send();
+        }
+
+        function updateTheme(theme) {
+          localStorage.setItem('awsm-current-theme', theme);
+          loadCSS(getCSSFileName(theme), function(text) {
+            localStorage.setItem('awsm-' + theme + '-theme', text);
+            reloadTheme(theme);
+          });
+        }
 
 mixin code-block
   pre

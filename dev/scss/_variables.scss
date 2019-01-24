@@ -14,15 +14,15 @@ $size-map: (
 );
 
 $color-map: (
-  'primary': #000,
-  'secondary': #fff,
-  'stealthy': #aaa,
-  'invisible': #f2f2f2,
-  'selection-base': #0064c1,
-  'link': #0064c1,
-  'link-hover': #f00000,
-  'link-visited': #8d39d0,
-  'alarm': #d00000,
+  'primary': theme-color('primary'),
+  'secondary': theme-color('secondary'),
+  'stealthy': theme-color('stealthy'),
+  'invisible': theme-color('invisible'),
+  'selection-base': theme-color('selection-base'),
+  'link': theme-color('link'),
+  'link-hover': theme-color('link-hover'),
+  'link-visited': theme-color('link-visited'),
+  'alarm': theme-color('alarm'),
 );
 
 //- Functions
