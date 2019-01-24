@@ -62,6 +62,22 @@ const themes = [
     },
     prismTheme: 'tomorrow',
   },
+  {
+    // source: inverted default theme
+    title: 'black',
+    colors: {
+      primary: '#fff',
+      secondary: '#000',
+      stealthy: '#444',
+      invisible: '#222',
+      selectionBase: '#FD9A49',
+      link: '#FD9A49',
+      linkHover: '#75C53C',
+      linkVisited: '#7b4a29',
+      alarm: '#5AFFFE',
+    },
+    prismTheme: '',
+  },
 ];
 
 themes.push(Object.assign({}, themes.find(x => x.title === 'default'), { title: '' })); // alias for default
