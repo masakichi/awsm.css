@@ -1,6 +1,7 @@
 const themes = [
   {
     title: 'white',
+    description: 'Simple black on white theme, that you saw when firstly met awsm.css.',
     colors: {
       primary: '#000',
       secondary: '#fff',
@@ -17,6 +18,7 @@ const themes = [
   {
     // source: https://www.instagram.com/p/BgJk0tcBK-d/
     title: 'gondola',
+    description: '“Premium” theme with dark wine background color.',
     colors: {
       primary: '#FFF2E1',
       secondary: '#1F1010',
@@ -33,6 +35,7 @@ const themes = [
   {
     // source: https://www.instagram.com/p/Be2qWo_FR2s/
     title: 'mischka',
+    description: 'Grey-ish military looking theme with nice red links.',
     colors: {
       primary: '#3A3B45',
       secondary: '#D3D7DD',
@@ -49,6 +52,7 @@ const themes = [
   {
     // source: https://www.instagram.com/p/BeF113mlSfq/
     title: 'big-stone',
+    description: 'Awesome colored dark blue theme that looks like you\'re under water. I\'m sure that Aquaman likes this theme!',
     colors: {
       primary: '#99C0C9',
       secondary: '#1B2D3E',
@@ -65,6 +69,7 @@ const themes = [
   {
     // source: inverted white theme
     title: 'black',
+    description: 'I created this theme using color inversion on the white version. And I got old-fashion theme that looks like you\'re in 80\'s.',
     colors: {
       primary: '#fff',
       secondary: '#000',
@@ -81,6 +86,7 @@ const themes = [
   {
     // source: https://www.instagram.com/p/BUlk5_sFn1s/
     title: 'tasman',
+    description: 'Do you like pistachios?',
     colors: {
       primary: '#742E1E',
       secondary: '#DAE4D8',
@@ -97,6 +103,7 @@ const themes = [
   {
     // source: https://www.instagram.com/p/BUJFTRmldcm/
     title: 'pastel-pink',
+    description: 'Just a nice pink theme.',
     colors: {
       primary: '#173957',
       secondary: '#ffd9e3',
@@ -113,6 +120,7 @@ const themes = [
   {
     // source: https://www.instagram.com/p/BdbLpu6FAWd/
     title: 'pearl-lusta',
+    description: 'Really warm theme with colors like orange, red, pink and some others.',
     colors: {
       primary: '#411B33',
       secondary: '#FBECDA',

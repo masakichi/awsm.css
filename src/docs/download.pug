@@ -21,23 +21,47 @@ include _mixins.pug
     | .
 
   section
+    +h("sealed") Sealed
+
+    p
+      | If you want to to use awsm.css inside any other projects without any side effects,
+      | just download “sealed” version that applies styles to
+      = ' '
+      code .awsm
+      = ' '
+      | selector, without changing global namespace.
+
+    p Here it is:
+      = ' '
+      a(href="css/awsm_sealed.css") awsm_sealed.css
+      = ', '
+      a(href="css/awsm_sealed.min.css") awsm_sealed.min.css
+      | .
+
+  section
     +h("themes") Themes
 
     p Here is a list of all available themes:
 
-    ul
-      each theme, index in locals.themes
-        li
+    dl
+      each theme in locals.themes
+        dt
+          span(style=`background: linear-gradient(to right, ${theme.colors.primary} 0%, ${theme.colors.primary} 50%, ${theme.colors.secondary} 50%, ${theme.colors.secondary} 100%); display: inline-block; width: .75rem; height: .75rem; border-radius: 50%; border: 1px solid ${theme.colors.stealthy};`)
+          = ' '
+          | #{theme.title}
+
+        dd
+          p #{theme.description}
+
           p
-            span(style=`background: linear-gradient(to right, ${theme.colors.primary} 0%, ${theme.colors.primary} 50%, ${theme.colors.secondary} 50%, ${theme.colors.secondary} 100%); display: inline-block; width: .75rem; height: .75rem; border-radius: 50%; border: 1px solid ${theme.colors.stealthy};`)
-            = ' '
-            | #{theme.title}
+            a(href=`css/awsm_theme_${theme.title}.css`) Original
             = ' ('
-            a(href=`css/awsm_theme_${theme.title}.css`) original
-            = ', '
             a(href=`css/awsm_theme_${theme.title}.min.css`) min
-            = ')'
-            = index + 1 === locals.themes.length ? '.' : ';'
+            = '), '
+            a(href=`css/awsm_theme_${theme.title}._sealed.css`) sealed
+            = ' ('
+            a(href=`css/awsm_theme_${theme.title}._sealed.min.css`) min
+            = ').'
 
   section
     +h("unpkg") unpkg
