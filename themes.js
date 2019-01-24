@@ -46,6 +46,22 @@ const themes = [
     },
     prismTheme: 'okaidia',
   },
+  {
+    // source: https://www.instagram.com/p/BeF113mlSfq/
+    title: 'big-stone',
+    colors: {
+      primary: '#99C0C9',
+      secondary: '#1B2D3E',
+      stealthy: '#145E86',
+      invisible: '#184165',
+      selectionBase: '#1570AB',
+      link: '#1570AB',
+      linkHover: '#AEC8E7',
+      linkVisited: '#726191',
+      alarm: '#A15433',
+    },
+    prismTheme: 'tomorrow',
+  },
 ];
 
 themes.push(Object.assign({}, themes.find(x => x.title === 'default'), { title: '' })); // alias for default
