@@ -11,6 +11,8 @@ Check out [examples](#examples) or sample markup [here](https://github.com/igora
 
 [**Demo**](https://igoradamenko.github.io/awsm.css/)
 
+[![Demo picture](http://igoradamenko.com/github/awsm.css/repo-header.png)](https://igoradamenko.github.io/awsm.css/)
+
 ## Previous versions
 
 Current `master` points to v3 of the library. 
