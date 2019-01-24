@@ -4,12 +4,11 @@ const gulp = require('gulp');
 const bs = require('browser-sync');
 const del = require('del');
 
-const Fiber = require('fibers');
 const sass = require('gulp-sass');
 const sassCompiler = require('sass');
+const Fiber = require('fibers');
 sass.compiler = sassCompiler;
 
-const filter = require('gulp-filter');
 const pug = require('gulp-pug');
 const stylelint = require('gulp-stylelint');
 const postcss = require('gulp-postcss');
@@ -24,7 +23,7 @@ const themes = require('./themes');
 /* paths */
 
 const input = {
-  pug: ['src/docs/**/*.pug'],
+  pug: ['src/docs/**/!(_)*.pug'],
   html: ['src/docs/**/*.html', '!src/docs/includes/*.html'] ,
   scss: 'src/scss/**/*.scss',
   images: 'src/docs/images/*'
@@ -40,9 +39,7 @@ const output = {
 const stylesTasks = getStylesTasks(themes);
 
 gulp.task('markup', function() {
-
   return gulp.src(input.pug)
-    .pipe(filter(['**/!(_)*.pug']))
     .pipe(pug({
       pretty: true,
       locals: {
