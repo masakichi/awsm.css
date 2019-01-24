@@ -20,10 +20,10 @@ const themes = require('./themes');
 /* paths */
 
 var input = {
-  pug: ['dev/docs/**/*.pug'],
-  html: ['dev/docs/**/*.html', '!dev/docs/includes/*.html'] ,
-  scss: 'dev/scss/**/*.scss',
-  images: 'dev/docs/images/*'
+  pug: ['src/docs/**/*.pug'],
+  html: ['src/docs/**/*.html', '!src/docs/includes/*.html'] ,
+  scss: 'src/scss/**/*.scss',
+  images: 'src/docs/images/*'
 };
 
 var output = {
