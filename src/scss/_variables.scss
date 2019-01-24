@@ -1,4 +1,5 @@
 //- Maps
+
 $font-map: (
   'mono': (Consolas, 'Lucida Console', Monaco, monospace),
   'sans': (system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'PT Sans', 'Open Sans', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif),
@@ -13,6 +14,7 @@ $size-map: (
   'width-max': 40rem, // 640px / 16px
 );
 
+// theme colors passed from build system and got from /themes.js
 $color-map: (
   'primary': theme-color('primary'),
   'secondary': theme-color('secondary'),
@@ -26,6 +28,7 @@ $color-map: (
 );
 
 //- Functions
+
 @function font($key) {
   @return map-get($font-map, $key);
 }
@@ -36,4 +39,20 @@ $color-map: (
 
 @function color($key) {
   @return map-get($color-map, $key);
+}
+
+//- Mixins
+
+@mixin placeholder {
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
 }

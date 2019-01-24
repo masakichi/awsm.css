@@ -337,7 +337,7 @@
     "plugin/no-unsupported-browser-features": [true, {
       "browsers": "> 1%, not OperaMini all",
       "severity": "warning",
-      "ignore": ["css-appearance", "flexbox", "css-hyphens", "calc", "viewport-units", "outline", "css-gradients"]
+      "ignore": ["css-appearance", "flexbox", "css-hyphens", "calc", "viewport-units", "outline", "css-gradients", "css-resize"]
     }],
 		"primer/selector-no-utility": true,
 		"property-case": "lower",

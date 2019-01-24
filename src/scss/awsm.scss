@@ -330,10 +330,6 @@ audio, video {
   max-width: 100%;
 }
 
-video {
-  object-position: 0 -1px; // fix strange chrome video controls rendering
-}
-
 figure {
   margin: 1em 0 .5em;
   padding: 0;
@@ -410,20 +406,6 @@ table {
 }
 
 //- Forms
-// stylelint-disable
-@mixin placeholder {
-  &::-moz-placeholder {
-    @content;
-  }
-
-  &::-webkit-input-placeholder {
-    @content;
-  }
-
-  &:-ms-input-placeholder {
-    @content;
-  }
-}
 
 @mixin inputs-buttons {
   outline: none;
@@ -433,9 +415,9 @@ table {
   padding: calc(.25em - 1px) .5em;
   font-family: inherit;
   font-size: 1em;
-  background: color('secondary');
   border: 1px solid color('stealthy');
   border-radius: 2px;
+  background: color('secondary');
   color: color('primary');
 
   &:focus {
@@ -504,11 +486,11 @@ select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(#{red($color)}, #{green($color)}, #{blue($color)})' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
   }
 
-  appearance: button;
   padding-right: 1.2em;
   background-position: top 55% right .35em;
-  background-repeat: no-repeat;
   background-size: .5em;
+  background-repeat: no-repeat;
+  appearance: button;
 
   @include select-background-image(color('stealthy'));
 
@@ -550,10 +532,10 @@ input {
   }
 
   &[type=file] {
-    font-size: 12px; // otherwise browsers change only text size but not button size
-    height: auto;
     width: 100%;
+    height: auto;
     padding: .75em .5em;
+    font-size: 12px; // otherwise browsers change only text size but not button size
     line-height: 1;
   }
 }
@@ -561,9 +543,9 @@ input {
 textarea {
   @include inputs;
   height: 4.5em;
+  resize: vertical;
   padding-top: .5em;
   padding-bottom: .5em;
-  resize: vertical;
 }
 
 output {
