@@ -1,6 +1,6 @@
 const themes = [
   {
-    title: 'default',
+    title: 'white',
     colors: {
       primary: '#000',
       secondary: '#fff',
@@ -63,7 +63,7 @@ const themes = [
     prismTheme: 'tomorrow',
   },
   {
-    // source: inverted default theme
+    // source: inverted white theme
     title: 'black',
     colors: {
       primary: '#fff',
@@ -80,6 +80,6 @@ const themes = [
   },
 ];
 
-themes.push(Object.assign({}, themes.find(x => x.title === 'default'), { title: '' })); // alias for default
+themes.push(Object.assign({}, themes.find(x => x.title === 'white'), { title: '' })); // alias for white
 
 module.exports = themes;

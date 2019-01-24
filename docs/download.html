@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://igoradamenko.github.io/awsm.css/download.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@igoradamenko">
-    <script>var themes = JSON.parse('[{"title":"default","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"},{"title":"mischka","prismTheme":"okaidia"},{"title":"big-stone","prismTheme":"tomorrow"},{"title":"black","prismTheme":""}]');
+    <script>var themes = JSON.parse('[{"title":"white","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"},{"title":"mischka","prismTheme":"okaidia"},{"title":"big-stone","prismTheme":"tomorrow"},{"title":"black","prismTheme":""}]');
       
       function getCSSFileName(theme) {
         return 'css/awsm_theme_' + theme + '.min.css';
@@ -26,7 +26,7 @@
       function loadTheme() {
         var theme = localStorage.getItem('awsm-current-theme');
       
-        if (!theme || theme === 'default') return;
+        if (!theme || theme === 'white') return;
       
         reloadTheme(theme);
       }
@@ -57,7 +57,7 @@
           <li><a href="https://github.com/igoradamenko/awsm.css" target="_blank">GitHub</a></li>
           <li>Theme:
             <select id="theme-changer" onchange="updateTheme(this.value)">
-              <option value="default" selected>default</option>
+              <option value="white" selected>white</option>
               <option value="gondola">gondola</option>
               <option value="mischka">mischka</option>
               <option value="big-stone">big-stone</option>
@@ -139,7 +139,7 @@ postcss([awsm()]).process('a {color: red}').then(result =&gt; {
       
       var theme = localStorage.getItem('awsm-current-theme');
       
-      if (theme && theme !== 'default') {
+      if (theme && theme !== 'white') {
         document.getElementById('theme-changer').value = theme;
       }
       

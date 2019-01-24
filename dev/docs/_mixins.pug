@@ -35,7 +35,7 @@ mixin page(name)
         function loadTheme() {
           var theme = localStorage.getItem('awsm-current-theme');
 
-          if (!theme || theme === 'default') return;
+          if (!theme || theme === 'white') return;
 
           reloadTheme(theme);
         }
@@ -107,7 +107,7 @@ mixin page(name)
 
         var theme = localStorage.getItem('awsm-current-theme');
 
-        if (theme && theme !== 'default') {
+        if (theme && theme !== 'white') {
           document.getElementById('theme-changer').value = theme;
         }
 
