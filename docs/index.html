@@ -11,7 +11,16 @@
     <meta property="og:url" content="https://igoradamenko.github.io/awsm.css/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@igoradamenko">
-    <script>var themes = JSON.parse('[{"title":"white","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"},{"title":"mischka","prismTheme":"okaidia"},{"title":"big-stone","prismTheme":"tomorrow"},{"title":"black","prismTheme":""},{"title":"tasman","prismTheme":""},{"title":"pastel-pink","prismTheme":""},{"title":"pearl-lusta","prismTheme":"solarizedlight"}]');
+    <script>localStorage.clear();
+      var version = '2.1.0';
+      var themes = JSON.parse('[{"title":"white","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"},{"title":"mischka","prismTheme":"okaidia"},{"title":"big-stone","prismTheme":"tomorrow"},{"title":"black","prismTheme":""},{"title":"tasman","prismTheme":""},{"title":"pastel-pink","prismTheme":""},{"title":"pearl-lusta","prismTheme":"solarizedlight"}]');
+      var storedVersion = localStorage.getItem('awsm-version');
+      
+      if (version !== storedVersion) {
+        localStorage.removeItem('awsm-current-theme');
+        localStorage.removeItem('awsm-themes');
+        localStorage.setItem('awsm-version', version);
+      }
       
       function getCSSFileName(theme) {
         return 'css/awsm_theme_' + theme + '.min.css';
@@ -32,11 +41,13 @@
       }
       
       function reloadTheme(theme) {
-        var stylesText = localStorage.getItem('awsm-' + theme + '-theme');
+        var storedThemesStr = localStorage.getItem('awsm-themes');
       
-        if (!stylesText) return;
+        if (!storedThemesStr) return;
       
-        appendStyles(stylesText);
+        var storedThemes = JSON.parse(storedThemesStr);
+      
+        appendStyles(storedThemes[theme]);
       }
       
       loadTheme();
@@ -116,7 +127,11 @@
       function updateTheme(theme) {
         localStorage.setItem('awsm-current-theme', theme);
         loadCSS(getCSSFileName(theme), function(text) {
-          localStorage.setItem('awsm-' + theme + '-theme', text);
+          var storedThemesStr = localStorage.getItem('awsm-themes');
+          var storedThemes = JSON.parse(storedThemesStr) || {};
+          storedThemes[theme] = text;
+      
+          localStorage.setItem('awsm-themes', JSON.stringify(storedThemes));
           reloadTheme(theme);
         });
       }

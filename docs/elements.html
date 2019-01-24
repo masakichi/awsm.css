@@ -11,7 +11,16 @@
     <meta property="og:url" content="https://igoradamenko.github.io/awsm.css/elements.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@igoradamenko">
-    <script>var themes = JSON.parse('[{"title":"white","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"},{"title":"mischka","prismTheme":"okaidia"},{"title":"big-stone","prismTheme":"tomorrow"},{"title":"black","prismTheme":""},{"title":"tasman","prismTheme":""},{"title":"pastel-pink","prismTheme":""},{"title":"pearl-lusta","prismTheme":"solarizedlight"}]');
+    <script>localStorage.clear();
+      var version = '2.1.0';
+      var themes = JSON.parse('[{"title":"white","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"},{"title":"mischka","prismTheme":"okaidia"},{"title":"big-stone","prismTheme":"tomorrow"},{"title":"black","prismTheme":""},{"title":"tasman","prismTheme":""},{"title":"pastel-pink","prismTheme":""},{"title":"pearl-lusta","prismTheme":"solarizedlight"}]');
+      var storedVersion = localStorage.getItem('awsm-version');
+      
+      if (version !== storedVersion) {
+        localStorage.removeItem('awsm-current-theme');
+        localStorage.removeItem('awsm-themes');
+        localStorage.setItem('awsm-version', version);
+      }
       
       function getCSSFileName(theme) {
         return 'css/awsm_theme_' + theme + '.min.css';
@@ -32,11 +41,13 @@
       }
       
       function reloadTheme(theme) {
-        var stylesText = localStorage.getItem('awsm-' + theme + '-theme');
+        var storedThemesStr = localStorage.getItem('awsm-themes');
       
-        if (!stylesText) return;
+        if (!storedThemesStr) return;
       
-        appendStyles(stylesText);
+        var storedThemes = JSON.parse(storedThemesStr);
+      
+        appendStyles(storedThemes[theme]);
       }
       
       loadTheme();
@@ -213,6 +224,57 @@
           <audio src="http://igoradamenko.com/github/awsm.css/radio-t.mp3" controls loop>It seems like your browser can't play this audio.</audio>
           <video src="http://igoradamenko.com/github/awsm.css/cats.mp4" controls>It seems like your browser can't play this video.</video>
         </section>
+        <!--section-->
+        <!--  +h("forms") Forms-->
+        <!---->
+        <!--  script.-->
+        <!--    function accept() {-->
+        <!--      document.getElementById('output').style.display = 'block';-->
+        <!--      return false;-->
+        <!--    }-->
+        <!---->
+        <!--  form(onsubmit="accept(); return false;")-->
+        <!--    h4 Mars vacation program-->
+        <!---->
+        <!--    fieldset-->
+        <!--      legend Be first-->
+        <!---->
+        <!--      label(for="first-name") First Name-->
+        <!--      input#first-name(type="text")-->
+        <!--      br-->
+        <!---->
+        <!--      label(for="last-name") Last Name-->
+        <!--      input#last-name(type="text")-->
+        <!--      br-->
+        <!---->
+        <!--      label(for="date") Date of birth-->
+        <!--      input#date(type="date")-->
+        <!--      br-->
+        <!---->
+        <!--      label(for="country") Country-->
+        <!--      select#country-->
+        <!--        option(value="china") China-->
+        <!--        option(value="russia") Russia-->
+        <!--        option(value="usa") USA-->
+        <!--      br-->
+        <!---->
+        <!--      label(for="about") Tell us about yourself-->
+        <!--      textarea#about-->
+        <!--      br-->
+        <!---->
+        <!--      label(for="photo") Photo-->
+        <!--      input#photo(type="file")-->
+        <!--      br-->
+        <!---->
+        <!--      label(for="password") Password-->
+        <!--      input#password(type="password")-->
+        <!--      br-->
+        <!---->
+        <!--      input(type="submit", value="Submit")-->
+        <!--      button(type="reset") Reset-->
+        <!---->
+        <!--      output#output(style="display: none")-->
+        <!--        p Welcome on board!-->
         <section>
           <h2><a id="code" href="#code" aria-hidden="true"></a>Code
           </h2>
@@ -317,7 +379,11 @@
       function updateTheme(theme) {
         localStorage.setItem('awsm-current-theme', theme);
         loadCSS(getCSSFileName(theme), function(text) {
-          localStorage.setItem('awsm-' + theme + '-theme', text);
+          var storedThemesStr = localStorage.getItem('awsm-themes');
+          var storedThemes = JSON.parse(storedThemesStr) || {};
+          storedThemes[theme] = text;
+      
+          localStorage.setItem('awsm-themes', JSON.stringify(storedThemes));
           reloadTheme(theme);
         });
       }

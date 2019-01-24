@@ -44,6 +44,8 @@ gulp.task('markup', () => {
       pretty: true,
       locals: {
         themes: themes.map(({ title, prismTheme }) => ({ title, prismTheme })).filter(x => x.title),
+        NODE_ENV: process.env.NODE_ENV,
+        version: require('./package.json').version,
       }
     }))
     .pipe(gulp.dest(output.main))

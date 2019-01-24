@@ -20,7 +20,16 @@ mixin page(name)
       meta(name="twitter:creator", content="@igoradamenko")
 
       script.
+        #{locals.NODE_ENV === 'dev' ? 'localStorage.clear()' : ''};
+        var version = '#{locals.version}';
         var themes = JSON.parse('!{JSON.stringify(locals.themes)}');
+        var storedVersion = localStorage.getItem('awsm-version');
+
+        if (version !== storedVersion) {
+          localStorage.removeItem('awsm-current-theme');
+          localStorage.removeItem('awsm-themes');
+          localStorage.setItem('awsm-version', version);
+        }
 
         function getCSSFileName(theme) {
           return 'css/awsm_theme_' + theme + '.min.css';
@@ -41,11 +50,13 @@ mixin page(name)
         }
 
         function reloadTheme(theme) {
-          var stylesText = localStorage.getItem('awsm-' + theme + '-theme');
+          var storedThemesStr = localStorage.getItem('awsm-themes');
 
-          if (!stylesText) return;
+          if (!storedThemesStr) return;
 
-          appendStyles(stylesText);
+          var storedThemes = JSON.parse(storedThemesStr);
+
+          appendStyles(storedThemes[theme]);
         }
 
         loadTheme();
@@ -100,7 +111,11 @@ mixin page(name)
         function updateTheme(theme) {
           localStorage.setItem('awsm-current-theme', theme);
           loadCSS(getCSSFileName(theme), function(text) {
-            localStorage.setItem('awsm-' + theme + '-theme', text);
+            var storedThemesStr = localStorage.getItem('awsm-themes');
+            var storedThemes = JSON.parse(storedThemesStr) || {};
+            storedThemes[theme] = text;
+
+            localStorage.setItem('awsm-themes', JSON.stringify(storedThemes));
             reloadTheme(theme);
           });
         }
