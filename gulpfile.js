@@ -14,6 +14,7 @@ const stylelint = require('gulp-stylelint');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const discardComments = require('postcss-discard-comments');
+const prefixWrap = require('postcss-prefixwrap');
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const filter = require('gulp-filter');
@@ -94,44 +95,50 @@ function getStylesTasks(themes) {
   return gulp.parallel(themes.map(x => task(x.title, convertColorsObj(x.colors))));
 
   function task(theme, colors) {
-    const filename = theme ? `awsm_theme_${theme}` : 'awsm';
+    return gulp.parallel(generateTask({ sealed: false }), generateTask({ sealed: true }));
 
-    function _task() {
-      return gulp.src(input.scss)
-        .pipe(sass({
-          fiber: Fiber,
-          functions: {
-            'theme-color($name)': name => {
-              name = name.getValue();
+    function generateTask({ sealed }) {
+      const filenameBase = theme ? `awsm_theme_${theme}` : 'awsm';
+      const filename = sealed ? `${filenameBase}_sealed` : filenameBase;
 
-              if (!colors[name]) {
-                throw new Error(`There is no such color as ${name}`);
-              }
+      function _task() {
+        return gulp.src(input.scss)
+          .pipe(sass({
+            fiber: Fiber,
+            functions: {
+              'theme-color($name)': name => {
+                name = name.getValue();
 
-              return new sassCompiler.types.Color(...colors[name]);
+                if (!colors[name]) {
+                  throw new Error(`There is no such color as ${name}`);
+                }
+
+                return new sassCompiler.types.Color(...colors[name]);
+              },
             },
-          },
-        }))
+          }))
 
-        .pipe(postcss([
-          autoprefixer({ browsers: ['> 1%'] }),
-          discardComments()
-        ]))
-        .pipe(rename(`${filename}.css`))
-        .pipe(gulp.dest(output.css))
-        .pipe(gulp.dest(output.dist))
+          .pipe(postcss([
+            autoprefixer({ browsers: ['> 1%'] }),
+            discardComments(),
+            ...(sealed ? [prefixWrap('.awsm')] : []),
+          ]))
+          .pipe(rename(`${filename}.css`))
+          .pipe(gulp.dest(output.css))
+          .pipe(gulp.dest(output.dist))
 
-        .pipe(csso())
-        .pipe(rename(`${filename}.min.css`))
-        .pipe(gulp.dest(output.css))
-        .pipe(gulp.dest(output.dist))
+          .pipe(csso())
+          .pipe(rename(`${filename}.min.css`))
+          .pipe(gulp.dest(output.css))
+          .pipe(gulp.dest(output.dist))
 
-        .pipe(bs.stream());
+          .pipe(bs.stream());
+      }
+
+      _task.displayName = `styles for ${theme || 'default'} theme${sealed ? ' sealed' : ''}`;
+
+      return _task;
     }
-
-    _task.displayName = `styles for ${theme || 'default'} theme`;
-
-    return _task;
   }
 
   function convertColorsObj(obj) {
