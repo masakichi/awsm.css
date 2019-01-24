@@ -23,7 +23,6 @@ const themes = require('./themes');
 
 const input = {
   pug: ['src/docs/**/!(_)*.pug'],
-  html: ['src/docs/**/*.html', '!src/docs/includes/*.html'] ,
   scss: 'src/scss/awsm.scss',
   images: 'src/docs/images/*'
 };
