@@ -10,7 +10,8 @@
     "clean": "gulp clean",
     "dev": "NODE_ENV=dev gulp",
     "lint": "gulp lint",
-    "test": "npm run build"
+    "test": "npm run build",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.6",
