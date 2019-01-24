@@ -1,6 +1,6 @@
 {
   "name": "awsm.css",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Simple CSS lib for semantic HTML markup",
   "author": "Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)",
   "main": "index.js",

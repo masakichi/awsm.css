@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.0 “Charizard”] - 2018-01-25
+### Added
+- Themes support, and 7 themes out of the box!
+- Sealed styles support. Now you can use awsm.css without affecting global namespace.
+- Styles for `form`, `fieldset`, `input`, `textarea`, `select`, button`, etc.
+  Forms support is here!
+
+### Changed
+- Maximum font size (20px → 18px).
+- Anchor sign (`•` → `§`).
+
+### Removed
+- Serif fonts.
+- Retina borders.
+- `abbr` underlining.
+- All transitions.
+
+### Dev changes
+- Moved to Dart Sass instead of Node Sass.
+- All deps were updated.
+- Added 'start' npm script. 
+- Removed useless gulp plugins.
+- Add precommit linting & fixing issues in SCSS.
+- Theme changing on demo page.
+- Node 6 support was removed.
+
 ## [2.1.0 “Charmeleon”] - 2017-01-14
 ### Added
 - Rems for font size & page width.
@@ -65,6 +91,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 “Bulbasaur” - 2016-03-20
 
 
+[3.0.0 “Charizard”]: https://github.com/igoradamenko/awsm.css/compare/v2.1.0...v3.0.0
 [2.1.0 “Charmeleon”]: https://github.com/igoradamenko/awsm.css/compare/v2.0.0...v2.1.0
 [2.0.0 “Charmander”]: https://github.com/igoradamenko/awsm.css/compare/v1.2.1...v2.0.0
 [1.2.1]: https://github.com/igoradamenko/awsm.css/compare/v1.2.0...v1.2.1
