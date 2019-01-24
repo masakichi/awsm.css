@@ -94,6 +94,22 @@ const themes = [
     },
     prismTheme: '',
   },
+  {
+    // source: https://www.instagram.com/p/BUJFTRmldcm/
+    title: 'pastel-pink',
+    colors: {
+      primary: '#173957',
+      secondary: '#ffd9e3',
+      stealthy: '#46799A',
+      invisible: '#2C557A',
+      selectionBase: '#88505B',
+      link: '#88505B',
+      linkHover: '#1DB2C1',
+      linkVisited: '#C27174',
+      alarm: '#1981e0',
+    },
+    prismTheme: '',
+  },
 ];
 
 themes.push(Object.assign({}, themes.find(x => x.title === 'white'), { title: '' })); // alias for white
