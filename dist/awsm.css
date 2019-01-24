@@ -393,7 +393,7 @@ button{
   color:black;
   display:inline-block;
   width:auto;
-  background:white;
+  background:#f2f2f2;
   color:black;
   cursor:pointer;
 }
@@ -418,7 +418,7 @@ select{
   color:black;
   display:inline-block;
   width:auto;
-  background:white;
+  background:#f2f2f2;
   color:black;
   cursor:pointer;
   padding-right:1.2em;
@@ -481,7 +481,7 @@ input[type=submit], input[type=button], input[type=reset]{
   color:black;
   display:inline-block;
   width:auto;
-  background:white;
+  background:#f2f2f2;
   color:black;
   cursor:pointer;
   -webkit-appearance:none;
@@ -508,7 +508,7 @@ input[type=color], input[type=file]{
   color:black;
   display:inline-block;
   width:auto;
-  background:white;
+  background:#f2f2f2;
   color:black;
   cursor:pointer;
   display:block;

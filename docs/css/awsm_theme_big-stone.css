@@ -393,7 +393,7 @@ button{
   color:#99c0c9;
   display:inline-block;
   width:auto;
-  background:#1b2d3e;
+  background:#184165;
   color:#99c0c9;
   cursor:pointer;
 }
@@ -418,7 +418,7 @@ select{
   color:#99c0c9;
   display:inline-block;
   width:auto;
-  background:#1b2d3e;
+  background:#184165;
   color:#99c0c9;
   cursor:pointer;
   padding-right:1.2em;
@@ -481,7 +481,7 @@ input[type=submit], input[type=button], input[type=reset]{
   color:#99c0c9;
   display:inline-block;
   width:auto;
-  background:#1b2d3e;
+  background:#184165;
   color:#99c0c9;
   cursor:pointer;
   -webkit-appearance:none;
@@ -508,7 +508,7 @@ input[type=color], input[type=file]{
   color:#99c0c9;
   display:inline-block;
   width:auto;
-  background:#1b2d3e;
+  background:#184165;
   color:#99c0c9;
   cursor:pointer;
   display:block;

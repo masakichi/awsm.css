@@ -134,7 +134,7 @@
     margin:0;
     padding-left:0.5em;
     font-size:0.8em;
-    border-left:1px solid #833d32;
+    border-left:1px solid #c1b6b4;
   }
 }
 .awsm aside:first-child{
@@ -307,7 +307,7 @@
   padding:0.35em 0.75em;
   vertical-align:top;
   font-size:0.9em;
-  border:1px solid #833d32;
+  border:1px solid #c1b6b4;
   border-top:0;
   border-left:0;
 }
@@ -390,7 +390,7 @@
   color:#742e1e;
   display:inline-block;
   width:auto;
-  background:#dae4d8;
+  background:#c1b6b4;
   color:#742e1e;
   cursor:pointer;
 }
@@ -415,7 +415,7 @@
   color:#742e1e;
   display:inline-block;
   width:auto;
-  background:#dae4d8;
+  background:#c1b6b4;
   color:#742e1e;
   cursor:pointer;
   padding-right:1.2em;
@@ -478,7 +478,7 @@
   color:#742e1e;
   display:inline-block;
   width:auto;
-  background:#dae4d8;
+  background:#c1b6b4;
   color:#742e1e;
   cursor:pointer;
   -webkit-appearance:none;
@@ -505,7 +505,7 @@
   color:#742e1e;
   display:inline-block;
   width:auto;
-  background:#dae4d8;
+  background:#c1b6b4;
   color:#742e1e;
   cursor:pointer;
   display:block;
@@ -593,7 +593,7 @@
   height:1px;
   margin:2em 0;
   border:0;
-  background:#833d32;
+  background:#c1b6b4;
 }
 
 .awsm details{
@@ -601,7 +601,7 @@
 }
 .awsm details[open]{
   padding-bottom:0.5em;
-  border-bottom:1px solid #833d32;
+  border-bottom:1px solid #c1b6b4;
 }
 
 .awsm summary{
