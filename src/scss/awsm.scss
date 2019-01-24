@@ -14,7 +14,7 @@ html {
 //- Layout & fonts
 
 body {
-  margin: 1em;
+  margin: 1.2em;
   font-size: size('font-min');
 
   @media (min-width: size('width-min')) {
@@ -195,12 +195,16 @@ h1, h2, h3, h4, h5, h6 {
 
   > a[href^='#'][id]:empty {
     position: absolute;
-    left: -.8em;
+    left: -.65em;
     opacity: 0;
     text-decoration: none;
     font-weight: 400;
     line-height: 1;
     color: color('stealthy');
+
+    @media (min-width: size('width-max')) {
+      left: -.8em;
+    }
 
     &:target, &:hover, &:focus {
       opacity: 1;

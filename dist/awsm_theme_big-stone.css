@@ -9,7 +9,7 @@ html{
 }
 
 body{
-  margin:1em;
+  margin:1.2em;
   font-size:1rem;
 }
 @media (min-width: 20rem){
@@ -158,12 +158,17 @@ h1 + p, h1 + details, h2 + p, h2 + details, h3 + p, h3 + details, h4 + p, h4 + d
 }
 h1 > a[href^="#"][id]:empty, h2 > a[href^="#"][id]:empty, h3 > a[href^="#"][id]:empty, h4 > a[href^="#"][id]:empty, h5 > a[href^="#"][id]:empty, h6 > a[href^="#"][id]:empty{
   position:absolute;
-  left:-0.8em;
+  left:-0.65em;
   opacity:0;
   text-decoration:none;
   font-weight:400;
   line-height:1;
   color:#145e86;
+}
+@media (min-width: 40rem){
+  h1 > a[href^="#"][id]:empty, h2 > a[href^="#"][id]:empty, h3 > a[href^="#"][id]:empty, h4 > a[href^="#"][id]:empty, h5 > a[href^="#"][id]:empty, h6 > a[href^="#"][id]:empty{
+    left:-0.8em;
+  }
 }
 h1 > a[href^="#"][id]:empty:target, h1 > a[href^="#"][id]:empty:hover, h1 > a[href^="#"][id]:empty:focus, h2 > a[href^="#"][id]:empty:target, h2 > a[href^="#"][id]:empty:hover, h2 > a[href^="#"][id]:empty:focus, h3 > a[href^="#"][id]:empty:target, h3 > a[href^="#"][id]:empty:hover, h3 > a[href^="#"][id]:empty:focus, h4 > a[href^="#"][id]:empty:target, h4 > a[href^="#"][id]:empty:hover, h4 > a[href^="#"][id]:empty:focus, h5 > a[href^="#"][id]:empty:target, h5 > a[href^="#"][id]:empty:hover, h5 > a[href^="#"][id]:empty:focus, h6 > a[href^="#"][id]:empty:target, h6 > a[href^="#"][id]:empty:hover, h6 > a[href^="#"][id]:empty:focus{
   opacity:1;
