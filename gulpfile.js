@@ -16,13 +16,14 @@ const autoprefixer = require('autoprefixer');
 const discardComments = require('postcss-discard-comments');
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
+const filter = require('gulp-filter');
 
 const themes = require('./themes');
 
 /* paths */
 
 const input = {
-  pug: ['src/docs/**/!(_)*.pug'],
+  pug: ['src/docs/**/*.pug'],
   scss: 'src/scss/awsm.scss',
   images: 'src/docs/images/*'
 };
@@ -38,6 +39,7 @@ const stylesTasks = getStylesTasks(themes);
 
 gulp.task('markup', () => {
   return gulp.src(input.pug)
+    .pipe(filter(['**/!(_)*.pug'])) // we need to watch for all pug files, but use only main of them
     .pipe(pug({
       pretty: true,
       locals: {
