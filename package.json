@@ -30,6 +30,7 @@
     "postcss": "^7.0.14",
     "postcss-discard-comments": "^4.0.1",
     "sass": "^1.16.1",
+    "stylelint": "^9.10.1",
     "stylelint-no-unsupported-browser-features": "^3.0.2",
     "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.5.1",
