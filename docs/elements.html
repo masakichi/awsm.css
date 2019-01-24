@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://igoradamenko.github.io/awsm.css/elements.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@igoradamenko">
-    <script>var themes = JSON.parse('[{"title":"default","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"}]');
+    <script>var themes = JSON.parse('[{"title":"default","prismTheme":""},{"title":"gondola","prismTheme":"tomorrow"},{"title":"mischka","prismTheme":"okaidia"}]');
       
       function getCSSFileName(theme) {
         return 'css/awsm_theme_' + theme + '.min.css';
@@ -59,6 +59,7 @@
             <select id="theme-changer" onchange="updateTheme(this.value)">
               <option value="default" selected>default</option>
               <option value="gondola">gondola</option>
+              <option value="mischka">mischka</option>
             </select>
           </li>
         </ul>
@@ -297,12 +298,6 @@
       <p>Igor Adamenko</p>
     </footer>
     <script>
-      var theme = localStorage.getItem('awsm-current-theme');
-      
-      if (theme && theme !== 'default') {
-        document.getElementById('theme-changer').value = theme;
-      }
-      
       function loadCSS(path, cb) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', path);
@@ -320,6 +315,12 @@
           localStorage.setItem('awsm-' + theme + '-theme', text);
           reloadTheme(theme);
         });
+      }
+      
+      var theme = localStorage.getItem('awsm-current-theme');
+      
+      if (theme && theme !== 'default') {
+        document.getElementById('theme-changer').value = theme;
       }
       
     </script>

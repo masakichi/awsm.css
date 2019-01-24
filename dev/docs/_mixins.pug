@@ -86,12 +86,6 @@ mixin page(name)
         p Igor Adamenko
 
       script.
-        var theme = localStorage.getItem('awsm-current-theme');
-
-        if (theme && theme !== 'default') {
-          document.getElementById('theme-changer').value = theme;
-        }
-
         function loadCSS(path, cb) {
           var xhr = new XMLHttpRequest();
           xhr.open('GET', path);
@@ -109,6 +103,12 @@ mixin page(name)
             localStorage.setItem('awsm-' + theme + '-theme', text);
             reloadTheme(theme);
           });
+        }
+
+        var theme = localStorage.getItem('awsm-current-theme');
+
+        if (theme && theme !== 'default') {
+          document.getElementById('theme-changer').value = theme;
         }
 
 mixin code-block

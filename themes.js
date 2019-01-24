@@ -30,6 +30,22 @@ const themes = [
     },
     prismTheme: 'tomorrow',
   },
+  {
+    // source: https://www.instagram.com/p/Be2qWo_FR2s/
+    title: 'mischka',
+    colors: {
+      primary: '#3A3B45',
+      secondary: '#D3D7DD',
+      stealthy: '#9197A3',
+      invisible: '#CFCED4',
+      selectionBase: '#C34138',
+      link: '#C34138',
+      linkHover: '#DB887B',
+      linkVisited: '#603237',
+      alarm: '#851F1B',
+    },
+    prismTheme: 'okaidia',
+  },
 ];
 
 themes.push(Object.assign({}, themes.find(x => x.title === 'default'), { title: '' })); // alias for default
