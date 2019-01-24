@@ -99,7 +99,7 @@ function getStylesTasks(themes) {
 
     function generateTask({ sealed }) {
       const filenameBase = theme ? `awsm_theme_${theme}` : 'awsm';
-      const filename = sealed ? `${filenameBase}_sealed` : filenameBase;
+      const filename = sealed ? [filenameBase, 'sealed'].join(theme ? '._' : '_') : filenameBase;
 
       function _task() {
         return gulp.src(input.scss)
