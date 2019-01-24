@@ -12,7 +12,6 @@ sass.compiler = sassCompiler;
 const pug = require('gulp-pug');
 const stylelint = require('gulp-stylelint');
 const postcss = require('gulp-postcss');
-const concat = require('gulp-concat');
 const autoprefixer = require('autoprefixer');
 const discardComments = require('postcss-discard-comments');
 const csso = require('gulp-csso');
@@ -25,7 +24,7 @@ const themes = require('./themes');
 const input = {
   pug: ['src/docs/**/!(_)*.pug'],
   html: ['src/docs/**/*.html', '!src/docs/includes/*.html'] ,
-  scss: 'src/scss/**/*.scss',
+  scss: 'src/scss/awsm.scss',
   images: 'src/docs/images/*'
 };
 
@@ -38,7 +37,7 @@ const output = {
 
 const stylesTasks = getStylesTasks(themes);
 
-gulp.task('markup', function() {
+gulp.task('markup', () => {
   return gulp.src(input.pug)
     .pipe(pug({
       pretty: true,
@@ -50,7 +49,7 @@ gulp.task('markup', function() {
     .pipe(bs.stream());
 });
 
-gulp.task('lint', function() {
+gulp.task('lint', () => {
   return gulp.src(input.scss)
     .pipe(stylelint({
         reporters: [
@@ -59,13 +58,13 @@ gulp.task('lint', function() {
       }));
 });
 
-gulp.task('images', function() {
+gulp.task('images', () => {
 	return gulp.src(input.images)
 		.pipe(gulp.dest(output.images))
 		.pipe(bs.stream());
 });
 
-gulp.task('server', function() {
+gulp.task('server', () => {
 	bs.init({
 		server: output.main,
 		open: false,
@@ -75,13 +74,13 @@ gulp.task('server', function() {
 	});
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
 	gulp.watch(input.pug, gulp.series('markup'));
 	gulp.watch(input.scss, gulp.series('lint', stylesTasks));
 	gulp.watch(input.images, gulp.series('images'));
 });
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
 	return del([output.main, output.dist]);
 });
 
@@ -90,38 +89,16 @@ gulp.task('build', gulp.series('clean', 'markup', 'lint', stylesTasks, 'images')
 gulp.task('default', gulp.series('build', gulp.parallel('watch', 'server')));
 
 function getStylesTasks(themes) {
-
-  function hexToRgb(hex) {
-    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    const longHex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(longHex);
-
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    } : null;
-  }
-
-  function camelToKebab(str) {
-    return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
-  }
-
-  function convertColorsObj(obj) {
-    return Object.keys(obj).reduce((acc, x) => { acc[camelToKebab(x)] = hexToRgb(obj[x]); return acc; }, {});
-  }
-
   return gulp.series(themes.map(x => task(x.title, convertColorsObj(x.colors))));
 
   function task(theme, colors) {
     const filename = theme ? `awsm_theme_${theme}` : 'awsm';
 
     return () => gulp.src(input.scss)
-      .pipe(concat(`${filename}.scss`))
       .pipe(sass({
         fiber: Fiber,
         functions: {
-          'theme-color($name)': function(name) {
+          'theme-color($name)': name => {
             name = name.getValue();
 
             if (!colors[name]) {
@@ -137,6 +114,7 @@ function getStylesTasks(themes) {
         autoprefixer({ browsers: ['> 1%'] }),
         discardComments()
       ]))
+      .pipe(rename(`${filename}.css`))
       .pipe(gulp.dest(output.css))
       .pipe(gulp.dest(output.dist))
 
@@ -146,5 +124,25 @@ function getStylesTasks(themes) {
       .pipe(gulp.dest(output.dist))
 
       .pipe(bs.stream());
+  }
+
+  function convertColorsObj(obj) {
+    return Object.keys(obj).reduce((acc, x) => ({ ...acc, [camelToKebab(x)]: hexToRgb(obj[x]) }), {});
+  }
+
+  function camelToKebab(str) {
+    return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+  }
+
+  function hexToRgb(hex) {
+    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    const longHex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(longHex);
+
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    } : null;
   }
 }
