@@ -425,8 +425,35 @@ form {
     display: block;
   }
 
+  label {
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
+  }
+
+  p {
+    label {
+      display: inline;
+
+      + label {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  legend:first-child + label {
+    margin-top: 0;
+  }
+
   select, input[type], textarea {
     margin-bottom: 1em;
+  }
+
+  input {
+    &[type=checkbox],
+    &[type=radio] {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -547,6 +574,12 @@ input {
     padding: .75em .5em;
     font-size: 12px; // otherwise browsers change only text size but not button size
     line-height: 1;
+  }
+
+  &[type=checkbox],
+  &[type=radio] {
+    margin: -.2em .75em 0 0;
+    vertical-align: middle;
   }
 }
 

@@ -347,8 +347,23 @@
 .awsm form select, .awsm form label{
   display:block;
 }
+.awsm form label:not(:first-child){
+  margin-top:1em;
+}
+.awsm form p label{
+  display:inline;
+}
+.awsm form p label + label{
+  margin-left:1em;
+}
+.awsm form legend:first-child + label{
+  margin-top:0;
+}
 .awsm form select, .awsm form input[type], .awsm form textarea{
   margin-bottom:1em;
+}
+.awsm form input[type=checkbox], .awsm form input[type=radio]{
+  margin-bottom:0;
 }
 
 .awsm fieldset{
@@ -510,6 +525,10 @@
   padding:0.75em 0.5em;
   font-size:12px;
   line-height:1;
+}
+.awsm input[type=checkbox], .awsm input[type=radio]{
+  margin:-0.2em 0.75em 0 0;
+  vertical-align:middle;
 }
 
 .awsm textarea{

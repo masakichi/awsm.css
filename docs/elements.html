@@ -230,22 +230,30 @@
           <h2><a id="forms" href="#forms" aria-hidden="true"></a>Forms
           </h2>
           <script>
-            function accept() {
+            function showOutput() {
               document.getElementById('output').style.display = 'block';
               return false;
             }
             
-            function onreset() {
+            function hideOutput(e) {
               document.getElementById('output').style.display = 'none';
             }
             
           </script>
-          <form onsubmit="accept(); return false;">
+          <form onsubmit="showOutput(); return false;" onreset="hideOutput(); return false;">
             <h4>Mars vacation program</h4>
             <fieldset>
               <legend>Be first</legend>
               <label for="full-name">Full Name</label>
               <input id="full-name" type="text" value="Elon Reeve Musk">
+              <p>Sex<br>
+                <label>
+                  <input type="radio" name="sex">Male
+                </label>
+                <label>
+                  <input type="radio" name="sex">Female
+                </label>
+              </p>
               <label for="date">Date of birth</label>
               <input id="date" type="date" value="1971-06-28">
               <label for="email">E-mail</label>
@@ -267,8 +275,11 @@
               <input id="eyes-color" type="color">
               <label for="password">Password</label>
               <input id="password" type="password" placeholder="Use strong password!">
+              <label>
+                <input type="checkbox">I pass my soul to SpaceX.
+              </label><br>
               <input type="submit" value="Submit">
-              <button type="reset" onclick="onreset()">Reset</button>
+              <button type="reset">Reset</button>
               <output id="output" style="display: none">
                 <p>Welcome on board!</p>
               </output>
