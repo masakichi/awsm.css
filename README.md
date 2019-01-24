@@ -62,10 +62,12 @@ If you install [npm package](https://www.npmjs.com/package/awsm.css), you can us
 const postcss = require('postcss');
 const awsm = require('awsm.css');
 
-postcss([awsm({ theme: 'tasman' })]).process('a {color: red}').then(result => {
+postcss([awsm({ theme: 'tasman', sealed: true })]).process('a {color: red}').then(result => {
   console.log(result.css); // awsm.css prepends your CSS 
 });
 ```
+
+For more information about options check out [docs](https://igoradamenko.github.io/awsm.css/download.html#options).
 
 ## Why?
 
