@@ -20,7 +20,7 @@ Current `master` points to v3 of the library.
 If you want to see or download previous versions, here they are:
 
 - [v2](https://igoradamenko.com/awsm.css/v2/)
-- [v1](https://igoradamenko.com/awsm.css/v2/)
+- [v1](https://igoradamenko.com/awsm.css/v1/)
 
 ## Usage
 
