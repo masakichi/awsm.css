@@ -188,7 +188,7 @@ h1 > a[href^="#"][id]:empty::before, h2 > a[href^="#"][id]:empty::before, h3 > a
 }
 
 h1{
-  font-size:2em;
+  font-size:2.5em;
 }
 
 h2{
