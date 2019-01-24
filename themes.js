@@ -78,6 +78,22 @@ const themes = [
     },
     prismTheme: '',
   },
+  {
+    // source: https://www.instagram.com/p/BUlk5_sFn1s/
+    title: 'tasman',
+    colors: {
+      primary: '#742E1E',
+      secondary: '#DAE4D8',
+      stealthy: '#9A5C37',
+      invisible: '#833D32',
+      selectionBase: '#1D2A3D',
+      link: '#418198',
+      linkHover: '#D68A41',
+      linkVisited: '#1D2A3D',
+      alarm: '#73BFBE',
+    },
+    prismTheme: '',
+  },
 ];
 
 themes.push(Object.assign({}, themes.find(x => x.title === 'white'), { title: '' })); // alias for white
