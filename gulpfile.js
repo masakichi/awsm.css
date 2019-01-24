@@ -9,8 +9,6 @@ const sass = require('gulp-sass');
 const sassCompiler = require('sass');
 sass.compiler = sassCompiler;
 
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
 const filter = require('gulp-filter');
 const pug = require('gulp-pug');
 const stylelint = require('gulp-stylelint');
@@ -39,24 +37,11 @@ const output = {
   images: 'docs/images'
 };
 
-const errorHandler = function(title) {
-	return plumber({
-		errorHandler: notify.onError(function(err) {
-			return {
-				title: title  + ' (' + err.plugin + ')',
-				message: err.message
-			};
-		})
-	});
-};
-
 const stylesTasks = getStylesTasks(themes);
 
 gulp.task('markup', function() {
 
   return gulp.src(input.pug)
-    .pipe(errorHandler('Markup'))
-
     .pipe(filter(['**/!(_)*.pug']))
     .pipe(pug({
       pretty: true,
@@ -70,8 +55,6 @@ gulp.task('markup', function() {
 
 gulp.task('lint', function() {
   return gulp.src(input.scss)
-    .pipe(errorHandler('Linter'))
-
     .pipe(stylelint({
         reporters: [
           { formatter: 'string', console: true }
@@ -81,8 +64,6 @@ gulp.task('lint', function() {
 
 gulp.task('images', function() {
 	return gulp.src(input.images)
-		.pipe(errorHandler('Images'))
-
 		.pipe(gulp.dest(output.images))
 		.pipe(bs.stream());
 });
@@ -139,8 +120,6 @@ function getStylesTasks(themes) {
     const filename = theme ? `awsm_theme_${theme}` : 'awsm';
 
     return () => gulp.src(input.scss)
-      .pipe(errorHandler('Styles'))
-
       .pipe(concat(`${filename}.scss`))
       .pipe(sass({
         fiber: Fiber,
