@@ -147,10 +147,12 @@
           <pre><code>const postcss = require('postcss');
 const awsm = require('awsm.css');
 
-postcss([awsm()]).process('a {color: red}').then(result =&gt; {
+postcss([awsm({ theme: 'tasman' })]).process('a {color: red}').then(result =&gt; {
   console.log(result.css); // awsm.css prepends your CSS 
 });</code></pre>
         </section>
+        <p>You can omit <code>theme</code> key in options argument. In this case default (white) theme will be loaded.
+        </p>
         <section>
           <h2><a id="license" href="#license" aria-hidden="true"></a>License
           </h2>

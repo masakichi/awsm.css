@@ -79,11 +79,19 @@ include _mixins.pug
       var code = 'const postcss = require(\'postcss\');\n' +
       'const awsm = require(\'awsm.css\');\n' +
       '\n' +
-      'postcss([awsm()]).process(\'a {color: red}\').then(result => {\n' +
+      'postcss([awsm({ theme: \'tasman\' })]).process(\'a {color: red}\').then(result => {\n' +
       '  console.log(result.css); // awsm.css prepends your CSS \n' +
       '});'
 
     +code-block= code
+
+  p
+    | You can omit
+    = ' '
+    code theme
+    = ' '
+    | key in options argument. In this case default (white) theme will be loaded.
+
 
   section
     +h("license") License
