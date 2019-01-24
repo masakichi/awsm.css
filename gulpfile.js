@@ -1,41 +1,47 @@
 /* requires */
 
-var gulp = require('gulp');
-var bs = require('browser-sync');
-var $ = require('gulp-load-plugins')({
-  replaceString: /^gulp(-|\.)|postcss-/,
-  pattern: ['*'],
-  rename: {
-    postcss: "postcss-base", // for difference between gulp-postcss & postcss
-    sass: "dart-sass",
-  }
-});
-var Fiber = require("fibers");
-var sass = require("gulp-sass");
-var sassCompiler = require("sass");
+const gulp = require('gulp');
+const bs = require('browser-sync');
+const del = require('del');
+
+const Fiber = require('fibers');
+const sass = require('gulp-sass');
+const sassCompiler = require('sass');
 sass.compiler = sassCompiler;
+
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const filter = require('gulp-filter');
+const pug = require('gulp-pug');
+const stylelint = require('gulp-stylelint');
+const postcss = require('gulp-postcss');
+const concat = require('gulp-concat');
+const autoprefixer = require('autoprefixer');
+const discardComments = require('postcss-discard-comments');
+const csso = require('gulp-csso');
+const rename = require('gulp-rename');
 
 const themes = require('./themes');
 
 /* paths */
 
-var input = {
+const input = {
   pug: ['src/docs/**/*.pug'],
   html: ['src/docs/**/*.html', '!src/docs/includes/*.html'] ,
   scss: 'src/scss/**/*.scss',
   images: 'src/docs/images/*'
 };
 
-var output = {
+const output = {
   dist: 'dist',
   main: 'docs',
   css: 'docs/css',
   images: 'docs/images'
 };
 
-var errorHandler = function(title) {
-	return $.plumber({
-		errorHandler: $.notify.onError(function(err) {
+const errorHandler = function(title) {
+	return plumber({
+		errorHandler: notify.onError(function(err) {
 			return {
 				title: title  + ' (' + err.plugin + ')',
 				message: err.message
@@ -51,8 +57,8 @@ gulp.task('markup', function() {
   return gulp.src(input.pug)
     .pipe(errorHandler('Markup'))
 
-    .pipe($.filter(['**/!(_)*.pug']))
-    .pipe($.pug({
+    .pipe(filter(['**/!(_)*.pug']))
+    .pipe(pug({
       pretty: true,
       locals: {
         themes: themes.map(({ title, prismTheme }) => ({ title, prismTheme })).filter(x => x.title),
@@ -66,7 +72,7 @@ gulp.task('lint', function() {
   return gulp.src(input.scss)
     .pipe(errorHandler('Linter'))
 
-    .pipe($.stylelint({
+    .pipe(stylelint({
         reporters: [
           { formatter: 'string', console: true }
         ]
@@ -85,7 +91,7 @@ gulp.task('server', function() {
 	bs.init({
 		server: output.main,
 		open: false,
-		browser: "browser",
+		browser: 'browser',
 		reloadOnRestart: true,
     notify: false
 	});
@@ -98,7 +104,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('clean', function() {
-	return $.del([output.main, output.dist]);
+	return del([output.main, output.dist]);
 });
 
 gulp.task('build', gulp.series('clean', 'markup', 'lint', stylesTasks, 'images'));
@@ -135,7 +141,7 @@ function getStylesTasks(themes) {
     return () => gulp.src(input.scss)
       .pipe(errorHandler('Styles'))
 
-      .pipe($.concat(`${filename}.scss`))
+      .pipe(concat(`${filename}.scss`))
       .pipe(sass({
         fiber: Fiber,
         functions: {
@@ -151,15 +157,15 @@ function getStylesTasks(themes) {
         }
       }))
 
-      .pipe($.postcss([
-        $.autoprefixer({ browsers: ["> 1%"] }),
-        $.discardComments()
+      .pipe(postcss([
+        autoprefixer({ browsers: ['> 1%'] }),
+        discardComments()
       ]))
       .pipe(gulp.dest(output.css))
       .pipe(gulp.dest(output.dist))
 
-      .pipe($.csso())
-      .pipe($.rename(`${filename}.min.css`))
+      .pipe(csso())
+      .pipe(rename(`${filename}.min.css`))
       .pipe(gulp.dest(output.css))
       .pipe(gulp.dest(output.dist))
 
