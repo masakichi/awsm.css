@@ -21,11 +21,34 @@ include _mixins.pug
     | .
 
   section
+    +h("themes") Themes
+
+    p Here is a list of all available themes:
+
+    ul
+      each theme, index in locals.themes
+        li
+          p
+            span(style=`background: linear-gradient(to right, ${theme.colors.primary} 0%, ${theme.colors.primary} 50%, ${theme.colors.secondary} 50%, ${theme.colors.secondary} 100%); display: inline-block; width: .75rem; height: .75rem; border-radius: 50%; border: 1px solid ${theme.colors.stealthy};`)
+            = ' '
+            | #{theme.title}
+            = ' ('
+            a(href=`css/awsm_theme_${theme.title}.css`) original
+            = ', '
+            a(href=`css/awsm_theme_${theme.title}.min.css`) min
+            = ')'
+            = index + 1 === locals.themes.length ? '.' : ';'
+
+  section
     +h("unpkg") unpkg
 
-    p Also you can use unpkg for link latest or exact version of library:
+    p You can use unpkg for link latest or exact version of the library:
 
     +code-block &lt;link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css"&gt;
+
+    p All themes are available there too:
+
+    +code-block &lt;link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm_theme_#{locals.themes[3].title}.min.css"&gt;
 
     p
       | Get more information about the unpkg
@@ -87,4 +110,11 @@ include _mixins.pug
         target="_blank"
       ) Anastasia Medvedeva
       = ' '
-      | for photo & video used in examples.
+      | for photo & video used in examples, and for themes
+      = ' '
+      a(
+        href="https://www.instagram.com/cake4am/",
+        title="@cake4am in Instagram",
+        target="_blank"
+      ) inspiration
+      | .

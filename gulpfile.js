@@ -43,7 +43,7 @@ gulp.task('markup', () => {
     .pipe(pug({
       pretty: true,
       locals: {
-        themes: themes.map(({ title, prismTheme }) => ({ title, prismTheme })).filter(x => x.title),
+        themes: themes.filter(x => x.title),
         NODE_ENV: process.env.NODE_ENV,
         version: require('./package.json').version,
       }

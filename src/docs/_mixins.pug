@@ -22,7 +22,7 @@ mixin page(name)
       script.
         #{locals.NODE_ENV === 'dev' ? 'localStorage.clear()' : ''};
         var version = '#{locals.version}';
-        var themes = JSON.parse('!{JSON.stringify(locals.themes)}');
+        var themes = JSON.parse('!{JSON.stringify(locals.themes.map(({ title, prismTheme }) => ({ title, prismTheme })))}');
         var storedVersion = localStorage.getItem('awsm-version');
 
         if (version !== storedVersion) {
