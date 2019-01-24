@@ -89,41 +89,47 @@ gulp.task('build', gulp.series('clean', 'markup', 'lint', stylesTasks, 'images')
 gulp.task('default', gulp.series('build', gulp.parallel('watch', 'server')));
 
 function getStylesTasks(themes) {
-  return gulp.series(themes.map(x => task(x.title, convertColorsObj(x.colors))));
+  return gulp.parallel(themes.map(x => task(x.title, convertColorsObj(x.colors))));
 
   function task(theme, colors) {
     const filename = theme ? `awsm_theme_${theme}` : 'awsm';
 
-    return () => gulp.src(input.scss)
-      .pipe(sass({
-        fiber: Fiber,
-        functions: {
-          'theme-color($name)': name => {
-            name = name.getValue();
+    function _task() {
+      return gulp.src(input.scss)
+        .pipe(sass({
+          fiber: Fiber,
+          functions: {
+            'theme-color($name)': name => {
+              name = name.getValue();
 
-            if (!colors[name]) {
-              throw new Error('There is no such color as ' + name);
-            }
+              if (!colors[name]) {
+                throw new Error(`There is no such color as ${name}`);
+              }
 
-            return new sassCompiler.types.Color(colors[name].r, colors[name].g, colors[name].b);
-          }
-        }
-      }))
+              return new sassCompiler.types.Color(...colors[name]);
+            },
+          },
+        }))
 
-      .pipe(postcss([
-        autoprefixer({ browsers: ['> 1%'] }),
-        discardComments()
-      ]))
-      .pipe(rename(`${filename}.css`))
-      .pipe(gulp.dest(output.css))
-      .pipe(gulp.dest(output.dist))
+        .pipe(postcss([
+          autoprefixer({ browsers: ['> 1%'] }),
+          discardComments()
+        ]))
+        .pipe(rename(`${filename}.css`))
+        .pipe(gulp.dest(output.css))
+        .pipe(gulp.dest(output.dist))
 
-      .pipe(csso())
-      .pipe(rename(`${filename}.min.css`))
-      .pipe(gulp.dest(output.css))
-      .pipe(gulp.dest(output.dist))
+        .pipe(csso())
+        .pipe(rename(`${filename}.min.css`))
+        .pipe(gulp.dest(output.css))
+        .pipe(gulp.dest(output.dist))
 
-      .pipe(bs.stream());
+        .pipe(bs.stream());
+    }
+
+    _task.displayName = `styles for ${theme || 'default'} theme`;
+
+    return _task;
   }
 
   function convertColorsObj(obj) {
@@ -139,10 +145,6 @@ function getStylesTasks(themes) {
     const longHex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(longHex);
 
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    } : null;
+    return result ? result.slice(1, 4).map(x => parseInt(x, 16)) : null;
   }
 }
