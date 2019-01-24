@@ -110,6 +110,22 @@ const themes = [
     },
     prismTheme: '',
   },
+  {
+    // source: https://www.instagram.com/p/BdbLpu6FAWd/
+    title: 'pearl-lusta',
+    colors: {
+      primary: '#411B33',
+      secondary: '#FBECDA',
+      stealthy: '#EECBD0',
+      invisible: '#EDDBD6',
+      selectionBase: '#A54A29',
+      link: '#A54A29',
+      linkHover: '#F6B731',
+      linkVisited: '#742B5A',
+      alarm: '#EFC44E',
+    },
+    prismTheme: 'solarizedlight',
+  },
 ];
 
 themes.push(Object.assign({}, themes.find(x => x.title === 'white'), { title: '' })); // alias for white
