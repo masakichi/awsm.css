@@ -115,6 +115,9 @@ function getStylesTasks(themes) {
 
                 return new sassCompiler.types.Color(...colors[name]);
               },
+              'get-version()': () => {
+                return new sassCompiler.types.String(require('./package').version.toString());
+              },
             },
           }))
 
