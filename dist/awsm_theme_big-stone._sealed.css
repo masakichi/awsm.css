@@ -397,8 +397,11 @@
 .awsm button:focus{
   border:1px solid #99c0c9;
 }
-.awsm button:focus, .awsm button:hover{
+.awsm button:hover{
   border:1px solid #99c0c9;
+}
+.awsm button:active{
+  background-color:#145e86;
 }
 
 .awsm select{
@@ -430,8 +433,11 @@
 .awsm select:focus{
   border:1px solid #99c0c9;
 }
-.awsm select:focus, .awsm select:hover{
+.awsm select:hover{
   border:1px solid #99c0c9;
+}
+.awsm select:active{
+  background-color:#145e86;
 }
 .awsm select:focus, .awsm select:hover{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(153, 192, 201)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
@@ -492,8 +498,11 @@
 .awsm input[type=submit]:focus, .awsm input[type=button]:focus, .awsm input[type=reset]:focus{
   border:1px solid #99c0c9;
 }
-.awsm input[type=submit]:focus, .awsm input[type=submit]:hover, .awsm input[type=button]:focus, .awsm input[type=button]:hover, .awsm input[type=reset]:focus, .awsm input[type=reset]:hover{
+.awsm input[type=submit]:hover, .awsm input[type=button]:hover, .awsm input[type=reset]:hover{
   border:1px solid #99c0c9;
+}
+.awsm input[type=submit]:active, .awsm input[type=button]:active, .awsm input[type=reset]:active{
+  background-color:#145e86;
 }
 .awsm input[type=color]{
   outline:none;
@@ -527,6 +536,9 @@
 .awsm input[type=color]:-ms-input-placeholder{
   color:#145e86;
 }
+.awsm input[type=color]:hover{
+  border:1px solid #99c0c9;
+}
 .awsm input[type=file]{
   outline:none;
   box-sizing:border-box;
@@ -554,8 +566,11 @@
 .awsm input[type=file]:focus{
   border:1px solid #99c0c9;
 }
-.awsm input[type=file]:focus, .awsm input[type=file]:hover{
+.awsm input[type=file]:hover{
   border:1px solid #99c0c9;
+}
+.awsm input[type=file]:active{
+  background-color:#145e86;
 }
 .awsm input[type=checkbox], .awsm input[type=radio]{
   margin:-0.2em 0.75em 0 0;

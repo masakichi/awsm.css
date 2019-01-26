@@ -507,8 +507,12 @@ legend {
   color: color('primary');
   cursor: pointer;
 
-  &:focus, &:hover {
+  &:hover {
     border: 1px solid color('primary');
+  }
+
+  &:active {
+    background-color: color('stealthy');
   }
 }
 
@@ -563,6 +567,10 @@ input {
     @include inputs;
 
     width: 6em;
+
+    &:hover {
+      border: 1px solid color('primary');
+    }
   }
 
   &[type=file] {
