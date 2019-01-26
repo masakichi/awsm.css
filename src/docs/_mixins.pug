@@ -21,7 +21,7 @@ mixin page(name)
 
       script.
         if (location.hostname === 'localhost') localStorage.clear();
-        var version = '#{locals.version}';
+        var version = '#{locals.libVersion}';
         var themes = JSON.parse('!{JSON.stringify(locals.themes.map(({ title, prismTheme }) => ({ title, prismTheme })))}');
         var storedVersion = localStorage.getItem('awsm-version');
 

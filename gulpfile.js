@@ -45,7 +45,7 @@ gulp.task('markup', () => {
       pretty: true,
       locals: {
         themes: themes.filter(x => x.title),
-        version: require('./package.json').version,
+        libVersion: require('./package.json').version,
       }
     }))
     .pipe(gulp.dest(output.main))
