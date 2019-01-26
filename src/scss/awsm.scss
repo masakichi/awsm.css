@@ -490,6 +490,8 @@ legend {
 
   display: block;
   width: 100%;
+  line-height: calc(2em - 1px * 2 - (.25em - 1px) * 2); // height - 2 * border - 2 * paddingHrz
+  appearance: none; // prevents strange appearances, such as date selector-like in safari ios
 
   @include placeholder {
     color: color('stealthy');

@@ -454,6 +454,10 @@ input[type=text], input[type=password], input[type^=date], input[type=email], in
   color:#411b33;
   display:block;
   width:100%;
+  line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
 }
 input[type=text]:focus, input[type=password]:focus, input[type^=date]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=month]:focus, input[type=week]:focus, input[type=url]:focus{
   border:1px solid #411b33;
@@ -548,6 +552,10 @@ textarea{
   color:#411b33;
   display:block;
   width:100%;
+  line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
   height:4.5em;
   resize:vertical;
   padding-top:0.5em;

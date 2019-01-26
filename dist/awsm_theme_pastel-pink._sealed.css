@@ -451,6 +451,10 @@
   color:#173957;
   display:block;
   width:100%;
+  line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
 }
 .awsm input[type=text]:focus, .awsm input[type=password]:focus, .awsm input[type^=date]:focus, .awsm input[type=email]:focus, .awsm input[type=number]:focus, .awsm input[type=search]:focus, .awsm input[type=tel]:focus, .awsm input[type=time]:focus, .awsm input[type=month]:focus, .awsm input[type=week]:focus, .awsm input[type=url]:focus{
   border:1px solid #173957;
@@ -545,6 +549,10 @@
   color:#173957;
   display:block;
   width:100%;
+  line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
   height:4.5em;
   resize:vertical;
   padding-top:0.5em;
