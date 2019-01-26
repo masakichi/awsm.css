@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.1] - 2018-01-26
+### Fixed
+- `input[type=date]` appearance in iOS Safari.
+
+### Changed
+- `input[type=color]` now looks more like input, not button. 
+
 ## [3.0.0 “Charizard”] - 2018-01-25
 ### Added
 - Themes support, and 7 themes out of the box!
