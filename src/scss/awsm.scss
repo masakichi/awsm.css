@@ -491,7 +491,7 @@ legend {
   display: block;
   width: 100%;
   line-height: calc(2em - 1px * 2 - (.25em - 1px) * 2); // height - 2 * border - 2 * paddingHrz
-  appearance: none; // prevents strange appearances, such as date selector-like in safari ios
+  appearance: none; // prevents strange appearances, such as date selector-like in ios safari
 
   @include placeholder {
     color: color('stealthy');
@@ -559,18 +559,16 @@ input {
     appearance: none;
   }
 
-  &[type=color],
+  &[type=color] {
+    @include inputs;
+
+    width: 6em;
+  }
+
   &[type=file] {
     @include buttons;
 
     display: block;
-  }
-
-  &[type=color] {
-    width: 4em;
-  }
-
-  &[type=file] {
     width: 100%;
     height: auto;
     padding: .75em .5em;

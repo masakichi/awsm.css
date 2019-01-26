@@ -498,7 +498,39 @@ input[type=submit]:focus, input[type=button]:focus, input[type=reset]:focus{
 input[type=submit]:focus, input[type=submit]:hover, input[type=button]:focus, input[type=button]:hover, input[type=reset]:focus, input[type=reset]:hover{
   border:1px solid #742e1e;
 }
-input[type=color], input[type=file]{
+input[type=color]{
+  outline:none;
+  box-sizing:border-box;
+  height:2em;
+  margin:0;
+  padding:calc(.25em - 1px) 0.5em;
+  font-family:inherit;
+  font-size:1em;
+  border:1px solid #9a5c37;
+  border-radius:2px;
+  background:#dae4d8;
+  color:#742e1e;
+  display:block;
+  width:100%;
+  line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
+  width:6em;
+}
+input[type=color]:focus{
+  border:1px solid #742e1e;
+}
+input[type=color]::-moz-placeholder{
+  color:#9a5c37;
+}
+input[type=color]::-webkit-input-placeholder{
+  color:#9a5c37;
+}
+input[type=color]:-ms-input-placeholder{
+  color:#9a5c37;
+}
+input[type=file]{
   outline:none;
   box-sizing:border-box;
   height:2em;
@@ -516,22 +548,17 @@ input[type=color], input[type=file]{
   color:#742e1e;
   cursor:pointer;
   display:block;
-}
-input[type=color]:focus, input[type=file]:focus{
-  border:1px solid #742e1e;
-}
-input[type=color]:focus, input[type=color]:hover, input[type=file]:focus, input[type=file]:hover{
-  border:1px solid #742e1e;
-}
-input[type=color]{
-  width:4em;
-}
-input[type=file]{
   width:100%;
   height:auto;
   padding:0.75em 0.5em;
   font-size:12px;
   line-height:1;
+}
+input[type=file]:focus{
+  border:1px solid #742e1e;
+}
+input[type=file]:focus, input[type=file]:hover{
+  border:1px solid #742e1e;
 }
 input[type=checkbox], input[type=radio]{
   margin:-0.2em 0.75em 0 0;
