@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [3.0.1] - 2018-01-26
 ### Fixed
-- `input[type=date]` appearance in iOS Safari.
+- `input[type=date]` appearance in iOS Safari (kudos to [@pepelsbey](https://github.com/pepelsbey)).
 
 ### Changed
 - `input[type=color]` now looks more like input, not button. 
@@ -98,6 +98,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 “Bulbasaur” - 2016-03-20
 
 
+[3.0.1]: https://github.com/igoradamenko/awsm.css/compare/v3.0.0...v3.0.1
 [3.0.0 “Charizard”]: https://github.com/igoradamenko/awsm.css/compare/v2.1.0...v3.0.0
 [2.1.0 “Charmeleon”]: https://github.com/igoradamenko/awsm.css/compare/v2.0.0...v2.1.0
 [2.0.0 “Charmander”]: https://github.com/igoradamenko/awsm.css/compare/v1.2.1...v2.0.0
