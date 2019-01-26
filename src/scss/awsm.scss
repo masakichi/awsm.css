@@ -103,6 +103,10 @@ ul, ol {
     + li {
       margin-top: .25em;
     }
+
+    > details {
+      margin: 0;
+    }
   }
 }
 

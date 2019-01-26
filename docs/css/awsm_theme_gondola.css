@@ -82,6 +82,9 @@ ul, ol{
 ul li + li, ol li + li{
   margin-top:0.25em;
 }
+ul li > details, ol li > details{
+  margin:0;
+}
 
 p{
   margin:1em 0;
