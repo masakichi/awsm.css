@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.3] - 2019-06-30
+### Fixed
+- Audit warnings (deps were updated).
+
+### Changed
+- Margins between content, footer and articles. 
+- Margins for details inside `ul` / `ol` (completely removed). 
+
 ## [3.0.2] - 2018-01-26
 ### Changed
 - Buttons have active color now. 
@@ -102,6 +110,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 “Bulbasaur” - 2016-03-20
 
 
+[3.0.3]: https://github.com/igoradamenko/awsm.css/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/igoradamenko/awsm.css/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/igoradamenko/awsm.css/compare/v3.0.0...v3.0.1
 [3.0.0 “Charizard”]: https://github.com/igoradamenko/awsm.css/compare/v2.1.0...v3.0.0
