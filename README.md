@@ -34,7 +34,7 @@ Also don't forget to add viewport info to the `<head>` for adaptation to mobile.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-It also available as the [npm package](https://www.npmjs.com/package/awsm.css), which supports [PostCSS API](#postcss-api).
+It's also available as the [npm package](https://www.npmjs.com/package/awsm.css), which supports [PostCSS API](#postcss-api).
 
 ## Download
 
