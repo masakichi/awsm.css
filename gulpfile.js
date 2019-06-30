@@ -122,7 +122,7 @@ function getStylesTasks(themes) {
           }))
 
           .pipe(postcss([
-            autoprefixer({ browsers: ['> 1%'] }),
+            autoprefixer(),
             discardComments(),
             ...(sealed ? [prefixWrap('.awsm')] : []),
           ]))

@@ -2,8 +2,7 @@
 	"plugins": [
 		"stylelint-no-unsupported-browser-features",
 		"stylelint-order",
-		"stylelint-scss",
-		"stylelint-selector-no-utility"
+		"stylelint-scss"
 	],
 	"rules": {
 		"at-rule-blacklist": ["extend"],
@@ -339,7 +338,6 @@
       "severity": "warning",
       "ignore": ["css-appearance", "flexbox", "css-hyphens", "calc", "viewport-units", "outline", "css-gradients", "css-resize"]
     }],
-		"primer/selector-no-utility": true,
 		"property-case": "lower",
 		"property-no-vendor-prefix": true,
 		"rule-empty-line-before": ["always-multi-line", {
