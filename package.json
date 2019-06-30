@@ -10,7 +10,6 @@
     "clean": "gulp clean",
     "dev": "gulp",
     "lint": "gulp lint",
-    "test": "npm run build",
     "precommit": "lint-staged",
     "postcommit": "git update-index --again",
     "prepublishOnly": "npm run build"
