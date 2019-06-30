@@ -91,32 +91,38 @@ And I use the lib for [my own website](https://igoradamenko.com).
 
 If you use the library in your project, feel free to [open issue](https://github.com/igoradamenko/awsm.css/issues/new) and we will add your url in this list :)
 
-### v2
+### v3
 
-Short list of projects that use v2 of the library:
+Short list of projects that use v3 of the library:
 
 - [React Coroutine](https://react-coroutine.js.org). Documentation.
+- [Minicurso PWA](https://fziliotti.github.io/minicursopwa/). Course page.
+- [Alexander Pushkov](https://notpushk.in). CV. 
+- [RLI News](https://rli-news.github.io). Blog.
+- [harshp.com](https://harshp.com). Blog.
+- [Markus Ritzmann](https://markusritzmann.ch). Homepage.
+- [Image Search Abstraction Layer](https://img-search-ms-343dev.herokuapp.com/). Demo.
+- [File Metadata Microservice](https://file-metadata-ms-343dev.herokuapp.com/). Demo.
+- [Timestamp Microservice](https://timestamp-ms-343dev.herokuapp.com/). Demo.
+- [Isomorpic Rendering](https://codient.herokuapp.com/). Demo.
+- [and so on..](https://github.com/search?p=1&q="awsm.css"&type=Code&utf8=✓)
+
+### v2
+
+List of projects that use v2 of the library:
+
 - [addmeto](http://addmeto.cc/). Telegram feed.
 - [Yandex](http://tele.ga/yandex/). Telegram feed.
 - [toberta](http://tobetra.com/). Telegram feed.
 - [tele.ga](http://tele.ga/). Service for exporting Telegram feed to blog.
-- [tgram](https://github.com/recoilme/tgram). Medium clone.
 - [botan](https://botan.glitch.me). Documentation.
 - [A.Ulizko](http://ulizko.com). Blog.
 - [anatta](https://wordpress.org/themes/anatta/). WordPress theme. 
-- [Alexander Pushkov](https://notpushk.in). CV.
 - [Masashi Yoshikawa](https://masashi-y.github.io/). CV.
-- [Markus Ritzmann](https://markusritzmann.ch). Homepage.
-- [exploit.tokyo](http://me.exploit.tokyo). Homepage.
-- [kazehara.com](http://kazehara.com). Homepage.
+- [kazehara.github.io](https://kazehara.github.io). CV.
 - [MONETOCHKA SIGNS](https://hgenru.github.io/monetochka-signs/). Fun.
 - [illustrarium.github.io](https://illustrarium.github.io). Vacancy.
 - [Laravel news](http://laravel-news-demo.lith.pw). Demo.
-- [Isomorpic Rendering](https://codient.herokuapp.com/). Demo.
-- [Image Search Abstraction Layer](https://img-search-ms-343dev.herokuapp.com/). Demo.
-- [File Metadata Microservice](https://file-metadata-ms-343dev.herokuapp.com/). Demo.
-- [Timestamp Microservice](https://timestamp-ms-343dev.herokuapp.com/). Demo.
-- [and so on..](https://github.com/search?p=1&q="awsm.css"&type=Code&utf8=✓)
 
 ### v1
 
