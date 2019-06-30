@@ -1,6 +1,6 @@
 # awsm.css
 
-[![GitHub release](https://img.shields.io/github/release/igoradamenko/awsm.css.svg)](https://github.com/igoradamenko/awsm.css/releases)
+[![npm version](https://img.shields.io/npm/v/awsm.css.svg)](https://www.npmjs.com/package/awsm.css)
 
 **awsm.css** is a simple CSS library for [semantic HTML](http://www.w3schools.com/html/html5_semantic_elements.asp), which doesn't require classes, ids, attributes, etc.
 
