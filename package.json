@@ -64,5 +64,7 @@
     },
     "renderer": "silent"
   },
-  "browserslist": ["> 1%"]
+  "browserslist": [
+    "> 1%"
+  ]
 }
