@@ -95,6 +95,7 @@ If you use the library in your project, feel free to [open issue](https://github
 Short list of projects that use v3 of the library:
 
 - [React Coroutine](https://react-coroutine.js.org). Documentation.
+- [Anatoly Gulyaev](https://kaneru.me). Blog.
 - [Minicurso PWA](https://fziliotti.github.io/minicursopwa/). Course page.
 - [Alexander Pushkov](https://notpushk.in). CV. 
 - [RLI News](https://rli-news.github.io). Blog.
@@ -116,7 +117,8 @@ List of projects that use v2 of the library:
 - [tele.ga](http://tele.ga/). Service for exporting Telegram feed to blog.
 - [botan](https://botan.glitch.me). Documentation.
 - [A.Ulizko](http://ulizko.com). Blog.
-- [anatta](https://wordpress.org/themes/anatta/). WordPress theme. 
+- [anatta](https://wordpress.org/themes/anatta/). WordPress theme.
+- [Kostantin](https://konstantin.io). Blog. 
 - [Masashi Yoshikawa](https://masashi-y.github.io/). CV.
 - [kazehara.github.io](https://kazehara.github.io). CV.
 - [MONETOCHKA SIGNS](https://hgenru.github.io/monetochka-signs/). Fun.
