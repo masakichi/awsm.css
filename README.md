@@ -125,12 +125,6 @@ List of projects that use v2 of the library:
 - [illustrarium.github.io](https://illustrarium.github.io). Vacancy.
 - [Laravel news](http://laravel-news-demo.lith.pw). Demo.
 
-### v1
-
-Very short list of projects that use v1 :-)
-
-- [PokemonGO](https://igoradamenko.github.io/pokemon-go/). Simple page with a map.
-
 ## Got questions? Any troubles?
 
 If you have questions or general suggestions, don't hesitate to submit a new [GitHub issue](https://github.com/igoradamenko/awsm.css/issues/new).
