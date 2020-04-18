@@ -535,7 +535,7 @@ select {
   background-position: top 55% right .35em;
   background-size: .5em;
   background-repeat: no-repeat;
-  appearance: button;
+  appearance: none;
 
   @include select-background-image(color('stealthy'));
 

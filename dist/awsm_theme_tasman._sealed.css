@@ -428,9 +428,9 @@
   background-position:top 55% right 0.35em;
   background-size:0.5em;
   background-repeat:no-repeat;
-  -webkit-appearance:button;
-     -moz-appearance:button;
-          appearance:button;
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(154, 92, 55)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
 }
 .awsm select:focus{
