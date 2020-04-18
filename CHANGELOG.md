@@ -4,9 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.5] - 2020-04-18
+### Fixed
+- `select` appearance (#95).
+- Audit warnings (package-lock was updated).
+
+
 ## [3.0.4] - 2019-09-01
 ### Fixed
 - Audit warnings (package-lock was updated).
+
 
 ## [3.0.3] - 2019-06-30
 ### Fixed
@@ -16,9 +23,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Margins between content, footer and articles. 
 - Margins for details inside `ul` / `ol` (completely removed). 
 
+
 ## [3.0.2] - 2018-01-26
 ### Changed
 - Buttons have active color now. 
+
 
 ## [3.0.1] - 2018-01-26
 ### Fixed
@@ -26,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - `input[type=color]` now looks more like input, not button. 
+
 
 ## [3.0.0 “Charizard”] - 2018-01-25
 ### Added
@@ -53,6 +63,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Theme changing on demo page.
 - Node 6 support was removed.
 
+
 ## [2.1.0 “Charmeleon”] - 2017-01-14
 ### Added
 - Rems for font size & page width.
@@ -62,6 +73,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Code block right border size.
+
 
 ## [2.0.0 “Charmander”] - 2017-01-07
 ### Added
@@ -91,10 +103,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Forms support.
 - Useless examples. 
 
+
 ## [1.2.1] - 2016-05-09
 ### Changed
 - Move to Gulp 4, rewrite gulpfile using plumber & gulp-add-plugins.
 - Reduce code blocks font size.
+
 
 ## [1.2.0 “Venusaur”] - 2016-04-03
 ### Added
@@ -104,6 +118,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Non-input element in a form does not have a margin-bottom.
 - Checkbox element inside of label are blocks.
 
+
 ## [1.1.0 “Ivysaur”] - 2016-03-24
 ### Added
 - Responsive tables and forms.
@@ -111,9 +126,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - iOS buttons/inputs appearance.
 
+
 ## 1.0.0 “Bulbasaur” - 2016-03-20
 
 
+[3.0.4]: https://github.com/igoradamenko/awsm.css/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/igoradamenko/awsm.css/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/igoradamenko/awsm.css/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/igoradamenko/awsm.css/compare/v3.0.0...v3.0.1
