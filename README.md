@@ -98,8 +98,6 @@ Short list of projects that use v3 of the library:
 - [Anatoly Gulyaev](https://kaneru.me). Blog.
 - [Minicurso PWA](https://fziliotti.github.io/minicursopwa/). Course page.
 - [Alexander Pushkov](https://notpushk.in). CV. 
-- [RLI News](https://rli-news.github.io). Blog.
-- [harshp.com](https://harshp.com). Blog.
 - [Markus Ritzmann](https://markusritzmann.ch). Homepage.
 - [Image Search Abstraction Layer](https://img-search-ms-343dev.herokuapp.com/). Demo.
 - [File Metadata Microservice](https://file-metadata-ms-343dev.herokuapp.com/). Demo.
@@ -120,10 +118,8 @@ List of projects that use v2 of the library:
 - [anatta](https://wordpress.org/themes/anatta/). WordPress theme.
 - [Kostantin](https://konstantin.io). Blog. 
 - [Masashi Yoshikawa](https://masashi-y.github.io/). CV.
-- [kazehara.github.io](https://kazehara.github.io). CV.
 - [MONETOCHKA SIGNS](https://hgenru.github.io/monetochka-signs/). Fun.
 - [illustrarium.github.io](https://illustrarium.github.io). Vacancy.
-- [Laravel news](http://laravel-news-demo.lith.pw). Demo.
 
 ## Got questions? Any troubles?
 
