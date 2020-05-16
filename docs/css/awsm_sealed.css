@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * awsm.css v3.0.5 (https://igoradamenko.github.io/awsm.css/)
+ * awsm.css v3.0.6 (https://igoradamenko.github.io/awsm.css/)
  * Copyright 2015 Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)
  * Licensed under MIT (https://github.com/igoradamenko/awsm.css/blob/master/LICENSE.md)
  */
@@ -400,11 +400,15 @@
 .awsm button:focus{
   border:1px solid black;
 }
-.awsm button:hover{
+.awsm button:not([disabled]):hover{
   border:1px solid black;
 }
 .awsm button:active{
   background-color:#aaaaaa;
+}
+.awsm button[disabled]{
+  color:#aaaaaa;
+  cursor:not-allowed;
 }
 
 .awsm select{
@@ -436,11 +440,15 @@
 .awsm select:focus{
   border:1px solid black;
 }
-.awsm select:hover{
+.awsm select:not([disabled]):hover{
   border:1px solid black;
 }
 .awsm select:active{
   background-color:#aaaaaa;
+}
+.awsm select[disabled]{
+  color:#aaaaaa;
+  cursor:not-allowed;
 }
 .awsm select:focus, .awsm select:hover{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(0, 0, 0)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
@@ -501,11 +509,15 @@
 .awsm input[type=submit]:focus, .awsm input[type=button]:focus, .awsm input[type=reset]:focus{
   border:1px solid black;
 }
-.awsm input[type=submit]:hover, .awsm input[type=button]:hover, .awsm input[type=reset]:hover{
+.awsm input[type=submit]:not([disabled]):hover, .awsm input[type=button]:not([disabled]):hover, .awsm input[type=reset]:not([disabled]):hover{
   border:1px solid black;
 }
 .awsm input[type=submit]:active, .awsm input[type=button]:active, .awsm input[type=reset]:active{
   background-color:#aaaaaa;
+}
+.awsm input[type=submit][disabled], .awsm input[type=button][disabled], .awsm input[type=reset][disabled]{
+  color:#aaaaaa;
+  cursor:not-allowed;
 }
 .awsm input[type=color]{
   outline:none;
@@ -569,11 +581,15 @@
 .awsm input[type=file]:focus{
   border:1px solid black;
 }
-.awsm input[type=file]:hover{
+.awsm input[type=file]:not([disabled]):hover{
   border:1px solid black;
 }
 .awsm input[type=file]:active{
   background-color:#aaaaaa;
+}
+.awsm input[type=file][disabled]{
+  color:#aaaaaa;
+  cursor:not-allowed;
 }
 .awsm input[type=checkbox], .awsm input[type=radio]{
   margin:-0.2em 0.75em 0 0;

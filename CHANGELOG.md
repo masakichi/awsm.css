@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.6] - 2020-06-16
+### Fixed
+- `disabled` styles for buttons (#99 by @swissmanu).
+
+
 ## [3.0.5] - 2020-04-18
 ### Fixed
 - `select` appearance (#95).

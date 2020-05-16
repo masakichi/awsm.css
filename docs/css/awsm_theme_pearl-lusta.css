@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * awsm.css v3.0.5 (https://igoradamenko.github.io/awsm.css/)
+ * awsm.css v3.0.6 (https://igoradamenko.github.io/awsm.css/)
  * Copyright 2015 Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)
  * Licensed under MIT (https://github.com/igoradamenko/awsm.css/blob/master/LICENSE.md)
  */
@@ -403,11 +403,15 @@ button{
 button:focus{
   border:1px solid #411b33;
 }
-button:hover{
+button:not([disabled]):hover{
   border:1px solid #411b33;
 }
 button:active{
   background-color:#dcafb5;
+}
+button[disabled]{
+  color:#dcafb5;
+  cursor:not-allowed;
 }
 
 select{
@@ -439,11 +443,15 @@ select{
 select:focus{
   border:1px solid #411b33;
 }
-select:hover{
+select:not([disabled]):hover{
   border:1px solid #411b33;
 }
 select:active{
   background-color:#dcafb5;
+}
+select[disabled]{
+  color:#dcafb5;
+  cursor:not-allowed;
 }
 select:focus, select:hover{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(65, 27, 51)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
@@ -504,11 +512,15 @@ input[type=submit], input[type=button], input[type=reset]{
 input[type=submit]:focus, input[type=button]:focus, input[type=reset]:focus{
   border:1px solid #411b33;
 }
-input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover{
+input[type=submit]:not([disabled]):hover, input[type=button]:not([disabled]):hover, input[type=reset]:not([disabled]):hover{
   border:1px solid #411b33;
 }
 input[type=submit]:active, input[type=button]:active, input[type=reset]:active{
   background-color:#dcafb5;
+}
+input[type=submit][disabled], input[type=button][disabled], input[type=reset][disabled]{
+  color:#dcafb5;
+  cursor:not-allowed;
 }
 input[type=color]{
   outline:none;
@@ -572,11 +584,15 @@ input[type=file]{
 input[type=file]:focus{
   border:1px solid #411b33;
 }
-input[type=file]:hover{
+input[type=file]:not([disabled]):hover{
   border:1px solid #411b33;
 }
 input[type=file]:active{
   background-color:#dcafb5;
+}
+input[type=file][disabled]{
+  color:#dcafb5;
+  cursor:not-allowed;
 }
 input[type=checkbox], input[type=radio]{
   margin:-0.2em 0.75em 0 0;
