@@ -232,15 +232,16 @@
           <script>
             function showOutput() {
               document.getElementById('output').style.display = 'block';
-              return false;
+              document.getElementById('reset').disabled = false;
             }
             
-            function hideOutput(e) {
+            function hideOutput() {
               document.getElementById('output').style.display = 'none';
+              document.getElementById('reset').disabled = true;
             }
             
           </script>
-          <form onsubmit="showOutput(); return false;" onreset="hideOutput(); return false;">
+          <form onsubmit="showOutput(); return false;" onreset="hideOutput()">
             <h4>Mars vacation program</h4>
             <fieldset>
               <legend>Be first</legend>
@@ -272,14 +273,14 @@
               <input id="photo" type="file">
               <label for="eyes-color">Eyes color <small>(just kidding)</small>
               </label>
-              <input id="eyes-color" type="color">
+              <input id="eyes-color" type="color" value="#000000">
               <label for="password">Password</label>
               <input id="password" type="password" placeholder="Use strong password!">
               <label>
                 <input type="checkbox" checked>I pass my soul to SpaceX.
               </label><br>
               <input type="submit" value="Submit">
-              <button type="reset">Reset</button>
+              <button id="reset" type="reset" disabled>Reset</button>
               <output id="output" style="display: none">
                 <p>Welcome on board!</p>
               </output>

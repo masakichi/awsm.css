@@ -218,14 +218,15 @@ include _mixins.pug
     script.
       function showOutput() {
         document.getElementById('output').style.display = 'block';
-        return false;
+        document.getElementById('reset').disabled = false;
       }
 
-      function hideOutput(e) {
+      function hideOutput() {
         document.getElementById('output').style.display = 'none';
+        document.getElementById('reset').disabled = true;
       }
 
-    form(onsubmit="showOutput(); return false;", onreset="hideOutput(); return false;")
+    form(onsubmit="showOutput(); return false;", onreset="hideOutput()")
       h4 Mars vacation program
 
       fieldset
@@ -272,7 +273,7 @@ include _mixins.pug
           | Eyes color
           = ' '
           small (just kidding)
-        input#eyes-color(type="color")
+        input#eyes-color(type="color", value="#000000")
 
         label(for="password") Password
         input#password(type="password", placeholder="Use strong password!")
@@ -284,7 +285,7 @@ include _mixins.pug
         br
 
         input(type="submit", value="Submit")
-        button(type="reset", disabled) Reset
+        button#reset(type="reset", disabled) Reset
 
         output#output(style="display: none")
           p Welcome on board!
