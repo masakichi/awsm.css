@@ -135,6 +135,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 “Bulbasaur” - 2016-03-20
 
 
+[3.0.6]: https://github.com/igoradamenko/awsm.css/compare/v3.0.5...v3.0.6
+[3.0.5]: https://github.com/igoradamenko/awsm.css/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/igoradamenko/awsm.css/compare/v3.0.3...v3.0.4
 [3.0.3]: https://github.com/igoradamenko/awsm.css/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/igoradamenko/awsm.css/compare/v3.0.1...v3.0.2
