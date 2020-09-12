@@ -6,7 +6,6 @@ const del = require('del');
 
 const sass = require('gulp-sass');
 const sassCompiler = require('sass');
-const Fiber = require('fibers');
 sass.compiler = sassCompiler;
 
 const pug = require('gulp-pug');
@@ -104,7 +103,6 @@ function getStylesTasks(themes) {
       function _task() {
         return gulp.src(input.scss)
           .pipe(sass({
-            fiber: Fiber,
             functions: {
               'theme-color($name)': name => {
                 name = name.getValue();
