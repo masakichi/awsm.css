@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.7] - 2020-09-12
+### Fixed
+- Excess margin on last item of nav lists (#102 by @ethan-ou).
+
+
 ## [3.0.6] - 2020-06-16
 ### Fixed
 - `disabled` styles for buttons (#99 by @swissmanu).
@@ -135,6 +140,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 “Bulbasaur” - 2016-03-20
 
 
+[3.0.7]: https://github.com/igoradamenko/awsm.css/compare/v3.0.6...v3.0.7
 [3.0.6]: https://github.com/igoradamenko/awsm.css/compare/v3.0.5...v3.0.6
 [3.0.5]: https://github.com/igoradamenko/awsm.css/compare/v3.0.4...v3.0.5
 [3.0.4]: https://github.com/igoradamenko/awsm.css/compare/v3.0.3...v3.0.4

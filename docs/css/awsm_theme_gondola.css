@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * awsm.css v3.0.6 (https://igoradamenko.github.io/awsm.css/)
+ * awsm.css v3.0.7 (https://igoradamenko.github.io/awsm.css/)
  * Copyright 2015 Igor Adamenko <mail@igoradamenko.com> (https://igoradamenko.com)
  * Licensed under MIT (https://github.com/igoradamenko/awsm.css/blob/master/LICENSE.md)
  */
@@ -66,6 +66,9 @@ nav li{
   display:inline-block;
   margin-right:1em;
   margin-bottom:0.25em;
+}
+nav li:last-child{
+  margin-right:0;
 }
 nav a:visited{
   color:#874671;
