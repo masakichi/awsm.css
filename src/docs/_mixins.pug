@@ -10,6 +10,7 @@ mixin page(name)
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
       title= info.pageTitle ? info.pageTitle : info.title
       link(rel="stylesheet", href="css/awsm.min.css", id="theme")
+      link(rel="stylesheet", id="preload-theme")
       link(rel="stylesheet", id="prism-theme")
 
       //- Stuff for social networks
@@ -34,23 +35,34 @@ mixin page(name)
         reloadTheme(currentTheme);
 
         function reloadTheme(theme) {
-          updateThemeHref(getThemePath(theme));
+          var themeNode = document.getElementById('theme');
+          var themePreloadNode = document.getElementById('preload-theme');
+
+          themePreloadNode.onload = onPreloadThemeLoad.bind(null, theme);
+          themePreloadNode.setAttribute('href', getThemePath(theme));
 
           if (window.isPrismThemeShouldBeLoaded) {
             var prismThemeNode = document.getElementById('prism-theme');
             prismThemeNode.setAttribute('href', getPrismThemePath(theme));
           }
-
-          localStorage.setItem('awsm-current-theme', theme);
         }
 
-        function updateThemeHref(href) {
+        function onPreloadThemeLoad(theme) {
           var themeNode = document.getElementById('theme');
-          if (!href) {
-            themeNode.removeAttribute('href');
-          } else {
-            themeNode.setAttribute('href', href);
-          }
+          var themePreloadNode = document.getElementById('preload-theme');
+          
+          themePreloadNode.onload = null;
+
+          themeNode.remove();
+          themePreloadNode.setAttribute('id', 'theme');
+          themeNode = themePreloadNode;
+
+          var themePreloadNodeNew = document.createElement('link');
+          themePreloadNodeNew.setAttribute('id', 'preload-theme');
+          themePreloadNodeNew.setAttribute('rel', 'stylesheet');
+
+          themeNode.insertAdjacentElement('afterend', themePreloadNodeNew);
+          localStorage.setItem('awsm-current-theme', theme);
         }
 
         function getThemePath(theme) {

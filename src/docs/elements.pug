@@ -368,8 +368,15 @@ include _mixins.pug
     var themeChanger = document.getElementById('theme-changer');
 
     function toggle() {
-      updateThemeHref(isCSSEnabled ? null : currentThemeHref)
-      toggler.textContent = isCSSEnabled ? 'Enable CSS' : 'Disable CSS';
+      var themeNode = document.getElementById('theme');
+      
+      if (isCSSEnabled) {
+        themeNode.removeAttribute('href');
+        toggler.textContent = 'Enable CSS';
+      } else {
+        themeNode.setAttribute('href', currentThemeHref);
+        toggler.textContent = 'Disable CSS';
+      }
 
       isCSSEnabled = !isCSSEnabled;
     };
