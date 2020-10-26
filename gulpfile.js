@@ -38,12 +38,18 @@ const output = {
 const stylesTasks = getStylesTasks(themes);
 
 gulp.task('markup', () => {
+  const availableThemes = themes.filter(x => x.title);
+
   return gulp.src(input.pug)
     .pipe(filter(['**/!(_)*.pug'])) // we need to watch for all pug files, but use only main of them
     .pipe(pug({
       pretty: true,
       locals: {
-        themes: themes.filter(x => x.title),
+        themes: availableThemes,
+        themeToPrismTheme: availableThemes.reduce((acc, { title, prismTheme }) => {
+          acc[title] = prismTheme;
+          return acc;
+        }, {}),
         libVersion: require('./package.json').version,
       }
     }))

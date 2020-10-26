@@ -359,29 +359,39 @@ include _mixins.pug
         = ' '
         a(href="https://github.com/igoradamenko/awsm.css#examples") GitHub
 
-  #toggler Disable CSS
+  button#toggler Disable CSS
 
   script.
-    var stylesheetNode = document.querySelector('link[rel="stylesheet"]');
-    var awsmPath = stylesheetNode.href;
+    var currentThemeHref;
     var toggler = document.getElementById('toggler');
     var togglerNotice = document.getElementById('togglerNotice');
+    var themeChanger = document.getElementById('theme-changer');
 
     function toggle() {
-      stylesheetNode.href = stylesheetNode.href === awsmPath ? '' : awsmPath;
-      toggler.textContent = toggler.textContent === 'Disable CSS' ? 'Enable CSS' : 'Disable CSS';
+      updateThemeHref(isCSSEnabled ? null : currentThemeHref)
+      toggler.textContent = isCSSEnabled ? 'Enable CSS' : 'Disable CSS';
+
+      isCSSEnabled = !isCSSEnabled;
     };
 
     function toggleToggler() {
       if (toggler.style.display !== 'block') {
+        isCSSEnabled = true;
+        currentThemeHref = document.getElementById('theme').getAttribute('href')
+
         toggler.addEventListener('click', toggle);
 
         toggler.style.display = 'block';
         togglerNotice.style.display = 'inline';
+        themeChanger.setAttribute('disabled', true);
+        
         toggle();
       } else {
+        updateThemeHref(currentThemeHref);
+
         toggler.style.display = 'none';
         togglerNotice.style.display = 'none';
+        themeChanger.removeAttribute('disabled');
       }
     }
 
@@ -397,13 +407,4 @@ include _mixins.pug
       top: 50%;
       right: 1em;
       transform: translateY(-50%);
-      padding: .25em .5em;
-      border: 1px solid #afafaf;
-      border-radius: 3px;
-      background: #fafafa;
-      cursor: pointer;
-    }
-
-    #toggler:hover {
-      background: #bebebe;
     }

@@ -92,22 +92,7 @@ include _mixins.pug
   script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/components/prism-scss.min.js")
   script.
-    function appendPrismCSS(theme) {
-      var url = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism' + (theme ? ('-' + theme) : '') + '.min.css';
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = url;
-      document.querySelector('head').appendChild(link);
-    }
-
-    var theme = localStorage.getItem('awsm-current-theme');
-
-    if (theme) {
-      var prismTheme = themes.find(x => x.title === theme).prismTheme;
-      appendPrismCSS(prismTheme);
-    } else {
-      appendPrismCSS();
-    }
+    window.isPrismThemeShouldBeLoaded = true;
 
   script(src="https://unpkg.com/@nishanths/zoom.js@2.0.1/dist/zoom.min.js")
   link(rel="stylesheet", href="https://unpkg.com/@nishanths/zoom.js@2.0.1/css/zoom.css")
