@@ -548,8 +548,10 @@ select {
 
   @include select-background-image(color('stealthy'));
 
-  &:focus, &:hover {
-    @include select-background-image(color('primary'));
+  &:not([disabled]) {
+    &:focus, &:hover {
+      @include select-background-image(color('primary'));
+    }
   }
 }
 

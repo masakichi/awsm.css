@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Fixed
+- Disabled styles for `select` tag.
+
+
 ## [3.0.7] - 2020-09-12
 ### Fixed
 - Excess margin on last item of nav lists (#102 by @ethan-ou).
