@@ -184,6 +184,18 @@
               </p>
             </dd>
           </dl>
+          <section>
+            <h3><a id="dark-mode" href="#dark-mode" aria-hidden="true"></a>Dark Mode Support
+            </h3>
+            <p>If you need a “Dark Mode” support, just inject two CSS files and use media queries:</p>
+            <pre><code>&lt;!-- CSS for users with dark mode --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;awsm_theme_big-stone.min.css&quot; media=&quot;(prefers-color-scheme: dark)&quot;&gt;
+
+&lt;!-- CSS for users without dark mode --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;awsm_theme_pearl-lusta.min.css&quot; media=&quot;(prefers-color-scheme: no-preference), (prefers-color-scheme: light)&quot;&gt;</code></pre>
+            <p>(See <a href="https://github.com/igoradamenko/awsm.css/issues/103">#103</a> for other solutions.)
+            </p>
+          </section>
         </section>
         <section>
           <h2><a id="unpkg" href="#unpkg" aria-hidden="true"></a>unpkg

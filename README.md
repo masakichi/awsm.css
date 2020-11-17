@@ -41,12 +41,6 @@ Download the latest version here — [awsm.css](https://raw.githubusercontent.co
 
 Minified — [awsm.min.css](https://raw.githubusercontent.com/igoradamenko/awsm.css/master/dist/awsm.min.css) (≈3 Kb after gzip).
 
-## Themes
-
-Current version contains some themes that you can use. 
-
-Check them on [the demo page](https://igoradamenko.github.io/awsm.css/download.html).
-
 ### unpkg
 
 Also you can use unpkg for link latest or exact version of library:
@@ -71,6 +65,26 @@ postcss([awsm({ theme: 'tasman', sealed: true })]).process('a {color: red}').the
 ```
 
 For more information about options check out [docs](https://igoradamenko.github.io/awsm.css/download.html#options).
+
+## Themes
+
+Current version contains some themes that you can use. 
+
+Check them on [the demo page](https://igoradamenko.github.io/awsm.css/download.html).
+
+### Dark Mode Support
+
+If you need a “Dark Mode” support, just inject two CSS files and use media queries:
+
+```html
+<!-- CSS for users with dark mode -->
+<link rel="stylesheet" href="awsm_theme_big-stone.min.css" media="(prefers-color-scheme: dark)">
+
+<!-- CSS for users without dark mode -->
+<link rel="stylesheet" href="awsm_theme_pearl-lusta.min.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+```
+
+(See [#103](https://github.com/igoradamenko/awsm.css/issues/103) for other solutions.)
 
 ## Why?
 

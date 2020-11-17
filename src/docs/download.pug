@@ -63,6 +63,27 @@ include _mixins.pug
             a(href=`css/awsm_theme_${theme.title}._sealed.min.css`) min
             = ').'
 
+    section
+      +h("dark-mode", 3) Dark Mode Support
+
+      p If you need a “Dark Mode” support, just inject two CSS files and use media queries:
+
+      -
+        var code = '<!-- CSS for users with dark mode -->\n'
+          + '<link rel="stylesheet" href="awsm_theme_big-stone.min.css" media="(prefers-color-scheme: dark)">\n'
+          + '\n'
+          + '<!-- CSS for users without dark mode -->\n'
+          + '<link rel="stylesheet" href="awsm_theme_pearl-lusta.min.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">';
+
+      +code-block= code
+
+      p
+        | (See
+        = ' '
+        a(href="https://github.com/igoradamenko/awsm.css/issues/103") #103
+        = ' '
+        | for other solutions.)
+
   section
     +h("unpkg") unpkg
 
