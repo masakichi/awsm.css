@@ -7,7 +7,7 @@
 .awsm{
   font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "PT Sans", "Open Sans", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:100%;
-  line-height:1.4;
+  line-height:1.5;
   background:#fbecda;
   color:#411b33;
   -webkit-overflow-scrolling:touch;
@@ -55,7 +55,6 @@
   margin:1em 0;
 }
 .awsm nav ul{
-  list-style:none;
   margin:0;
   padding:0;
 }
@@ -89,7 +88,6 @@
 .awsm p{
   margin:1em 0;
   -webkit-hyphens:auto;
-      -ms-hyphens:auto;
           hyphens:auto;
 }
 .awsm p:first-child{
@@ -128,8 +126,19 @@
 
 .awsm aside{
   margin:0.5em 0;
-  font-style:italic;
   color:#dcafb5;
+}
+.awsm aside nav{
+  margin:0.5em 0;
+}
+.awsm aside nav ul{
+  margin:0;
+  padding-left:1em;
+}
+.awsm aside nav li{
+  display:list-item;
+  margin-right:1em;
+  margin-bottom:0.25em;
 }
 @media (min-width: 65rem){
   .awsm aside{
@@ -156,7 +165,7 @@
 
 .awsm h1, .awsm h2, .awsm h3, .awsm h4, .awsm h5, .awsm h6{
   margin:1.25em 0 0;
-  line-height:1.2;
+  line-height:1.25;
 }
 .awsm h1:hover > a[href^="#"][id]:empty, .awsm h1:focus > a[href^="#"][id]:empty, .awsm h2:hover > a[href^="#"][id]:empty, .awsm h2:focus > a[href^="#"][id]:empty, .awsm h3:hover > a[href^="#"][id]:empty, .awsm h3:focus > a[href^="#"][id]:empty, .awsm h4:hover > a[href^="#"][id]:empty, .awsm h4:focus > a[href^="#"][id]:empty, .awsm h5:hover > a[href^="#"][id]:empty, .awsm h5:focus > a[href^="#"][id]:empty, .awsm h6:hover > a[href^="#"][id]:empty, .awsm h6:focus > a[href^="#"][id]:empty{
   opacity:1;
@@ -191,11 +200,11 @@
 }
 
 .awsm h1{
-  font-size:2.5em;
+  font-size:2em;
 }
 
 .awsm h2{
-  font-size:1.75em;
+  font-size:1.5em;
 }
 
 .awsm h3{
@@ -203,7 +212,7 @@
 }
 
 .awsm h4{
-  font-size:1.15em;
+  font-size:1.125em;
 }
 
 .awsm h5{
@@ -212,7 +221,7 @@
 
 .awsm h6{
   margin-top:1em;
-  font-size:1em;
+  font-size:0.875em;
   color:#dcafb5;
 }
 
@@ -233,7 +242,7 @@
   color:#411b33;
 }
 .awsm article header h1 a:visited, .awsm article header h2 a:visited{
-  color:#dcafb5;
+  color:#411b33;
 }
 .awsm article header h1 a:visited:hover, .awsm article header h2 a:visited:hover{
   color:#f6b731;
@@ -247,7 +256,7 @@
   color:#a54a29;
 }
 .awsm a:visited{
-  color:#742b5a;
+  color:#a54a29;
 }
 .awsm a:hover, .awsm a:active{
   outline-width:0;
@@ -263,7 +272,6 @@
   margin-right:-0.075em;
   text-decoration:none;
   -webkit-hyphens:none;
-      -ms-hyphens:none;
           hyphens:none;
   letter-spacing:0.075em;
   font-size:0.9em;
@@ -338,7 +346,7 @@
   background-repeat:no-repeat, no-repeat;
 }
 .awsm table th{
-  line-height:1.2;
+  line-height:1.25;
 }
 
 .awsm form{
@@ -436,7 +444,6 @@
   background-size:0.5em;
   background-repeat:no-repeat;
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(220, 175, 181)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
 }
@@ -473,7 +480,6 @@
   width:100%;
   line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
 }
 .awsm input[type=text]:focus, .awsm input[type=password]:focus, .awsm input[type^=date]:focus, .awsm input[type=email]:focus, .awsm input[type=number]:focus, .awsm input[type=search]:focus, .awsm input[type=tel]:focus, .awsm input[type=time]:focus, .awsm input[type=month]:focus, .awsm input[type=week]:focus, .awsm input[type=url]:focus{
@@ -506,7 +512,6 @@
   color:#411b33;
   cursor:pointer;
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
 }
 .awsm input[type=submit]:focus, .awsm input[type=button]:focus, .awsm input[type=reset]:focus{
@@ -538,7 +543,6 @@
   width:100%;
   line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
   width:6em;
 }
@@ -615,7 +619,6 @@
   width:100%;
   line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
   height:4.5em;
   resize:vertical;
@@ -647,18 +650,14 @@
 .awsm pre{
   overflow-x:auto;
   font-size:0.8em;
-  background:linear-gradient(rgba(65, 27, 51, 0.15) 0%, rgba(65, 27, 51, 0.15) 100%) 0 0, linear-gradient(rgba(65, 27, 51, 0.15) 0%, rgba(65, 27, 51, 0.15) 100%) 100% 0;
-  background-attachment:scroll, scroll;
-  background-size:1px 100%, 1px 100%;
-  background-repeat:no-repeat, no-repeat;
+  border-radius:6px;
 }
 .awsm pre > code{
   display:inline-block;
   overflow-x:visible;
   box-sizing:border-box;
   min-width:100%;
-  border-right:3px solid #fbecda;
-  border-left:1px solid #fbecda;
+  padding:10px;
 }
 
 .awsm hr{

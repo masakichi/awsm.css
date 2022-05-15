@@ -72,7 +72,6 @@ nav {
   margin: 1em 0;
 
   ul {
-    list-style: none;
     margin: 0;
     padding: 0;
   }
@@ -161,8 +160,22 @@ blockquote {
 
 aside {
   margin: .5em 0;
-  font-style: italic;
   color: color('stealthy');
+
+  nav {
+    margin: .5em 0;
+
+    ul {
+      margin: 0;
+      padding-left: 1em;
+    }
+
+    li {
+      display: list-item;
+      margin-right: 1em;
+      margin-bottom: .25em;
+    }
+  }
 
   $shift: 12.5rem; // 200px / 16px
   @media (min-width: size('width-max') + $shift * 2) {
@@ -237,11 +250,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 1.5em;
 }
 
 h3 {
@@ -249,7 +262,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.15em;
+  font-size: 1.125em;
 }
 
 h5 {
@@ -258,7 +271,7 @@ h5 {
 
 h6 {
   margin-top: 1em;
-  font-size: 1em;
+  font-size: .875em;
   color: color('stealthy');
 }
 
@@ -286,7 +299,7 @@ article {
         color: color('primary');
 
         &:visited {
-          color: color('stealthy');
+          color: color('primary');
 
           &:hover {
             color: color('link-hover');
@@ -306,7 +319,7 @@ a {
   color: color('link');
 
   &:visited {
-    color: color('link-visited');
+    color: color('link');
   }
 
   &:hover,
@@ -627,24 +640,16 @@ code, kbd, var, samp {
 }
 
 pre {
-  $scrollBorderColor: rgba(color('primary'), .15);
-
   overflow-x: auto;
   font-size: .8em;
-  background:
-    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 0 0,
-    linear-gradient($scrollBorderColor 0%, $scrollBorderColor 100%) 100% 0;
-  background-attachment: scroll, scroll;
-  background-size: 1px 100%, 1px 100%;
-  background-repeat: no-repeat, no-repeat;
+  border-radius: 6px;
 
   > code {
     display: inline-block;
     overflow-x: visible;
     box-sizing: border-box;
     min-width: 100%;
-    border-right: 3px solid color('secondary'); // 3px 'cause of bad chrome rendering
-    border-left: 1px solid color('secondary');
+    padding: 10px;
   }
 }
 

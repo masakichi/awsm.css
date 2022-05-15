@@ -7,7 +7,7 @@
 html{
   font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "PT Sans", "Open Sans", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:100%;
-  line-height:1.4;
+  line-height:1.5;
   background:white;
   color:black;
   -webkit-overflow-scrolling:touch;
@@ -58,7 +58,6 @@ nav{
   margin:1em 0;
 }
 nav ul{
-  list-style:none;
   margin:0;
   padding:0;
 }
@@ -92,7 +91,6 @@ ul li > details, ol li > details{
 p{
   margin:1em 0;
   -webkit-hyphens:auto;
-      -ms-hyphens:auto;
           hyphens:auto;
 }
 p:first-child{
@@ -131,8 +129,19 @@ blockquote{
 
 aside{
   margin:0.5em 0;
-  font-style:italic;
   color:#aaaaaa;
+}
+aside nav{
+  margin:0.5em 0;
+}
+aside nav ul{
+  margin:0;
+  padding-left:1em;
+}
+aside nav li{
+  display:list-item;
+  margin-right:1em;
+  margin-bottom:0.25em;
 }
 @media (min-width: 65rem){
   aside{
@@ -159,7 +168,7 @@ section + section{
 
 h1, h2, h3, h4, h5, h6{
   margin:1.25em 0 0;
-  line-height:1.2;
+  line-height:1.25;
 }
 h1:hover > a[href^="#"][id]:empty, h1:focus > a[href^="#"][id]:empty, h2:hover > a[href^="#"][id]:empty, h2:focus > a[href^="#"][id]:empty, h3:hover > a[href^="#"][id]:empty, h3:focus > a[href^="#"][id]:empty, h4:hover > a[href^="#"][id]:empty, h4:focus > a[href^="#"][id]:empty, h5:hover > a[href^="#"][id]:empty, h5:focus > a[href^="#"][id]:empty, h6:hover > a[href^="#"][id]:empty, h6:focus > a[href^="#"][id]:empty{
   opacity:1;
@@ -194,11 +203,11 @@ h1 > a[href^="#"][id]:empty::before, h2 > a[href^="#"][id]:empty::before, h3 > a
 }
 
 h1{
-  font-size:2.5em;
+  font-size:2em;
 }
 
 h2{
-  font-size:1.75em;
+  font-size:1.5em;
 }
 
 h3{
@@ -206,7 +215,7 @@ h3{
 }
 
 h4{
-  font-size:1.15em;
+  font-size:1.125em;
 }
 
 h5{
@@ -215,7 +224,7 @@ h5{
 
 h6{
   margin-top:1em;
-  font-size:1em;
+  font-size:0.875em;
   color:#aaaaaa;
 }
 
@@ -236,7 +245,7 @@ article header h1 a, article header h2 a{
   color:black;
 }
 article header h1 a:visited, article header h2 a:visited{
-  color:#aaaaaa;
+  color:black;
 }
 article header h1 a:visited:hover, article header h2 a:visited:hover{
   color:#f00000;
@@ -250,7 +259,7 @@ a{
   color:#0064c1;
 }
 a:visited{
-  color:#8d39d0;
+  color:#0064c1;
 }
 a:hover, a:active{
   outline-width:0;
@@ -266,7 +275,6 @@ abbr{
   margin-right:-0.075em;
   text-decoration:none;
   -webkit-hyphens:none;
-      -ms-hyphens:none;
           hyphens:none;
   letter-spacing:0.075em;
   font-size:0.9em;
@@ -341,7 +349,7 @@ table td:only-child, table th:only-child{
   background-repeat:no-repeat, no-repeat;
 }
 table th{
-  line-height:1.2;
+  line-height:1.25;
 }
 
 form{
@@ -439,7 +447,6 @@ select{
   background-size:0.5em;
   background-repeat:no-repeat;
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='rgb(170, 170, 170)' fill-rule='nonzero' d='M1.5 2L3 0H0z'/%3E%3C/svg%3E");
 }
@@ -476,7 +483,6 @@ input[type=text], input[type=password], input[type^=date], input[type=email], in
   width:100%;
   line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
 }
 input[type=text]:focus, input[type=password]:focus, input[type^=date]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=month]:focus, input[type=week]:focus, input[type=url]:focus{
@@ -509,7 +515,6 @@ input[type=submit], input[type=button], input[type=reset]{
   color:black;
   cursor:pointer;
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
 }
 input[type=submit]:focus, input[type=button]:focus, input[type=reset]:focus{
@@ -541,7 +546,6 @@ input[type=color]{
   width:100%;
   line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
   width:6em;
 }
@@ -618,7 +622,6 @@ textarea{
   width:100%;
   line-height:calc(2em - 1px * 2 - (.25em - 1px) * 2);
   -webkit-appearance:none;
-     -moz-appearance:none;
           appearance:none;
   height:4.5em;
   resize:vertical;
@@ -650,18 +653,14 @@ code, kbd, var, samp{
 pre{
   overflow-x:auto;
   font-size:0.8em;
-  background:linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 0 0, linear-gradient(rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%) 100% 0;
-  background-attachment:scroll, scroll;
-  background-size:1px 100%, 1px 100%;
-  background-repeat:no-repeat, no-repeat;
+  border-radius:6px;
 }
 pre > code{
   display:inline-block;
   overflow-x:visible;
   box-sizing:border-box;
   min-width:100%;
-  border-right:3px solid white;
-  border-left:1px solid white;
+  padding:10px;
 }
 
 hr{

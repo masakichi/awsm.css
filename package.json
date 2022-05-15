@@ -64,5 +64,9 @@
   },
   "browserslist": [
     "> 1%"
-  ]
+  ],
+  "volta": {
+    "node": "14.19.2"
+  },
+  "dependencies": {}
 }
